@@ -2714,7 +2714,7 @@ input[type=checkbox]:checked ~ input[type=text] {
 }
 */
 
- .success_boodshap p,i {
+ .success_boodshap p {
      color : green
  }
 
