@@ -2714,11 +2714,11 @@ input[type=checkbox]:checked ~ input[type=text] {
 }
 */
 
- .success_boodshap p {
+ .success_boodschap p {
      color : green
  }
 
- .fout_boodshap p {
+ .fout_boodschap p {
      color : red
  }
 

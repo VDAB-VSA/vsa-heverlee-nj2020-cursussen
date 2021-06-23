@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="images/logo_fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!-- ALL CSS FILES -->
     <link href="css/materialize.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -330,133 +331,248 @@
     <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
     <section>
         <!-- LOGIN SECTION -->
-        <div id="modal1" class="modal fade" role="dialog">
+        <div id="modal_bezoeker_inloggen" class="modal fade" role="dialog">
             <div class="log-in-pop">
                 <div class="log-in-pop-left">
                     <h1>Welkom bij DIT</h1>
-                    <p>Heb je geen account? Maak een account aan. Het duurt minder dan een minuut </p>
+                    <p>
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_registreren">Heb je geen account ? Maak een account aan.</a>
+                    </p>
                 </div>
                 <div class="log-in-pop-right">
                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                     </a>
-                    <h4>Login</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                    <h4>Inloggen</h4>
+                    <p>Bestaande klanten</p>
                     <form class="s12">
                         <div>
                             <div class="input-field s12">
-                                <input type="text" data-ng-model="name" class="validate">
-                                <label>User name</label>
+                                <input type="email" data-ng-model="email" class="validate" required>
+                                <label>E-mail adres</label>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Password</label>
+                                <input type="password" class="validate" required>
+                                <label>Wachtwoord</label>
                             </div>
                         </div>
-                        <div>
-                            <div class="s12 log-ch-bx">
-                                <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Remember me</label>
-                                </p>
+                        <div> 
+                            <div class="input-field s12"> 
+                                <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_wachtwoord_vergeten">Wachtwoord vergeten ?</a>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s4">
-                                <input type="submit" value="Login" class="waves-effect waves-light log-in-btn"> </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                                <input type="submit" value="Inloggen" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <!-- REGISTER SECTION -->
-        <div id="modal2" class="modal fade" role="dialog">
+        <div id="modal_bezoeker_registreren" class="modal fade" role="dialog">
             <div class="log-in-pop">
                 <div class="log-in-pop-left">
                     <h1>Welkom bij DIT</h1>
-                    <p>Heb je geen account? Maak een account aan. Het duurt minder dan een minuut</p>
+                    <p>Om je account te activeren vragen we volgende instellingen aan te passen.
+                    </p>
+                    <div>
+                        <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_inloggen">Heb je een account ? Hier inloggen</a> </div>
+                    </div>
                 </div>
                 <div class="log-in-pop-right">
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-                    </a>
-                    <h4>Create an Account</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    <h4>Maak een account aan</h4>
                     <form class="s12">
-                        <div>
-                            <div class="input-field s12">
-                                <input type="text" data-ng-model="name1" class="validate">
-                                <label>User name</label>
+                        <div class="col-md-12">
+                            <div>
+                                <div class="input-field s12">Persoonlijke gegevens</div>
+                            </div>
+                            <div>
+                                <div class="s12 log-ch-bx">
+                                    <input type="checkbox" id="ik_ben_bedrijf" />
+                                    <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="btw_nummer">
+                                    <label for="btw_nummer">BTW-nummer</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="naam_bedrijf">
+                                    <label for="naam_bedrijf">Naam (bedrijf)</label>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="adres_bedrijf">
+                                    <label for="adres_bedrijf">Adres (bedrijf)</label>
+                                </div>
+                                <div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                        <input type="number" data-ng-model="name1" id="postcode_bedrijf" min="1000" max="9999" class="validate">
+                                        <label for="postcode_bedrijf">Postcode (bedrijf)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                        <input type="text" data-ng-model="name1" id="registreren_stad_bedrijf" class="validate">
+                                        <label for="registreren_stad_bedrijf">Stad (bedrijf)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text"  class="validate" id="registreren_naam" required>
+                                    <label for="registreren_naam">Naam *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name2" class="validate" id="registreren_voornaam" required>
+                                    <label for="registreren_voornaam">Voornaam *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name3" id="registreren_adres" class="validate">
+                                    <label for="registreren_adres">Adres</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="number" data-ng-model="name1" id="postcode" min="1000" max="9999" class="validate" required>
+                                    <label for="postcode">Postcode *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name1" id="registreren_stad" class="validate" required>
+                                    <label for="registreren_stad">Stad *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="tel" data-ng-model="name1" id="registreren_phone" name="phone" pattern="[0-9]{10}" class="validate">
+                                    <label for="registreren_phone">Telefoon</label>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="email" class="validate">
-                                <label>Email id</label>
+                        <div class="col-md-12">
+                            <div>
+                                <div class="input-field s12">Inloggegevens</div>
+                            </div>
+                            <div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                    <input type="email" id="registreren_email" class="validate" required>
+                                    <label for="registreren_email">Email adres *</label>
+                                </div>
+                            </div>
+                            <!--
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
+                                    <input type="email" class="validate" required>
+                                    <label>Bevestig Email adres *</label>
+                                </div>
+                            </div>
+                            -->
+                            <div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                    <input type="password" id="registreren_paswoord"class="validate" required>
+                                    <label for="registreren_paswoord">Wachtwoord *</label>
+                                </div>
+                            </div>
+                            <!--
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
+                                    <input type="password" class="validate" required>
+                                    <label>Bevestig Wachtwoord *</label>
+                                </div>
+                            </div>
+                            -->
+                            <div>
+                                <div class="s12 log-ch-bx">
+                                    <p>
+                                        <input type="checkbox" id="gdpr3" required>
+                                        <label for="gdpr3"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
+                                            aanbiedingen. *</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="s12 log-ch-bx">
+                                    <p>
+                                        <input type="checkbox" id="gdpr4" required>
+                                        <label for="gdpr4">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
+                                            inschrijving en boekhouding. *</label>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Password</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Confirm password</label>
-                            </div>
-                        </div>
-                        <div>
+                        <div class="col-md-12">
                             <div class="input-field s4">
-                                <input type="submit" value="Register" class="waves-effect waves-light log-in-btn"> </div>
+                                <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div>
+                        <div class="col-md-12">
+                            <p class="verplicht">* verplichte velden</p>
                         </div>
+                        <div class="boodschap col-md-12">
+                            <div class="success_boodschap col-md-12">
+                                <p><i class="fas fa-check-circle fa-2x"></i></p>
+                                <p>Uw account is nu aangemaakt !
+                                    <br> Er zal u een e-mail worden gestuurd om dit te bevestigen.
+                                </p>
+                            </div>
+                            <div class="fout_boodschap col-md-12">
+                                <p><i class="fas fa-times-circle fa-2x"></i></p> 
+                                <p>Er was een probleem.
+                                    <br>Probeer het later nog eens of neem contact met ons op.
+                                </p>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
         </div>
         <!-- FORGOT SECTION -->
-        <div id="modal3" class="modal fade" role="dialog">
+        <div id="modal_wachtwoord_vergeten" class="modal fade" role="dialog">
             <div class="log-in-pop">
                 <div class="log-in-pop-left">
-                    <h1>Hello... </h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
+                    <h1>Welkom terug ! </h1>
+                    <p> 
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_registreren">Heb je geen account ? Maak een account aan.</a>
+                    </p>
+                    
                 </div>
                 <div class="log-in-pop-right">
                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                     </a>
-                    <h4>Forgot password</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                    <h4>Wachtwoord vergeten ?</h4>
+                    <p>Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in. 
+                      We sturen dan binnen enkele minuten een e-mail waarmee een nieuw wachtwoord kan worden aangemaakt.
+                    </p>
                     <form class="s12">
                         <div>
                             <div class="input-field s12">
-                                <input type="text" data-ng-model="name3" class="validate">
-                                <label>User name or email id</label>
+                                <input type="email" data-ng-model="name3" class="validate" required>
+                                <label>E-mail adres</label>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s4">
-                                <input type="submit" value="Submit" class="waves-effect waves-light log-in-btn"> </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                                <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                     </form>
+                    <div class="success_boodschap col-md-12">
+                        <p><i class="fas fa-check-circle fa-2x"></i></p> 
+                        <p>Wij hebben u een e-mail gestuurd met een nieuw wachtwoord</p>
+                    </div>
+                    <div class="fout_boodschap col-md-12">
+                        <p><i class="fas fa-times-circle fa-2x"></i></p>
+                        <p>Er was een probleem.
+                            <br>Probeer het later nog eens of neem contact met ons op.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
