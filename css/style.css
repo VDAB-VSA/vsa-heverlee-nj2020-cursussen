@@ -111,7 +111,6 @@
      color: #f26838;
      line-height: 40px;
 }
-
  .con-title p{
      font-size: 18px;
      color: #3f444a;
@@ -151,8 +150,7 @@
  .wed-logo a{
 }
  .wed-logo a img{
-     width: 250px;
-     padding: 7px 0px;
+     width: 220px;
 }
  .wed-menu{
      float: right;
@@ -224,16 +222,6 @@
      left: 18px;
      font-size: 12px;
      font-family: 'Open Sans', sans-serif;
-}
-.inverkoop{
-    line-height: 40px;
-    background: #f44336;
-    color: #fff !important;
-    font-size: 12px;
-    margin-top: 40px;
-    padding: 3px 8px;
-    border-radius: 25px;
-    font-weight: 600;
 }
  .wed-search:before{
      content: '';
@@ -1102,37 +1090,6 @@
      left: 0px;
      width: 100%;
 }
-.winkel-top-cour {
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    overflow: hidden;
-    background: #ffffff;
-    padding: 15px 0px;
-    margin-bottom: 30px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    border: 1px solid #e4e4e4;
-}
-.winkel-top-cour:hover {
-    -moz-transform: scale(1.02);
-    -webkit-transform: scale(1.02);
-    -o-transform: scale(1.02);
-    transform: scale(1.02);
-    box-shadow: 0px 11px 9px -10px rgba(0, 0, 0, 0.52);
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.winkel-top-cour .omschrijving{
- color: red;
- background-color: rgb(0, 0, 0);
- flex: 1;
-}
  .home-top-cour {
      position: relative;
      overflow: hidden;
@@ -1159,18 +1116,11 @@
  .home-top-cour img {
      width: 100%;
 }
-.winkel-top-cour img {
-    width: 40%;
+ .home-top-cour-desc {
 }
  .home-top-cour-desc span {
      text-transform: uppercase;
      font-size: 12px;
-}
-.winkel-top-cour-desc h3 {
-    font-size: 16px;
-    padding-bottom: 5px;
-    color: #000000;
-    margin: 0px;
 }
  .home-top-cour-desc h3 {
      font-size: 20px;
@@ -1629,7 +1579,7 @@
      box-shadow: 0 26px 64px 0 rgba(0,0,0,.6);
      border-bottom-left-radius: 8px;
      border-bottom-right-radius: 8px;
-     height: 300px;
+     height: 140px;
      overflow-y: hidden;
 }
  .sf-list:hover{
@@ -1804,7 +1754,7 @@
      font-size: 10px;
 }
  .top-logo{
-     padding: 12px;
+     padding-top: 17px;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;
@@ -1866,6 +1816,28 @@
      text-align: center;
      margin: 5px;
 }
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: rgb(243, 236, 236);
+  }
+  
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
  .wed-hom-ser ul li a{
      background: #202f40;
      width: 90px;
@@ -2032,7 +2004,7 @@
  .cor-con-mid div{
 }
  .cor-con-mid p,li{
-     color: #203245;
+     /*color: #203245;*/
      line-height: 24px;
 }
  .cor-p1{
@@ -2700,6 +2672,7 @@
      color: #fff;
      padding: 2px 10px;
      font-weight: 600;
+     margin-top: 20px;
 }
  .pop-close {
      color: #333;
@@ -2730,6 +2703,25 @@
 }
  .log-ch-bx p input {
 }
+
+/* to hide if checkbox "ik ben bedrijf" not checked
+.form_btw_nummer {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ input[type=text] {
+    display: inline;
+}
+*/
+
+ .success_boodshap p,i {
+     color : green
+ }
+
+ .fout_boodshap p {
+     color : red
+ }
+
 /*-------------------------------------------------*/
 /* = 17.REGISTER LOGIN POPUPS 
 /*-------------------------------------------------*/
@@ -3318,19 +3310,6 @@ left: 0;
      -o-transition: all 0.5s ease;
      transition: all 0.5s ease;
      padding: 0px;
-}
-.leden-pic{
-    width: 80%; 
-    height: 300px;
-    border: 2px solid gray;
-    border-radius: 5px;
-    float: center;
-}
-.leden-card{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
 }
  .icon-float ul li a i {
      padding: 8px;
@@ -4084,24 +4063,27 @@ left: 0;
     background-color: white !important;
 }
 .verplicht {
-    color: red !important;
+    color: orangered !important;
+    font-size: 1.2rem;
 }
  .contact-map {
      display: flex;
+     flex-wrap: wrap-reverse;
      align-items: center;
      margin: 0px;
 }
 .geenresultaat{
     color: red !important;
 }
-.contact-map .container{
-    width: 45%;
-}
+/*.contact-map .container{
+    width: 100%;
+}*/
+
  .contact-map iframe {
-     width: 70%;
-     height: 550px;
+     width: 100%;
+     height: 420px;
      border: 0px;
-     margin-bottom: -5px;
+     margin-bottom: 0px;
      display: block;
      pointer-events: none;
      position: relative;
@@ -4232,6 +4214,19 @@ left: 0;
      width: 50%;
      box-sizing: border-box;
 }
+
+ .ed-mm-menu-icon {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+    float: right;
+ }
+
+ #winkelwagentje_icon_mobile {
+    padding-top : 12px;
+    color : black;
+ }
+
  .ed-mm-menu{
 }
  .ed-micon{
@@ -4367,22 +4362,6 @@ left: 0;
 .sb2 {
     background: #263238;
     margin-top: 59px;
-}
-.inschrijven{
-    width: 100%;
-    border: 0px;
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 13px;
-    border: 1px solid #e25f30;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    background: #e05a2b;
-    background: -webkit-linear-gradient(to top, #ef612f, #f36b3b);
-    background: linear-gradient(to top, #de592a, #f36b3b);
-}
-
 }
 .white-text{
     color: white !important;
@@ -4916,6 +4895,7 @@ left: 0;
 }
 .sb2-2-3 {
     /* background:#fff; */
+    
     margin-top: 30px;
 }
 .list-img {} .list-img img {
@@ -5107,6 +5087,7 @@ left: 0;
 /*-------------------------------------------------------*/
 /* 9. LIST ACTION
 /*-------------------------------------------------------*/
+
 .list-act-hom ul {
     padding: 0px;
     padding-top: 5px;
