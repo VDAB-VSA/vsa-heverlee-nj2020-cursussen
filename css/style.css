@@ -1113,9 +1113,12 @@
      -o-transition: all 0.5s ease;
      transition: all 0.5s ease;
 }
+
  .home-top-cour img {
      width: 100%;
 }
+
+
  .home-top-cour-desc {
 }
  .home-top-cour-desc span {
@@ -4251,13 +4254,12 @@ left: 0;
 }
  .ed-mm-inn{
      position: fixed;
-     width: 70%;
+     width: 40%;
      background: #fff;
-     padding: 50px;
+     padding: 40px;
      box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.32);
      overflow-y: auto;
      right: -80%;
-     height: 100%;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;

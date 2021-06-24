@@ -74,6 +74,11 @@
      .ho-ev-link {
          width: 75%;
     }
+
+    .wed-logo a img {
+        width: 100px;
+        margin-top: 3px;
+    }
      .search-form {
          width: 100%;
     }
@@ -269,9 +274,9 @@
      .contact-map iframe {
          height: 250px;
     }
-     .new-con1{
+     /*.new-con1{
          height:150px;
-    }
+    }*/
      .new-con3{
     }
      .new-con4{
@@ -305,8 +310,8 @@
          display:none;
     }
      .wed-logo a img {
-         width: 200px;
-         margin-top: 5px;
+         width: 100px;
+         margin-top: 3px;
     }
      .wed-search-1 {
          width: 90%;
