@@ -2623,8 +2623,13 @@
 }
  .log-in-pop-right {
      float: left;
-     width: 60%;
+     width: 100%;
      padding: 50px;
+}
+ .inloggen_button {
+     width: 100%;
+     background: #f26838;
+     text-transform: uppercase;
 }
  .log-in-pop-right h4 {
      font-size: 24px;
