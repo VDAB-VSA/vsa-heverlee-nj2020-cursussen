@@ -211,7 +211,11 @@
                                 <p>Er zijn veel variaties van passages van Lorem Ipsum beschikbaar, maar de meerderheid heeft op de een of andere manier te lijden gehad van veranderingen, door ingevoegde humor of willekeurige woorden die er niet eens een beetje geloofwaardig uitzien. Als je gaat
                                     om een passage van Lorem Ipsum te gebruiken, moet je er zeker van zijn dat er niets gênants verborgen</p>
                                 <p> Het werd in de jaren zestig populair met de introductie van Letraset-vellen met Lorem Ipsum-passages en meer recentelijk met desktop publishing-software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>     
-                                <input class="inschrijven" id="inschrijven" type="submit" value="Aankoop" onclick="winkel();">
+                                <!--
+                                <input class="inschrijven" id="inschrijven" type="submit" value="Aankoop" data-mdb-toggle="modal" data-mdb-target="#verder_bestellen_of_winkelen" onclick="winkel();">
+                                -->
+                                <a href="#!" class="btn btn-primary" data-toggle="modal" data-target="#verder_bestellen_of_winkelen">Aankoop</a>
+                        
                             </div>
                             <div class="cor-p5">
                                 <h3>Cursus details</h3>
@@ -325,6 +329,27 @@
         </div>
     </section>
     <!--END HEADER SECTION-->
+
+    <!-- MODAL AANKOOP-->
+    <div id="verder_bestellen_of_winkelen" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-left">
+            </div>
+            <div class="log-in-pop-right">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                <div class="success_boodschap col-md-12">
+                    <p><i class="fas fa-check-circle fa-2x"></i>  Het artikel is toegevoegd aan je winkelwagen</p>
+                </div>
+                <div class="col-md-12"> 
+                    <a href="winkelwagentje.html">Verder naar bestellen ?</a>
+                </div>
+                <div class="col-md-12">
+                    <a href="all-courses.html">Of verder winkelen ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 
     <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
     <section>
