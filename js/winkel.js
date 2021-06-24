@@ -1,6 +1,69 @@
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjQsImV4cCI6MTYyMTcyNDEzMCwiaXNzIjoiTGx1RzNnd1pLUHpDIiwiaWF0IjoxNjIxNjg4MTMwfQ.CZUa2nwdwFepcvUuV7mADgmZEvoDDIct8TI52IoGcfI";
+const endpoint = "https://dwapi.dev/item";
+const project = "4nqmlRAiE5cG";
+
+let huidige_product_actie;
+let huidige_product_id;
+let huidige_filter_waardes = [];
+let huidige_sorteer_waarde = ["naam", "ASC"];
+
+
 window.onload = function(){
     getAllwinkel();
+    getCourses();
 }
+/*async function getCourses(){
+
+  let parameters = {
+    "endpoint": endpoint, 
+    "project": project,
+    "token": token, 
+    "entity": "cursus",
+    "filter": huidige_filter_waardes,
+    "sort": huidige_sorteer_waarde,
+    "relation": [{"pri_entity": "cursus", "pri_key": "cursus_id", "sec_entity": "categorie", "sec_key": "categorie_id"}]
+}
+let url = parameters.endpoint + 
+"?project=" + parameters.project + 
+"&entity=" + parameters.entity;
+
+let response = await fetch(url, {
+  method: 'GET'
+});
+console.log(response);
+return response.json()
+.then(data => { 
+  console.log(data);            
+    return data; 
+});
+}
+// READ
+async function dwapiRead(parameters) {   
+  let url = parameters.endpoint + 
+      "?project=" + parameters.project + 
+      "&entity=" + parameters.entity;
+
+  if (typeof parameters.filter !== "undefined" && parameters.filter.length > 0) {
+      url = url + "&filter=" + encodeURIComponent(JSON.stringify(parameters.filter))
+  }
+  if (typeof parameters.sort !== "undefined" && parameters.sort.length > 0) {
+      url = url + "&sort=" + encodeURIComponent(JSON.stringify(parameters.sort))
+  }
+  if (typeof parameters.relation !== "undefined" && parameters.relation.length > 0) {
+      url = url + "&relation=" + encodeURIComponent(JSON.stringify(parameters.relation))
+  }
+
+  let response = await fetch(url, {
+      method: 'GET'
+  });
+
+  return response.json()
+      .then(data => { 
+        console.log(data);            
+          return data; 
+      });
+}   */
+
 
 function winkel(){
         //invoeren
@@ -10,9 +73,9 @@ function winkel(){
 
         let product_lijst = JSON.parse(window.localStorage.getItem("products")) || [];
         let nieuw_lijst = [...product_lijst];
-        let pp = nieuw_lijst.indexOf(product);
-        console.log(pp);
-        if(pp >= 0){
+        let isProduct = nieuw_lijst.indexOf(product);
+
+        if(isProduct >= 0){
             nieuw_lijst.splice(pp, 1);
         }
         else {
@@ -47,3 +110,15 @@ function getAllwinkel(){
       gebruikers_lijst.appendChild(gebruiker_info);
     })*/
 }
+
+ document.getElementById("button_aankoop_bevestig").addEventListener('click', function() {
+  window.location.replace("bestelling.html");
+// similar behavior as clicking on a link
+//window.location.href = "http://stackoverflow.com";
+})
+
+document.getElementById("button_product_verwijderen").addEventListener('click', function() {
+ let cc= document.getElementById("button_product_verwijderen");
+ console.log(cc.dataset);
+ // winkel(huidige_product_id);
+})

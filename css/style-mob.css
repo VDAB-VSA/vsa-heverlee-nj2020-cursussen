@@ -48,6 +48,9 @@
      .h-quote:before {
          width: 100%;
     }
+    .sf-toevoegen{
+        width: 45%;
+    }
      .admiss-form {
          padding: 0px 30px;
          margin-top: 50px;

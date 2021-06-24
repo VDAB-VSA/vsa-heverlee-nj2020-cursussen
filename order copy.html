@@ -10,8 +10,29 @@
 </head>
 <body>
 
+<header class="header">
+  <h1 class="header__title">Multi Steps Form Animations</h1>
+</header>
 <div class="content">
   <div class="content__inner">
+    <div class="container">
+      <h2 class="content__title content__title--m-sm">Choose Animation Type</h2>
+      <form class="pick-animation my-4">
+        <div class="form-row">
+          <div class="col-5 m-auto">
+            <select class="pick-animation__select form-control">
+              <option value="scaleIn" selected="selected">ScaleIn</option>
+              <option value="scaleOut">ScaleOut</option>
+              <option value="slideHorz">SlideHorz</option>
+              <option value="slideVert">SlideVert</option>
+              <option value="fadeIn">FadeIn</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <h2 class="content__title">Click on steps or 'Prev' and 'Next' buttons</h2>
+    </div>
     <div class="container overflow-hidden">
       <div class="multisteps-form">
         <div class="row">
