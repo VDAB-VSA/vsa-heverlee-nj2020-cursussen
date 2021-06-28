@@ -22,12 +22,7 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="css/style-mob.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+ 
 </head>
 
 <body>
@@ -266,18 +261,67 @@
                             </div>
                               
                             <div>
-                                <h4>€65</h4>
+                                <h4>€100</h4>
                             </div>
+<<<<<<< HEAD
+=======
                                 <div class="hom-list-share">
                                     <ul>
                                         <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Aankop</a> </li>
                                         <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i>10 Vrij plaatsen </a> </li>
                                     </ul>
                                 </div>
+>>>>>>> ae68570bfa22a154b5b520927e22d109c01334db
                             <div>
-                                <h3>hgghg</h3>
+                                <button 
+                                    data-product-id='1',
+                                    data-product-naam='zz',
+                                    data-toggle='modal',
+                                    data-target='#modal_product_verwijderen'>
+                                    <i class='fa fa-trash'> Verwijderen</i>
+                                </button>
                             </div>
                         </div>
+                        <div class="winkel-top-cour">
+                            <div class="col-md-3"> 
+                                <img src="images/course/sm-2.jpg" alt="">
+                            </div>
+                            <div>
+                                <a href="course-details.html">
+                                    <h3>Java Ontwikkelaar</h3>
+                                </a>
+                            </div>
+                            <div class="omschrijving">
+                                <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p>
+                            </div>
+                            <div class="col-md-9 home-top-cour-desc">
+                                <h4>ICT: informatie- en </h4>
+                            </div>   
+                            <div>
+                                <h4>€80</h4>
+                            </div>
+                            <div>
+                                <button 
+                                    data-product-id='1',
+                                    data-product-naam='zz',
+                                    data-toggle='modal',
+                                    data-target='#modal_product_verwijderen'>
+                                    <i class='fa fa-trash'> Verwijderen</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="betaal_bedrag">
+                        <p>Subtotaal: €180</p>
+                        <p>Earlybird Korting: €28</p>
+                        <p>Inclusief BTW: €16.45</p>
+                        <h4>Totaal Bedrag: €168.45</h4>
+                        <button 
+                        data-product-id='1',
+                        data-product-naam='zz',
+                        data-toggle='modal',
+                        data-target='#bevestigen',
+                        class="verder_betalen">VERDER MET BETALEN</button>
                     </div>
                 </div>
             </div>
@@ -549,14 +593,84 @@
 
             </div>
         </div>
+<<<<<<< HEAD
+        <!--verwijderen product from lijst-->
+        <div
+            class="modal fade"
+            id="modal_product_verwijderen"
+            tabindex="-1"
+            aria-labelledby="modal_product_verwijderen"
+            aria-hidden="true"
+            >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Product Verwijderen</h5>
+                        <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    </div>
+                    <div class="modal-body">
+                        <label id="label_product_verwijderen_fout" class="note note-danger invisible"></label>
+                        <label class="form-outline mb-4" id="label_product_verwijderen">weet u zeker dat u dit product van de lijst wilt verwijderen. </label>
+                                                
+                        <div class="form-outline mb-4">
+                            <button 
+                            type="button" 
+                            id="button_product_verwijderen" 
+                            class="btn btn-outline-primary">Verwijderen</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-dismiss="modal">Annuleren</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--bevestigen betaal-->
+        <div
+            class="modal fade"
+            id="bevestigen"
+            tabindex="-1"
+            aria-labelledby="bevestigen"
+            aria-hidden="true"
+            >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Betaal Bevestigen</h5>
+                        <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    </div>
+                    <div class="modal-body">
+                        <label id="label_product_verwijderen_fout" class="note note-danger invisible"></label>
+                        <label class="form-outline mb-4" id="label_product_verwijderen">Bevestig om door te gaan met je bestelling</label>
+                                                
+                        <div class="form-outline mb-4">
+                            <button 
+                            type="button" 
+                            id="button_aankoop_bevestig" 
+                            class="btn btn-outline-primary">Bevestig</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-dismiss="modal">Annuleren</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+=======
     </div>
 </section>
+>>>>>>> ae68570bfa22a154b5b520927e22d109c01334db
     
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/winkel.js"></script>
 </body>
 
 

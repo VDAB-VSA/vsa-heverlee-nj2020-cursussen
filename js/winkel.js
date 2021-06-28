@@ -1,19 +1,21 @@
 window.onload = function(){
     getAllwinkel();
+    //winkel();
 }
+
 
 function winkel(){
         //invoeren
 
         //verwerken
-        let product = 1;
+        let product = 2;
 
         let product_lijst = JSON.parse(window.localStorage.getItem("products")) || [];
         let nieuw_lijst = [...product_lijst];
-        let pp = nieuw_lijst.indexOf(product);
-        console.log(pp);
-        if(pp >= 0){
-            nieuw_lijst.splice(pp, 1);
+        let isProduct = nieuw_lijst.indexOf(product);
+
+        if(isProduct >= 0){
+            nieuw_lijst.splice(isProduct, 1);
         }
         else {
         nieuw_lijst.push(product);
@@ -27,7 +29,8 @@ function getAllwinkel(){
     let product_lijst = window.localStorage.getItem("products")
     console.log(product_lijst);
     let producten = JSON.parse(product_lijst);
-    console.log(producten);
+    //document.getElementById("badge").innerHTML = producten.length;
+    //    console.log(producten.length);
     //gebruikers = JSON.parse(window.localStorage.getItem("users"));
     
     
@@ -47,3 +50,15 @@ function getAllwinkel(){
       gebruikers_lijst.appendChild(gebruiker_info);
     })*/
 }
+
+ document.getElementById("button_aankoop_bevestig").addEventListener('click', function() {
+  window.location.replace("bestelling.html");
+// similar behavior as clicking on a link
+//window.location.href = "http://stackoverflow.com";
+})
+
+document.getElementById("button_product_verwijderen").addEventListener('click', function() {
+ let cc= document.getElementById("button_product_verwijderen");
+ console.log(cc.dataset);
+ // winkel(huidige_product_id);
+})

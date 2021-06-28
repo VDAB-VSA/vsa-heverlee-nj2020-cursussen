@@ -22,6 +22,8 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="css/style-mob.css" rel="stylesheet" />
+
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -109,32 +111,42 @@
                 </div>
                 <!--== DASHBOARD INFO ==-->
                 <div class="sb2-2-1">
-                    <h2>CURSISTEN BEHEREN</h2>
+                    <h2>CURSISTEN</h2>
                 </div>
 
                 <div class="search-top">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8">
-                                <form>
+                                <form class="row g-3 needs-validation" novalidate>
                                     <div class="sf-type">
-                                        <div class="sf-input col-md-4">
-                                            <input type="text" id="sf-box" placeholder="Naam">
+                                        <div class="sf-input form-outline col-md-4">
+                                            <input type="text" id="naam" placeholder="Naam" class="form-control"/>
+                                            <div class="valid-feedback">Looks good!</div>
+                                            
                                         </div>
-                                        <div class="sf-input col-md-4">
-                                            <input type="text" id="sf-box" placeholder="Telefoon">
+                                        <div class="sf-input form-outline col-md-4">
+                                            <input type="tel" id="telefoon" placeholder="Telefoon" class="form-control"/>
+                                            <div class="valid-feedback">Looks good!</div>
                                         </div>
-                                        <div class="sf-input col-md-4">
-                                            <input type="text" id="sf-box" placeholder="E-mail">
+                                        <div class="sf-input  form-outline col-md-4">
+                                            <input type="email" id="e-mail" placeholder="E-mail" class="form-control"/>
+                                            <div class="valid-feedback">Looks good!</div>
                                         </div>
+                                        <!--div id="zoekfout" class="zoek_foutboodschap">hh</div-->
                                     </div>
-                                    <div class="sf-submit col-md-4">
-                                        <input type="submit" value="Zoek">
+                                    <div class="sf-submit  form-outline  col-md-4">
+                                        <input type="submit" value="Zoek" id="zoekcursist" onclick="zoekCursist();" />
                                     </div>
+                                    
                                 </form> 
                             </div>
-                            <div class="sf-toevoegen col-sm-6">
-                                <a href="add-cursist.html"><input type="submit" value="+ Nieuwe Cursist"></a>
+                            <div class="sf-toevoegen form-outline col-sm-6">
+                                    <input
+                                     id="button_product_toevoegen"
+                                     type="button" data-toggle="modal" 
+                                    data-target="#modal_cursist"        
+                                    data-product-actie="create" value="+ Cursist" />
                             </div>
                         </div>
                     </div>
@@ -178,9 +190,21 @@
                                                     <td>gthomashaile@gmail.com</td>
                                                     <td><i class="fa fa-check"></i></td>
                                                     <td>
-                                                        <a href="admin-student-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                        <!--a href="admin-student-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a-->
+                                                        <button
+                                                        id="button_product_toevoegen"
+                                                        type="button" data-toggle="modal" 
+                                                       data-target="#modal_cursist_wijzigen"        
+                                                       data-product-actie="create"><i class="fa fa-edit bg-edit"></i></button>
                                                     </td>
-													<td><a href="cursist-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+													<td><!--a href="cursist-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a-->
+                                                        <button 
+                                                        data-product-id='1',
+                                                        data-product-naam='zz',
+                                                        data-toggle='modal',
+                                                        data-target='#modal_cursist_verwijderen'>
+                                                        <i class='fa fa-trash bg-remove'></i>
+                                                    </button></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -195,12 +219,210 @@
 
         </div>
     </div>
+<!-- Modals -->
+
+<div
+class="modal fade"
+id="modal_cursist"
+tabindex="-1"
+aria-labelledby="modal_cursist"
+aria-hidden="true"        
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal_product_titel" class="modal-title">Cursist</h5>
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+            </div>
+            <div class="modal-body">
+                <label id="label_product_fout" class="note note-danger invisible">zz</label>
+                <form class="row g-3 needs-validation" id="form_product" novalidate>    
+                    <!-- Naam input -->
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_naam">Naam</label>
+                        <input required type="text" id="input_cursist_naam" class="form-control validate" />
+                        <div class="invalid-feedback">Een naam is verplicht.</div>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_voornaam">Voornaam</label>
+                        <input required type="text" id="input_cursist_voornaam" class="form-control validate" />
+                        <div class="invalid-feedback">Een Voornaam is verplicht.</div>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_email">E-mail</label>
+                        <input required type="email" id="input_cursist_email" class="form-control validate" />
+                        <div class="invalid-feedback">Een E-mail is verplicht.</div>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_paswoord">Paswoord</label>
+                        <input required type="password" id="input_cursist_paswoord" class="form-control validate" />
+                        <div class="invalid-feedback">Een Paswoord is verplicht.</div>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_telefoon">Telefoon</label>
+                        <input required type="tel" id="input_cursist_telefoon" class="form-control validate" />
+                        <div class="invalid-feedback">Een Telefoon is verplicht.</div>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_adres">Adres</label>
+                        <input required type="text" id="input_cursist_adres" class="form-control validate" />
+                        <div class="invalid-feedback">Een Adres is verplicht.</div>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_postcode">Postcode</label>
+                        <input required type="number" id="input_cursist_postcode" class="form-control validate" />
+                        <div class="invalid-feedback">Een Postcode is verplicht.</div>
+                    </div>
+                    <div class="input-field col-md-6">
+                        <label class="form-label" for="input_cursist_stad">Stad</label>
+                        <input required type="text" id="input_cursist_stad" class="form-control validate" />
+                        <div class="invalid-feedback">Een Stad is verplicht.</div>
+                    </div>     
+                    <div class="form-group mb-4">
+                        <label data-error="wrong" data-success="right" for="input_product_beeld">Beeld</label>
+                        <div class="custom-file">
+                            <input type="hidden" id="input_cursist_beeld_origineel" />
+                            <input type="file" id="inputcursist_beeld" aria-describedby="update_beeld">
+                            <label class="custom-file-label" id="label_cursist_beeld" for="product_beeld">Kies (nieuw) beeld</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4 form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="check_account_status" />
+                        <label class="form-check-label" for="check_account_status">account status</label>
+                    </div>
+                    <!-- Submit button -->
+                    <div class="form-outline mb-4">
+                        <button 
+                        id="button_product_bewaren" 
+                        class="btn btn-outline-primary">Bewaren</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-dismiss="modal">Annuleren</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div
+class="modal fade"
+id="modal_cursist_wijzigen"
+tabindex="-1"
+aria-labelledby="modal_cursist"
+aria-hidden="true"        
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal_product_titel" class="modal-title">Cursist Wijzigen</h5>
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+            </div>
+            <div class="modal-body">
+                <label id="label_product_fout" class="note note-danger invisible">zz</label>
+                <form class="row g-3 needs-validation" id="form_product" novalidate>    
+                    <!-- Naam input -->
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_naam">Naam</label>
+                        <input required type="text" id="input_cursist_naam" class="form-control validate" value="Gebrehiwet"/>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_voornaam">Voornaam</label>
+                        <input required type="text" id="input_cursist_voornaam" class="form-control validate" value="Thomas Haile"/>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_email">E-mail</label>
+                        <input required type="email" id="input_cursist_email" class="form-control validate" value="gthomashaile@gmail.com"/>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_paswoord">Paswoord</label>
+                        <input required type="password" id="input_cursist_paswoord" class="form-control validate" value="1qazxsw2" />
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_telefoon">Telefoon</label>
+                        <input required type="tel" id="input_cursist_telefoon" class="form-control validate" value="046567890"/>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_adres">Adres</label>
+                        <input required type="text" id="input_cursist_adres" class="form-control validate" value="abcd straat"/>
+                    </div>
+                    <div class="input-field mb-4">
+                        <label class="form-label" for="input_cursist_postcode">Postcode</label>
+                        <input required type="number" id="input_cursist_postcode" class="form-control validate" value="3001"/>
+                    </div>
+                    <div class="input-field col-md-6">
+                        <label class="form-label" for="input_cursist_stad">Stad</label>
+                        <input required type="text" id="input_cursist_stad" class="form-control validate" value="Leuven"/>
+                    </div>     
+                    <div class="form-group mb-4">
+                        <label data-error="wrong" data-success="right" for="input_product_beeld">Beeld</label>
+                        <div class="custom-file">
+                            <input type="hidden" id="input_cursist_beeld_origineel" />
+                            <input type="file" id="inputcursist_beeld" aria-describedby="update_beeld">
+                            <label class="custom-file-label" id="label_cursist_beeld" for="product_beeld">Kies (nieuw) beeld</label>
+                        </div>
+                    </div>
+                    <div class="form-group mb-4 form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="check_account_status"/>
+                        <label class="form-check-label" for="check_account_status">account status</label>
+                    </div>
+                    <!-- Submit button -->
+                    <div class="form-outline mb-4">
+                        <button 
+                        id="button_product_bewaren" 
+                        class="btn btn-outline-primary">Bewaren</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-dismiss="modal">Annuleren</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!--verwijderen cursist gegevens -->
+ <div
+ class="modal fade"
+ id="modal_cursist_verwijderen"
+ tabindex="-1"
+ aria-labelledby="modal_cursist_verwijderen"
+ aria-hidden="true"
+ >
+ <div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header">
+             <h5 class="modal-title">Cursist Verwijderen</h5>
+             <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+         </div>
+         <div class="modal-body">
+             <label id="label_product_verwijderen_fout" class="note note-danger invisible"></label>
+             <label class="form-outline mb-4" id="label_product_verwijderen">weet u zeker dat u dit deze gebruiker wilt verwijderen. </label>
+                                     
+             <div class="form-outline mb-4">
+                 <button 
+                 type="button" 
+                 id="button_cursist_verwijderen" 
+                 class="btn btn-outline-primary">Verwijderen</button>
+                 <button 
+                 type="button" 
+                 class="btn btn-outline-dark" 
+                 data-dismiss="modal">Annuleren</button>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+
 
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/cursisten.js"></script>
 </body>
 
 

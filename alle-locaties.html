@@ -109,7 +109,7 @@
                 </div>
                 <!--== DASHBOARD INFO ==-->
                 <div class="sb2-2-1">
-                    <h2>LOCATIES BEHEREN</h2>
+                    <h2>LOCATIES</h2>
                 </div>
 
                 <div class="search-top">
@@ -120,17 +120,22 @@
                                     <div class="sf-input col-md-9">
                                     <div class="sf-type">
                                         <div class="sf-input col-md-9">
-                                            <input type="text" id="sf-box" placeholder="Locatie">
+                                            <input type="text" id="input_filter_locatie" placeholder="Locatie">
                                         </div>
                                     </div>
                                     <div class="sf-submit col-md-4">
-                                        <input type="submit" value="Zoek">
+                                        <input type="button" id="button_locatie_zoek" value="Zoek">
                                     </div>
                                     </div>
                                 </form> 
                             </div>
-                            <div class="sf-toevoegen col-sm-6">
-                                <a href="add-locatie.html"><input type="submit" value="+ Nieuwe Locatie"></a>
+                            <div class="sf-toevoegen form-outline col-sm-6">
+                                <input
+                                  id="button_locatie_toevoegen"
+                                  type="button" data-toggle="modal" 
+                                  data-target="#modal_locatie" 
+                                  class="btn btn-outline-primary button-toon-locatie-modal"        
+                                  data-locatie-actie="create" value="+ Locatie">
                             </div>
                         </div>
                     </div>
@@ -150,33 +155,20 @@
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Locatie Id</th>
-                                                    <th>Naam</th>
-                                                    <th>Adres</th>
-                                                    <th>Postcode</th>
+                                                    <th scope="col">Locatie Id</th>
+                                                    <!--th>Naam</th-->
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_naam_campus" data-sorteer-op="naam_campus" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i> Naam</a></th>
+                                                 
+                                                    <th scope="col">Adres</th>
+                                                    <!--th>Postcode</th-->
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_postcode" data-sorteer-op="postcode" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i> Postcode</a></th>
 													<th>Stad</th>
 													<th>Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td><a href="admin-student-details.html">
-                                                        <span class="list-enq-name">DIT</span>
-                                                        <span class="list-enq-city">Hoofd kantoor op leuven</span></a>
-                                                    </td>
-                                                    <td>123 abcd-straat</td>
-                                                    <td>3000</td>
-                                                    <td>Leuven</td>
-                                                    <td>
-                                                        <a href="admin-student-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
-                                                    </td>
-													<td><a href="cursist-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
-                                                </tr>
-
-
-                                               
-                                                </tbody>
+                                            <tbody id="tabel_locaties">
+                                               <!--Toon locaties here-->
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -189,11 +181,99 @@
         </div>
     </div>
 
+    <!--Modal -->
+    <div
+    class="modal fade"
+    id="modal_locatie"
+    tabindex="-1"
+    aria-labelledby="modal_locatie"
+    aria-hidden="true"        
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal_locatie_titel" class="modal-title">Locatie</h5>
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_locatie_fout" class="note note-danger invisible">fout</label>
+                    <form class="row g-3 needs-validation" id="form_locatie" novalidate>    
+                        <!-- locatie input -->
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_locatie_naam">Campusnaam</label>
+                            <input required type="text" id="input_locatie_naam" class="form-control" validate/>
+                            <div class="invalid-feedback">Een campusnaam is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_locatie_adres">Adres</label>
+                            <input required type="text" id="input_locatie_adres" class="form-control validate" />
+                            <div class="invalid-feedback">Een Adres is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_locatie_postcode">Postcode</label>
+                            <input required type="number" id="input_locatie_postcode" class="form-control validate" />
+                            <div class="invalid-feedback">Een Postcode is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_locatie_stad">Stad</label>
+                            <input required type="text" id="input_locatie_stad" class="form-control validate" />
+                            <div class="invalid-feedback">Een Stad is verplicht.</div>
+                        </div>    
+                        <!-- Submit button -->
+                        <div class="form-outline mb-4">
+                            <button 
+                            id="button_locatie_bewaren" 
+                            class="btn btn-outline-primary">Bewaren</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-dismiss="modal">Annuleren</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="modal_locatie_verwijderen"
+    tabindex="-1"
+    aria-labelledby="modal_locatie_verwijderen"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Locatie verwijderen</h5>
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_locatie_verwijderen_fout" class="note note-danger invisible"></label>
+                    <label class="form-outline mb-4" id="label_locatie_verwijderen">
+                    </label>                      
+                    <div class="form-outline mb-4">
+                        <button 
+                        type="button" 
+                        id="button_locatie_verwijderen" 
+                        class="btn btn-outline-primary">Verwijderen</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-mdb-dismiss="modal">Annuleren</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/dwapi.js"></script>
+    <script src="js/locatie.js"></script>
 </body>
 
 
