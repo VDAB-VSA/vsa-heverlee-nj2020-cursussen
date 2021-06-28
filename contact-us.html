@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <title>DIT</title>
     <!-- META TAGS -->
@@ -14,6 +14,7 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/style-mob.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
 </head>
 
@@ -108,6 +109,26 @@
                                 <li class="about-menu"><a href="about.html" class="mm-arr">Over Ons</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                                 <li><a href="winkelwagentje.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                <!-- Button triggers collapse -->
+                                <a
+                                
+                                data-mdb-toggle="collapse"
+                                href="#collapseWithScrollbar"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                                >
+                                <i class="fa fa-angle-down"></i>
+                                </a>
+
+                                <!-- Collapsed content -->
+                                <div class="collapse mt-3 scroll-section" id="collapseWithScrollbar"  style="max-width: 400px; position: absolute;">
+                                    <p class="bg-danger">Jouw winklewandje is leeg</p>
+                                </div>
+
+                                <!--div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                  </div-->
                             </ul>
                         </div>
                     </div>
@@ -130,7 +151,7 @@
                                         <ul>
                                             <li><a href="course-details.html">IT</a></li>
                                             <li><a href="course-details.html">Talen</a></li>
-                                            <li><a href="course-details.html">Kunst</a></li>
+                                            <li><a href="course-details.html">Mode & Decoratie</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -222,13 +243,27 @@
                                     <option value="css">Over inschrijving</option>
                                 </select></li>
                             <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
-                                <textarea id="f5" name="f5" placeholder="Uw bericht.... *" required=""></textarea>
-                                <p class="verplicht">* verplichte velden</p>
-                            </li>
-                            <li class="col-md-6">
+                                <textarea id="f5" name="f5" placeholder="Uw bericht.... *" required=""></textarea></li>
+                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                                <input type="checkbox" id="gdpr1" required>
+                                <label for="gdpr1"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
+                                    aanbiedingen. *</label></li>
+                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                                <input type="checkbox" id="gdpr2" required>
+                                <label for="gdpr2">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
+                                    inschrijving en boekhouding. *</label></li>
+                            <li class="col-md-12">
                                 <input type="submit" value="Sturen"> </li>
+                            <li class="col md-6">
+                                <p class="verplicht">* verplichte velden</p></li>
                         </ul>
                     </form>
+                    <div class="success_boodschap col-md-12">
+                        <p><i class="fas fa-check-circle fa-2x"></i></p>
+                        <p>Uw bericht is verzonden !
+                            <br>Wij zullen zo spoedig mogelijk contact met u opnemen. 
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 container">
@@ -322,9 +357,29 @@
                                     <input type="checkbox" id="ik_ben_bedrijf" />
                                     <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
                                 </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s12" id="form_btw_nummer">
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
                                     <input type="text"  class="validate" id="btw_nummer">
                                     <label for="btw_nummer">BTW-nummer</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="naam_bedrijf">
+                                    <label for="naam_bedrijf">Naam (bedrijf)</label>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="adres_bedrijf">
+                                    <label for="adres_bedrijf">Adres (bedrijf)</label>
+                                </div>
+                                <div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                        <input type="number" data-ng-model="name1" id="postcode_bedrijf" min="1000" max="9999" class="validate">
+                                        <label for="postcode_bedrijf">Postcode (bedrijf)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                        <input type="text" data-ng-model="name1" id="registreren_stad_bedrijf" class="validate">
+                                        <label for="registreren_stad_bedrijf">Stad (bedrijf)</label>
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -341,33 +396,26 @@
                             </div>
                             <div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 input-field s12">
-                                    <input type="text" data-ng-model="name3" class="validate">
-                                    <label>Adres</label>
+                                    <input type="text" data-ng-model="name3" id="registreren_adres" class="validate">
+                                    <label for="registreren_adres">Adres</label>
                                 </div>
                             </div>
                             <div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
                                     <input type="number" data-ng-model="name1" id="postcode" min="1000" max="9999" class="validate" required>
-                                    <label>Postcode *</label>
+                                    <label for="postcode">Postcode *</label>
                                 </div>
                             </div>
                             <div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
-                                    <input type="text" data-ng-model="name1" class="validate" required>
-                                    <label>Stad *</label>
+                                    <input type="text" data-ng-model="name1" id="registreren_stad" class="validate" required>
+                                    <label for="registreren_stad">Stad *</label>
                                 </div>
                             </div>
                             <div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
-                                    <input type="tel" data-ng-model="name1" id="phone" name="phone" pattern="[0-9]{10}" class="validate">
-                                    <label>Telefoon</label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
-                                    <input type="tel" data-ng-model="name1" id="phone_mobile" name="phone_mobile" pattern="[0-9]{10}" 
-                                    class="validate">
-                                    <label>Mobile</label>
+                                    <input type="tel" data-ng-model="name1" id="registreren_phone" name="phone" pattern="[0-9]{10}" class="validate">
+                                    <label for="registreren_phone">Telefoon</label>
                                 </div>
                             </div>
                         </div>
@@ -376,34 +424,38 @@
                                 <div class="input-field s12">Inloggegevens</div>
                             </div>
                             <div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
-                                    <input type="email" class="validate" required>
-                                    <label>Email adres *</label>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                    <input type="email" id="registreren_email" class="validate" required>
+                                    <label for="registreren_email">Email adres *</label>
                                 </div>
                             </div>
+                            <!--
                             <div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
                                     <input type="email" class="validate" required>
                                     <label>Bevestig Email adres *</label>
                                 </div>
                             </div>
+                            -->
                             <div>
-                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
-                                    <input type="password" class="validate" required>
-                                    <label>Wachtwoord *</label>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                    <input type="password" id="registreren_paswoord"class="validate" required>
+                                    <label for="registreren_paswoord">Wachtwoord *</label>
                                 </div>
                             </div>
+                            <!--
                             <div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
                                     <input type="password" class="validate" required>
                                     <label>Bevestig Wachtwoord *</label>
                                 </div>
                             </div>
+                            -->
                             <div>
                                 <div class="s12 log-ch-bx">
                                     <p>
-                                        <input type="checkbox" id="gdpr1" required>
-                                        <label for="gdpr1"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
+                                        <input type="checkbox" id="gdpr3" required>
+                                        <label for="gdpr3"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
                                             aanbiedingen. *</label>
                                     </p>
                                 </div>
@@ -411,8 +463,8 @@
                             <div>
                                 <div class="s12 log-ch-bx">
                                     <p>
-                                        <input type="checkbox" id="gdpr2" required>
-                                        <label for="gdpr2">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
+                                        <input type="checkbox" id="gdpr4" required>
+                                        <label for="gdpr4">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
                                             inschrijving en boekhouding. *</label>
                                     </p>
                                 </div>
@@ -422,9 +474,24 @@
                             <div class="input-field s4">
                                 <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
-                        <div>
+                        <div class="col-md-12">
                             <p class="verplicht">* verplichte velden</p>
                         </div>
+                        <div class="boodschap col-md-12">
+                            <div class="success_boodschap col-md-12">
+                                <p><i class="fas fa-check-circle fa-2x"></i></p>
+                                <p>Uw account is nu aangemaakt !
+                                    <br> Er zal u een e-mail worden gestuurd om dit te bevestigen.
+                                </p>
+                            </div>
+                            <div class="fout_boodschap col-md-12">
+                                <p><i class="fas fa-times-circle fa-2x"></i></p> 
+                                <p>Er was een probleem.
+                                    <br>Probeer het later nog eens of neem contact met ons op.
+                                </p>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
@@ -458,6 +525,17 @@
                                 <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                     </form>
+                    <div class="success_boodschap col-md-12">
+                        <p><i class="fas fa-check-circle fa-2x"></i></p> 
+                        <p>Wij hebben u een e-mail gestuurd met een nieuw wachtwoord</p>
+                    </div>
+                    <div class="fout_boodschap col-md-12">
+                        <p><i class="fas fa-times-circle fa-2x"></i></p>
+                        <p>Er was een probleem.
+                            <br>Probeer het later nog eens of neem contact met ons op.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
