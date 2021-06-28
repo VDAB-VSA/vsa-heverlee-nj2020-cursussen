@@ -40,8 +40,8 @@
 	27.SEMINAR
 	28.EVENTS
 	29.CONTACT US
-    30. SHOPPING CART
-	31.MOBILE MANU
+   30. SHOPPING CART
+	31.MOBILE MENU
     
 -------------------------------------------------*/
 /*-------------------------------------------------*/
@@ -292,9 +292,9 @@ width: 40% !important;
     width: 100%;
 }
 
-
 .home-top-cour-desc {
 }
+
 .home-top-cour-desc span {
     text-transform: uppercase;
     font-size: 12px;
@@ -2543,7 +2543,7 @@ width: 40% !important;
    color: #203245;
    font-size: 24px;
    margin-bottom: 25px;
-   margin-top: 50px;
+  /* margin-top: 50px; */
 }
 .cor-p4 p{
 }
@@ -5052,90 +5052,12 @@ left: 0;
    letter-spacing: 1px;
    font-weight: 700;
 }
-/*-------------------------------------------------*/
-/* = 30.MOBILE MANU 
-/*-------------------------------------------------*/
-.ed-mob-menu{
-   position:fixed;
-   top:0px;
-   width:100%;
-   height:55px;
-   background:#fff;
-   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.32);
-   z-index: 999;
-   display:none;
-}
-.ed-mob-menu-con{
-   width: 90%;
-   margin: 0 auto;
-}
-.ed-mm-left{
-   float: left;
-   width: 50%;
-   box-sizing: border-box;
-}
-.wed-logo{
-}
-.wed-logo a{
-}
-.wed-logo a img{
-}
-.ed-mm-right{
-   float: left;
-   width: 50%;
-   box-sizing: border-box;
-}
-
-.ed-mm-menu-icon {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
-  float: right;
-}
-
-#winkelwagentje_icon_mobile {
-  padding-top : 12px;
-  color : black;
-}
-
-.ed-mm-menu{
-}
-.ed-micon{
-   float: right;
-}
-.ed-micon i{
-   width: 32px;
-   height: 32px;
-   border: 1px solid #0a2444;
-   text-align: center;
-   font-size: 20px;
-   padding: 5px;
-   border-radius: 2px;
-   margin-top: 10px;
-   color: #0a2444;
-   cursor: pointer;
-}
-.ed-mm-inn{
-   position: fixed;
-   width: 70%;
-   background: #fff;
-   padding: 50px;
-   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.32);
-   overflow-y: auto;
-   right: -80%;
-   height: 100%;
-   -webkit-transition: all 0.5s ease;
-   -moz-transition: all 0.5s ease;
-   -o-transition: all 0.5s ease;
-   transition:all 0.5s ease;
-}
-
 
 /*-------------------------------------------------*/
 /* = 30.SHOPPING CART 
 /*-------------------------------------------------*/
 
-
+/*
 .card {
    margin: auto;
    max-width: 950px;
@@ -5298,9 +5220,10 @@ a:hover {
    background-position-y: center
 
 }
+*/
 
 /*-------------------------------------------------*/
-/* = 31.MOBILE MANU 
+/* = 31.MOBILE MENU 
 /*-------------------------------------------------*/
 .ed-mob-menu{
     position:fixed;
@@ -5311,7 +5234,7 @@ a:hover {
     box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.32);
     z-index: 999;
     display:none;
-
+}
 .ed-mm-act{
    right: 0%;
    -webkit-transition: all 0.5s ease;
@@ -5319,6 +5242,7 @@ a:hover {
    -o-transition: all 0.5s ease;
    transition:all 0.5s ease;
 }
+
 .ed-mi-close{
    position: absolute;
    z-index: 99;
@@ -5351,6 +5275,27 @@ a:hover {
    font-size: 14px;
 }
 
+
+.ed-mob-menu-con{
+   width: 90%;
+   margin: 0 auto;
+}
+.ed-mm-left{
+   float: left;
+   width: 50%;
+   box-sizing: border-box;
+}
+.wed-logo{
+}
+.wed-logo a{
+}
+.wed-logo a img{
+}
+.ed-mm-right{
+   float: left;
+   width: 50%;
+   box-sizing: border-box;
+}
 
 .ed-mm-menu-icon {
    display: inline;
