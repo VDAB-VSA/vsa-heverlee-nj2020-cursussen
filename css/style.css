@@ -1639,7 +1639,8 @@ body{
 }
 .sf-toevoegen{
     float: left;
-    width: 25%;
+    width: 23%;
+    padding-right: 2px;
     white-space: normal;
     word-wrap: break-word;
 }
@@ -1845,6 +1846,9 @@ body{
      */
     /* box-shadow: 0 0 5px 0 #002147;
      */
+}
+.btn-outline-primary{
+    height: fit-content;
 }
  .wed-hom-ser ul li{
      float: left;
@@ -4193,6 +4197,17 @@ left: 0;
  .semi-text{
      text-align:left;
 }
+.note-danger {
+    margin-bottom: 1rem;
+}
+
+.invisible {
+    display: none!important;
+}
+
+.visible {
+    display: block!important;
+}
  .semi-form{
      background: #03294e;
      padding: 30px;
@@ -4692,6 +4707,10 @@ left: 0;
 .white-text{
     color: white !important;
 }
+.bg-danger{
+    background-color: red !important;
+    color: white !important;
+}
 .bg-edit{
     background-color: blue !important;
     opacity: 0.2;
@@ -5014,6 +5033,7 @@ left: 0;
 .blog-login-in a {
     display: block;
 }
+
 /*-------------------------------------------------------*/
 /* 2.LEFT MENU
 /*-------------------------------------------------------*/

@@ -197,7 +197,7 @@
                     <div class="ed-about-tit">
                         <div class="con-title">
                             <h2>Bestelling<span> Process</span></h2>
-                            <p>Geef al uw juiste informatie zorgvuldig.</p>
+                            <!--p>Geef al uw juiste informatie zorgvuldig.</p-->
                         </div>
                     </div>                    
                 </div>
@@ -206,21 +206,55 @@
                         <div class="row">
                             <div class="con-title">
                                 <div class="multisteps-form__progress">
-                                    <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">Klant Info</button>
-                                    <button class="multisteps-form__progress-btn" type="button" title="Address">Adres</button>
-                                    <button class="multisteps-form__progress-btn" type="button" title="Order Info">Bestelling Info</button>
+                                    <button class="multisteps-form__progress-btn js-active" type="button" title="Order Info">Bestelling Info</button>
+                                    <button class="multisteps-form__progress-btn" type="button" title="User Info">Klant Info</button>
+                                    <button class="multisteps-form__progress-btn" type="button" title="Data Gebruik">Data gebruik</button>
                                     <button class="multisteps-form__progress-btn" type="button" title="Betaal">Betaal</button>
-                                    <button class="multisteps-form__progress-btn" type="button" title="Message">Bericht </button> 
+                                    <button class="multisteps-form__progress-btn" type="button" title="Factuur">Factuur</button> 
                                 </div>
                             </div>
                        </div>
                        <div class="row">
                             <div class="col-12 col-lg-12 m-center">
                                 <form class="multisteps-form__form">
-                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white  js-active" data-animation="scaleIn">
+                                        <h3 class="multisteps-form__title">Jouw Bestelling Info</h3>
+                                        <div class="multisteps-form__content">
+                                        <div class="row">
+                                            <div class="col-12 col-md-6 mt-4">
+                                            <div class="card shadow-sm">
+                                                <div class="card-body">
+                                                <h5 class="card-title">Cursus 1</h5>
+                                                <p class="card-text">Kort en leuk omschrijving</p><!--a class="btn btn-primary" href="#" title="Item Link">Item Link</a-->
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="col-12 col-md-6 mt-4">
+                                            <div class="card shadow-sm">
+                                                <div class="card-body">
+                                                <h5 class="card-title">Cursus 2</h5>
+                                                <p class="card-text">Kort en leuk omschrijving</p>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="button-row d-flex mt-4 col-12">
+                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
                                         <h3 class="multisteps-form__title">Klant Info</h3>
                                         <div class="multisteps-form__content">
                                         <div class="form-row mt-4">
+                                            <div class="col-12 col-sm-6">
+                                            <a href="#">je moet eerst ingelogd zijn om verder te gaan</a>
+                                            </div>
+                                        </div>
+                                        <!--div class="form-row mt-4">
                                             <div class="col-12 col-sm-6">
                                             <input class="multisteps-form__input form-control" type="text" placeholder="First Name"/>
                                             </div>
@@ -246,65 +280,7 @@
                                         </div>
                                         <div class="button-row d-flex mt-4">
                                             <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Jouw Adres</h3>
-                                        <div class="multisteps-form__content">
-                                        <div class="form-row mt-4">
-                                            <div class="col">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="Address 1"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-row mt-4">
-                                            <div class="col">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="Address 2"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-row mt-4">
-                                            <div class="col-12 col-sm-4">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="City"/>
-                                            </div>
-                                            <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                                            <select class="multisteps-form__select form-control">
-                                                <option selected="selected">State...</option>
-                                                <option>...</option>
-                                            </select>
-                                            </div>
-                                            <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="Zip"/>
-                                            </div>
-                                        </div>
-                                        <div class="button-row d-flex mt-4">
-                                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
-                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Jouw Bestelling Info</h3>
-                                        <div class="multisteps-form__content">
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 mt-4">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                <h5 class="card-title">Cursus 1</h5>
-                                                <p class="card-text">Kort en leuk omschrijving</p><!--a class="btn btn-primary" href="#" title="Item Link">Item Link</a-->
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div class="col-12 col-md-6 mt-4">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                <h5 class="card-title">Cursus 2</h5>
-                                                <p class="card-text">Kort en leuk omschrijving</p>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
+                                        </div-->
                                         <div class="row">
                                             <div class="button-row d-flex mt-4 col-12">
                                             <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
@@ -313,6 +289,31 @@
                                         </div>
                                         </div>
                                     </div>
+                        
+                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                                        <h3 class="multisteps-form__title">Overeenkomst voor het gebruik van persoonlijke gegevens</h3>
+                                        <div class="multisteps-form__content">
+                                      
+                                        <div class="form-row mt-4 row">
+                                            <div class="input-field col-md-4">
+                                                <input type="checkbox" id="persoonlijke gegevens" name="inverkoop">
+                                               <label for="persoonlijke gegevens">Persoonlijke gegevens</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-row mt-4 row">
+                                            <div class="input-field col-md-4">
+                                                <input type="checkbox" id="bataal gegevens" name="inverkoop">
+                                               <label for="bataal gegevens">We zullen uw betalingsgegevens veilig delen en opslaan met derde partijen.</label>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="button-row d-flex md-4">
+                                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
+                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                        
                                    <!-- betaal info -->
                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
                                         <h3 class="multisteps-form__title">Betaling Info</h3>
@@ -417,33 +418,36 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <div class="form-row mt-4">
                                             <div class="form-container">
                                                 <div class="field-container">
-                                                    <label for="name">Name</label>
+                                                    <label for="name">Naam op de kaart</label>
                                                     <input id="name" maxlength="20" type="text">
                                                 </div>
                                                 <div class="field-container">
-                                                    <label for="cardnumber">Card Number</label><span id="generatecard">generate random</span>
+                                                    <label for="cardnumber">Kaartnummer</label><span id="generatecard">willekeurig genereren</span>
                                                     <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
                                                     <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                         xmlns:xlink="http://www.w3.org/1999/xlink">
                                                     </svg>
                                                 </div>
                                                 <div class="field-container">
-                                                    <label for="expirationdate">Expiration (mm/yy)</label>
+                                                    <label for="expirationdate">Vervaldatum (mm/yy)</label>
                                                     <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
                                                 </div>
                                                 <div class="field-container">
-                                                    <label for="securitycode">Security Code</label>
+                                                    <label for="securitycode">Beveiligingscode</label>
                                                     <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--div class="button-row d-flex mt-4">
+                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
+                                        </div-->
                                         <div class="button-row d-flex mt-4">
+                                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
                                             <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
                                         </div>
                                         </div>
@@ -451,10 +455,11 @@
                                 
                     
                                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Adtioneel Bericht</h3>
+                                        <h3 class="multisteps-form__title">Factuur</h3>
                                         <div class="multisteps-form__content">
                                         <div class="form-row mt-4">
-                                            <textarea class="multisteps-form__textarea form-control" placeholder="Additional Message and Questions"></textarea>
+                                            <input type="checkbox" id="factuur" name="factuur" checked>
+                                            <label for="factuur">Will je een factuur?</label>
                                         </div>
                                         <div class="button-row d-flex mt-4">
                                             <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>

@@ -109,7 +109,7 @@
                 </div>
                 <!--== DASHBOARD INFO ==-->
                 <div class="sb2-2-1">
-                    <h2>CATEGORIEËN BEHEREN</h2>
+                    <h2>CATEGORIEËN</h2>
                 </div>
 
                 <div class="search-top">
@@ -120,17 +120,22 @@
                                     <div class="sf-input col-md-9">
                                     <div class="sf-type">
                                         <div class="sf-input col-md-9">
-                                            <input type="text" id="sf-box" placeholder="Catagorie">
+                                            <input type="text" id="input_filter_categorie" placeholder="Catagorie">
                                         </div>
                                     </div>
                                     <div class="sf-submit col-md-4">
-                                        <input type="submit" value="Zoek">
+                                        <input type="button" id="button_categorie_zoek" value="Zoek">
                                     </div>
                                     </div>
                                 </form> 
                             </div>
-                            <div class="sf-toevoegen col-sm-6">
-                                <a href="add-catagorie.html"><input type="submit" value="+ Nieuwe Catagorie"></a>
+                            <div class="sf-toevoegen form-outline col-sm-6">
+                                <input
+                                  id="button_categorie_toevoegen"
+                                  type="button" data-toggle="modal" 
+                                  data-target="#modal_categorie" 
+                                  class="btn btn-outline-primary button-toon-categorie-modal"        
+                                  data-catagorie-actie="create" value="+ Nieuwe Catagorie">
                             </div>
                         </div>
                     </div>
@@ -151,12 +156,15 @@
                                             <thead>
                                                 <tr>
                                                     <th>Catagorie Id</th>
-                                                    <th>Titel</th>
+                                                    <th scope="col"><a class="link-categorieën-sorteren" id="link_sorteer_op_naam" data-sorteer-op="naam" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i>Titel</a></th>
                                                     <th>Omschrijving</th>
 													<th>Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="tabel_categorieën">
+                                                <!--Toon categorieën here-->
+                                             </tbody>
+                                            <!--tbody>
                                                 <tr>
                                                     <td>1</td>
                                                     <td>IT/ICT</td>
@@ -184,7 +192,7 @@
 
 
                                                
-                                                </tbody>
+                                                </tbody-->
                                         </table>
                                     </div>
                                 </div>
@@ -196,12 +204,89 @@
 
         </div>
     </div>
+    <!--Modal -->
+    <div
+    class="modal fade"
+    id="modal_categorie"
+    tabindex="-1"
+    aria-labelledby="modal_categorie"
+    aria-hidden="true"        
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal_categorie_titel" class="modal-title">Categorie</h5>
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_categorie_fout" class="note note-danger invisible">fout</label>
+                    <form class="row g-3 needs-validation" id="form_categorie" novalidate>    
+                        <!-- categorie input -->
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_categorie_naam">Categorietitel</label>
+                            <input required type="text" id="input_categorie_naam" class="form-control" validate/>
+                            <div class="invalid-feedback">Een categorienaam is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_categorie_omschrijving">Omschrijving</label>
+                            <input required type="text" id="input_categorie_omschrijving" class="form-control validate" />
+                            <div class="invalid-feedback">Een omschrijving is verplicht.</div>
+                        </div>
+                        <!-- Submit button -->
+                        <div class="form-outline mb-4">
+                            <button 
+                            id="button_categorie_bewaren" 
+                            class="btn btn-outline-primary">Bewaren</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-dismiss="modal">Annuleren</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="modal_categorie_verwijderen"
+    tabindex="-1"
+    aria-labelledby="modal_categorie_verwijderen"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Categorie verwijderen</h5>
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_categorie_verwijderen_fout" class="note note-danger invisible"></label>
+                    <label class="form-outline mb-4" id="label_categorie_verwijderen">
+                    </label>                      
+                    <div class="form-outline mb-4">
+                        <button 
+                        type="button" 
+                        id="button_categorie_verwijderen" 
+                        class="btn btn-outline-primary">Verwijderen</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-mdb-dismiss="modal">Annuleren</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/dwapi.js"></script>
+    <script src="js/catagorie.js"></script>
 </body>
 
 

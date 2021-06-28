@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <title>DIT</title>
     <!-- META TAGS -->
@@ -109,7 +107,7 @@
                 </div>
                 <!--== DASHBOARD INFO ==-->
                 <div class="sb2-2-1">
-                    <h2>BESTELLINGEN BEHEREN</h2>
+                    <h2>BESTELLINGEN</h2>
                 </div>
 
                 <div class="search-top">
@@ -120,11 +118,11 @@
                                     <div class="sf-input col-md-9">
                                     <div class="sf-type">
                                         <div class="sf-input col-md-9">
-                                            <input type="text" id="sf-box" placeholder="Bestellingen">
+                                            <input type="text" id="input_filter_bestelling" placeholder="Bestellingen">
                                         </div>
                                     </div>
                                     <div class="sf-submit col-md-4">
-                                        <input type="submit" value="Zoek">
+                                        <input type="button" id="button_bestelling_zoek" value="Zoek">
                                     </div>
                                     </div>
                                 </form> 
@@ -149,34 +147,19 @@
                                                 <tr>
                                                     <th>Bestelling Id</th>
                                                     <th>Bestelling Nummer</th>
-                                                    <th>Cursist</th>
-                                                    <th>Cursus</th>
-													<th>Bestelling Datum</th>
-                                                    <th>Betallingstatus</th>
-                                                    <th>Betallingmethode</th>
+                                                    <!--th>Cursist</th-->
+                                                    <th scope="col"><a class="link-bestellingen-sorteren" id="link_sorteer_op_user_id" data-sorteer-op="user_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i>Klant</a></th>
+                                                    <!--th>Cursus</th-->
+													<th>Aankoop Datum</th>
+                                                    <th>Bedrag</th>
+                                                    <th>Betaalstatus</th>
+                                                    <!--th>Betallingmethode</th-->
 													<th>Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td><a href="admin-student-details.html">
-                                                        <span class="list-enq-name">EF234</span>
-                                                        <span class="list-enq-city">1234EF234 REF-xcykl-java-12.07</span></a>
-                                                    </td>
-                                                    <td>Thomas</td>
-                                                    <td>C#</td>
-                                                    <td>12/06/2021</td>
-                                                    <td>Betaald</td>
-                                                    <td>Bancontact</td>
-                                                    <td>
-                                                        <a href="admin-student-details.html" class="waves-effect"><i class="fa fa-print bg-edit"></i></a>
-                                                    </td>
-                                                </tr>
+                                            <tbody id="tabel_bestellingen">
 
-
-                                               
-                                                </tbody>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -194,6 +177,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/dwapi.js"></script>
+    <script src="js/bestelling.js"></script>
 </body>
 
 
