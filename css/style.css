@@ -1,4 +1,57 @@
+<<<<<<< HEAD
 body{
+=======
+/*-----------------------------------------
+ [MASTER STYLE SHEET]
+ * Project: Education Master HTML Template
+ * Version: v1.0
+ * Copyright 2017-2020 rn53themes
+ * Last Changes: 10 jan 2018
+ * Author: RN53 Themes
+ * Email:      rn53themes@gmail.com
+ * Website:    http://www.rn53themes.net 
+ -----------------------------------------------*/
+/*-------------------------------------------------
+ =  Table of Css
+	All Pages Common CSS Styles
+	1.COLLEGE
+	2.MAIN MENU
+	3.HOME PAGE: PART ONE
+	4.HOME PAGE: COURSE 
+	5.HOME PAGE: EVENT
+	6.HOME PAGE: TAB AND ENQUIRY
+	7.SEARCH BOX
+	8.SLIDER
+	9.HOME PAGE: QUICK LINK 
+	10.TOP COURSES 
+	11.BOTTOM BOOKING 
+	12.BREADCRUM
+	13.COURSE DETAILS
+	14.USER DASHBOARD
+	15.FOOTER GALLERY AND BLOG
+	16.REGISTER LOGIN POPUPS 
+	17.REGISTER LOGIN POPUPS
+	18.STUDENT DASHBOARD 
+	19.STUDENT DASHBOARD - COURSES 
+	20.STUDENT DASHBOARD - TIME LINE 
+	21.MEGA MENU
+	22.SOCIAL MEDIA SHARE 
+	23.SOCIAL MEDIA SHARE
+	24.ABOUT US
+	25.AWARDS
+	26.ADMISSIONN
+	27.SEMINAR
+	28.EVENTS
+	29.CONTACT US
+    30. SHOPPING CART
+	31.MOBILE MANU
+    
+-------------------------------------------------*/
+/*-------------------------------------------------*/
+/* =  1.All Pages Common CSS Styles
+/*-------------------------------------------------*/
+ body{
+>>>>>>> ae68570bfa22a154b5b520927e22d109c01334db
      font-family: 'Open Sans', sans-serif;
      padding-right: 0px !important;
 }
@@ -64,7 +117,6 @@ body{
      color: #f26838;
      line-height: 40px;
 }
-
  .con-title p{
      font-size: 18px;
      color: #3f444a;
@@ -104,8 +156,7 @@ body{
  .wed-logo a{
 }
  .wed-logo a img{
-     width: 250px;
-     padding: 7px 0px;
+     width: 220px;
 }
  .wed-menu{
      float: right;
@@ -177,16 +228,6 @@ body{
      left: 18px;
      font-size: 12px;
      font-family: 'Open Sans', sans-serif;
-}
-.inverkoop{
-    line-height: 40px;
-    background: #f44336;
-    color: #fff !important;
-    font-size: 12px;
-    margin-top: 40px;
-    padding: 3px 8px;
-    border-radius: 25px;
-    font-weight: 600;
 }
  .wed-search:before{
      content: '';
@@ -1055,6 +1096,7 @@ body{
      left: 0px;
      width: 100%;
 }
+<<<<<<< HEAD
 .winkel-top-cour {
     position: relative;
     width: 100%;
@@ -1102,6 +1144,8 @@ body{
     font-family: 'Courier New', Courier, monospace;
     float: right;
 }
+=======
+>>>>>>> ae68570bfa22a154b5b520927e22d109c01334db
  .home-top-cour {
      position: relative;
      overflow: hidden;
@@ -1125,21 +1169,17 @@ body{
      -o-transition: all 0.5s ease;
      transition: all 0.5s ease;
 }
+
  .home-top-cour img {
      width: 100%;
 }
-.winkel-top-cour img {
-    width: 40%;
+
+
+ .home-top-cour-desc {
 }
  .home-top-cour-desc span {
      text-transform: uppercase;
      font-size: 12px;
-}
-.winkel-top-cour-desc h3 {
-    font-size: 16px;
-    padding-bottom: 5px;
-    color: #000000;
-    margin: 0px;
 }
  .home-top-cour-desc h3 {
      font-size: 20px;
@@ -1613,7 +1653,7 @@ body{
      box-shadow: 0 26px 64px 0 rgba(0,0,0,.6);
      border-bottom-left-radius: 8px;
      border-bottom-right-radius: 8px;
-     height: 300px;
+     height: 140px;
      overflow-y: hidden;
 }
  .sf-list:hover{
@@ -1791,7 +1831,7 @@ body{
      font-size: 10px;
 }
  .top-logo{
-     padding: 12px;
+     padding-top: 17px;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;
@@ -1856,6 +1896,28 @@ body{
      text-align: center;
      margin: 5px;
 }
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: rgb(243, 236, 236);
+  }
+  
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
  .wed-hom-ser ul li a{
      background: #202f40;
      width: 90px;
@@ -2022,7 +2084,7 @@ body{
  .cor-con-mid div{
 }
  .cor-con-mid p,li{
-     color: #203245;
+     /*color: #203245;*/
      line-height: 24px;
 }
  .cor-p1{
@@ -2642,7 +2704,12 @@ body{
  .log-in-pop-right {
      float: left;
      width: 60%;
-     padding: 50px;
+     padding: 30px;
+}
+ .inloggen_button {
+     width: 100%;
+     background: #f26838;
+     text-transform: uppercase;
 }
  .log-in-pop-right h4 {
      font-size: 24px;
@@ -2690,6 +2757,7 @@ body{
      color: #fff;
      padding: 2px 10px;
      font-weight: 600;
+     margin-top: 20px;
 }
  .pop-close {
      color: #333;
@@ -2720,6 +2788,25 @@ body{
 }
  .log-ch-bx p input {
 }
+
+/* to hide if checkbox "ik ben bedrijf" not checked
+.form_btw_nummer {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ input[type=text] {
+    display: inline;
+}
+*/
+
+ .success_boodschap p {
+     color : green
+ }
+
+ .fout_boodschap p {
+     color : red
+ }
+
 /*-------------------------------------------------*/
 /* = 17.REGISTER LOGIN POPUPS 
 /*-------------------------------------------------*/
@@ -3308,19 +3395,6 @@ left: 0;
      -o-transition: all 0.5s ease;
      transition: all 0.5s ease;
      padding: 0px;
-}
-.leden-pic{
-    width: 80%; 
-    height: 300px;
-    border: 2px solid gray;
-    border-radius: 5px;
-    float: center;
-}
-.leden-card{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
 }
  .icon-float ul li a i {
      padding: 8px;
@@ -4406,24 +4480,27 @@ left: 0;
     background-color: white !important;
 }
 .verplicht {
-    color: red !important;
+    color: orangered !important;
+    font-size: 1.2rem;
 }
  .contact-map {
      display: flex;
+     flex-wrap: wrap-reverse;
      align-items: center;
      margin: 0px;
 }
 .geenresultaat{
     color: red !important;
 }
-.contact-map .container{
-    width: 45%;
-}
+/*.contact-map .container{
+    width: 100%;
+}*/
+
  .contact-map iframe {
-     width: 70%;
-     height: 550px;
+     width: 100%;
+     height: 420px;
      border: 0px;
-     margin-bottom: -5px;
+     margin-bottom: 0px;
      display: block;
      pointer-events: none;
      position: relative;
@@ -4521,8 +4598,177 @@ left: 0;
      letter-spacing: 1px;
      font-weight: 700;
 }
+
 /*-------------------------------------------------*/
-/* = 30.MOBILE MANU 
+/* = 30.SHOPPING CART 
+/*-------------------------------------------------*/
+
+
+.card {
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
+
+@media(max-width:767px) {
+    .card {
+        margin: 3vh auto
+    }
+}
+
+.cart {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem
+}
+
+@media(max-width:767px) {
+    .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+}
+
+.summary {
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65)
+}
+
+@media(max-width:767px) {
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem
+    }
+}
+
+.summary .col-2 {
+    padding: 0
+}
+
+.summary .col-10 {
+    padding: 0
+}
+
+.row {
+    margin: 0
+}
+
+.title b {
+    font-size: 1.5rem
+}
+
+.main {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%
+}
+
+.col-2,
+.col {
+    padding: 0 1vh
+}
+
+a {
+    padding: 0 1vh
+}
+
+.close {
+    margin-left: auto;
+    font-size: 0.7rem
+}
+
+img {
+    width: 3.5rem
+}
+
+.back-to-shop {
+    margin-top: 4.5rem
+}
+
+h5 {
+    margin-top: 4vh
+}
+
+hr {
+    margin-top: 1.25rem
+}
+
+form {
+    padding: 2vh 0
+}
+
+select {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+.btn {
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 0
+}
+
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+
+.btn:hover {
+    color: white
+}
+
+
+
+a:hover {
+    color: black;
+    text-decoration: none
+}
+
+#code {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+
+}
+
+/*-------------------------------------------------*/
+/* = 31.MOBILE MANU 
 /*-------------------------------------------------*/
  .ed-mob-menu{
      position:fixed;
@@ -4554,6 +4800,19 @@ left: 0;
      width: 50%;
      box-sizing: border-box;
 }
+
+ .ed-mm-menu-icon {
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+    float: right;
+ }
+
+ #winkelwagentje_icon_mobile {
+    padding-top : 12px;
+    color : black;
+ }
+
  .ed-mm-menu{
 }
  .ed-micon{
@@ -4573,13 +4832,12 @@ left: 0;
 }
  .ed-mm-inn{
      position: fixed;
-     width: 70%;
+     width: 40%;
      background: #fff;
-     padding: 50px;
+     padding: 40px;
      box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.32);
      overflow-y: auto;
      right: -80%;
-     height: 100%;
      -webkit-transition: all 0.5s ease;
      -moz-transition: all 0.5s ease;
      -o-transition: all 0.5s ease;
@@ -5241,6 +5499,7 @@ left: 0;
 }
 .sb2-2-3 {
     /* background:#fff; */
+    
     margin-top: 30px;
 }
 .list-img {} .list-img img {
@@ -5432,6 +5691,7 @@ left: 0;
 /*-------------------------------------------------------*/
 /* 9. LIST ACTION
 /*-------------------------------------------------------*/
+
 .list-act-hom ul {
     padding: 0px;
     padding-top: 5px;

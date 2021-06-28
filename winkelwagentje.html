@@ -10,10 +10,11 @@
     <meta name="description" content="Education master is one of the best educational html template, it's suitable for all education websites like university,college,school,online education,tution center,distance education,computer education">
     <meta name="keyword" content="education html template, university template, college template, school template, online education template, tution center template">
     <!-- FAV ICON(BROWSER TAB ICON) -->
-    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo_fav.png" type="image/x-icon">
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
     <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <!-- ALL CSS FILES -->
     <link href="css/materialize.css" rel="stylesheet">
@@ -32,60 +33,37 @@
             <div class="ed-mob-menu-con">
                 <div class="ed-mm-left">
                     <div class="wed-logo">
-                        <a href="index-2.html"><img src="images/logo.png" alt="" />
+                        <a href="index-2.html"><img src="images/logo4.png" alt="" />
 						</a>
                     </div>
                 </div>
                 <div class="ed-mm-right">
                     <div class="ed-mm-menu">
-                        <a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a>
+                        <ul>
+                            <li class="ed-mm-menu-icon"><a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a></li>
+                            <li class="ed-mm-menu-icon" id="winkelwagentje_icon_mobile"><a href="winkelwagentje.html"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></li>
+                        </ul>
                         <div class="ed-mm-inn">
                             <a href="#!" class="ed-mi-close"><i class="fa fa-times"></i></a>
-                            <h4>All Courses</h4>
+                            <h4>Navigatie</h4>
                             <ul>
-                                <li><a href="course-details.html">Accounting/Finance</a></li>
-                                <li><a href="course-details.html">civil engineering</a></li>
-                                <li><a href="course-details.html">Art/Design</a></li>
-                                <li><a href="course-details.html">Marine Engineering</a></li>
-                                <li><a href="course-details.html">Business Management</a></li>
-                                <li><a href="course-details.html">Journalism/Writing</a></li>
-                                <li><a href="course-details.html">Physical Education</a></li>
-                                <li><a href="course-details.html">Political Science</a></li>
-                                <li><a href="course-details.html">Sciences</a></li>
-                                <li><a href="course-details.html">Statistics</a></li>
-                                <li><a href="course-details.html">Web Design/Development</a></li>
-                                <li><a href="course-details.html">SEO</a></li>
-                                <li><a href="course-details.html">Google Business</a></li>
-                                <li><a href="course-details.html">Graphics Design</a></li>
-                                <li><a href="course-details.html">Networking Courses</a></li>
-                                <li><a href="course-details.html">Information technology</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="all-courses.html">Cursussen</a></li>
+                                <li class="about-menu"><a href="about.html" class="mm-arr">Over Ons</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
                             </ul>
-                            <h4>User Account</h4>
+                            <h4>Aanmelden</h4>
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a></li>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal2">Register</a></li>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal_bezoeker_inloggen">Inloggen</a>
+                                </li>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal_bezoeker_registreren">Registreren</a>
+                                </li>
                             </ul>
-                            <h4>All Pages</h4>
+                            <h4>Admin</h4>
                             <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="admission.html">Admission</a></li>
-                                <li><a href="all-courses.html">All courses</a></li>
-                                <li><a href="course-details.html">Course details</a></li>
-                                <li><a href="awards.html">Awards</a></li>
-                                <li><a href="seminar.html">Seminar</a></li>
-                                <li><a href="events.html">Events</a></li>
-                                <li><a href="event-details.html">Event details</a></li>
-                                <li><a href="event-register.html">Event register</a></li>
-                                <li><a href="contact-us.html">Contact us</a></li>
-                            </ul>
-                            <h4>User Profile</h4>
-                            <ul>
-                                <li><a href="dashboard.html">User profile</a></li>
-                                <li><a href="db-courses.html">Courses</a></li>
-                                <li><a href="db-exams.html">Exams</a></li>
-                                <li><a href="db-profile.html">Prfile</a></li>
-                                <li><a href="db-time-line.html">Time line</a></li>
+                                <li>
+                                    <a href="admin-login.html">Beheerder Inloggen</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -94,7 +72,7 @@
         </div>
     </section>
 
-   
+
        <!--HEADER SECTION-->
        <section>
         <!-- TOP BAR -->
@@ -104,15 +82,16 @@
                     <div class="col-md-12">
                         <div class="ed-com-t1-left">
                             <ul>
-                                <li><a href="admin-login.html">BeheerderAnmelden</a>
+                                <li>
+                                    <a href="admin-login.html">Beheerder Inloggen</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="ed-com-t1-right">
                             <ul>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal_bezoeker_inloggen">Inloggen</a>
                                 </li>
-                                <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
+                                <li><a href="#!" data-toggle="modal" data-target="#modal_bezoeker_registreren">Registreren</a>
                                 </li>
                             </ul>
                         </div>
@@ -127,7 +106,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="wed-logo">
-                            <a href="index.html"><img src="images/logo.png" alt="" />
+                            <a href="index.html"><img src="images/logo3.png" alt="" />
                             </a>
                         </div>
                         <div class="main-menu">
@@ -135,8 +114,28 @@
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="all-courses.html">Cursussen</a></li>
                                 <li class="about-menu"><a href="about.html" class="mm-arr">Over Ons</a></li>
-                                <li><a href="contact-us.html">Contact Ons</a></li>
-                                <li><a href="winkelwagentje.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="badge bg-danger ms-2" id="badge">2</span></a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="winkelwagentje.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                                <!-- Button triggers collapse -->
+                                <a
+                                
+                                data-mdb-toggle="collapse"
+                                href="#collapseWithScrollbar"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                                >
+                                <i class="fa fa-angle-down"></i>
+                                </a>
+
+                                <!-- Collapsed content -->
+                                <div class="collapse mt-3 scroll-section" id="collapseWithScrollbar"  style="max-width: 400px; position: absolute;">
+                                    <p class="bg-danger">Jouw winklewandje is leeg</p>
+                                </div>
+
+                                <!--div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                  </div-->
                             </ul>
                         </div>
                     </div>
@@ -153,31 +152,18 @@
                             <form>
                                 <div class="sf-type">
                                     <div class="sf-input">
-                                        <input type="text" id="sf-box" placeholder="Zoek cursussen en earlybird kortingen">
+                                        <input type="text" id="sf-box" placeholder="Titel of categorie">
                                     </div>
                                     <div class="sf-list">
                                         <ul>
-                                            <li><a href="course-details.html">Accounting/Finance</a></li>
-                                            <li><a href="course-details.html">civil engineering</a></li>
-                                            <li><a href="course-details.html">Art/Design</a></li>
-                                            <li><a href="course-details.html">Marine Engineering</a></li>
-                                            <li><a href="course-details.html">Business Management</a></li>
-                                            <li><a href="course-details.html">Journalism/Writing</a></li>
-                                            <li><a href="course-details.html">Physical Education</a></li>
-                                            <li><a href="course-details.html">Political Science</a></li>
-                                            <li><a href="course-details.html">Sciences</a></li>
-                                            <li><a href="course-details.html">Statistics</a></li>
-                                            <li><a href="course-details.html">Web Design/Development</a></li>
-                                            <li><a href="course-details.html">SEO</a></li>
-                                            <li><a href="course-details.html">Google Business</a></li>
-                                            <li><a href="course-details.html">Graphics Design</a></li>
-                                            <li><a href="course-details.html">Networking Courses</a></li>
-                                            <li><a href="course-details.html">Information technology</a></li>
+                                            <li><a href="course-details.html">IT</a></li>
+                                            <li><a href="course-details.html">Talen</a></li>
+                                            <li><a href="course-details.html">Mode & Decoratie</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="sf-submit">
-                                    <input type="submit" value="Zoek Cursus ">
+                                    <input type="submit" value="Zoek Cursus">
                                 </div>
                             </form>
                         </div>
@@ -187,35 +173,105 @@
         </div>
     </section>
     <!--END HEADER SECTION-->
-
+    
     <!--SECTION START-->
-    <section>
+    <div class="card">
+        <div class="con-title">
+            <h2>Uw <span>Winkelwagentje</span></h2>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="home-top-cour">
+                    <div class="col-md-3 col-sm-3"> <img src="images/course/csharp2.jfif" alt=""></div>
+                    <div class="col-md-6 col-sm-9 home-top-cour-desc">
+                        <a href="course-details.html">
+                            <h3>C# Ontwikkelaar</h3>
+                        </a>
+                        <h4>ICT</h4>
+                        <p>Deze cursus begint op 11/07/2021</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>&euro; 65 <span class="close">&#10005;</span></p>
+                    </div>
+                </div>
+        <div class="row">
+            <div class="col">
+                <div class="home-top-cour">
+                    <div class="col-md-3 col-sm-3"> <img src="images/course/sew.jfif" alt=""></div>
+                        <div class="col-md-6 col-sm-9 home-top-cour-desc">
+                            <a href="course-details.html">
+                                <h3>Naaien</h3>
+                            </a>
+                            <h4>Mode & Decoratie</h4>
+                            <p>Deze cursus begint op 11/09/2021</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>&euro; 40 <span class="close">&#10005;</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="back-to-shop"><a href="all-courses.html">&leftarrow;</a><span class="text-muted">Verder winkelen</span></div>
+    </div>
+        <div class="col-md-4 summary">
+            <div>
+                <h5><b>Klaar om te bestellen?</b></h5>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;">Subtotaal</div>
+                <div class="col text-right">&euro; 132.00</div>
+            </div>
+            <div class="row">
+                <div class="col" style="padding-left:0;">Early-bird Korting</div>
+                <div class="col text-right">&euro;-26.00</div>
+            </div>
+               
+            <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                <div class="col">TOTAAL</div>
+                <div class="col text-right">&euro; 137.00</div>
+            </div> <button class="btn">BESTELLEN</button>
+        </div>
+    </div>
+    </div>
+    <!--
+        <section>
         <div class="container com-sp">
             <div class="row">
                 <div class="cor about-sp">
                     <div class="ed-about-tit">
                         <div class="con-title">
-                            <h2>winkelwagentje <span> Lijst</span></h2>
-                            <p>Productenlijst toegevoegd aan uw winkelwagen.</p>
+                            <h2>Uw <span>Winkelwagentje</span></h2>
                         </div>
+                        
                         <div class="winkel-top-cour">
                             <div class="col-md-3"> 
-                                <img src="images/course/sm-1.jpg" alt="">
+                                <img src="images/course/csharp2.jfif" alt="">
                             </div>
                             <div>
                                 <a href="course-details.html">
                                     <h3>C# Ontwiklaar</h3>
                                 </a>
                             </div>
-                            <div class="omschrijving">
-                                <p>Classes started from coming friday(21 jun 2017),total seats 72 and available seats 10</p>
-                            </div>
                             <div class="col-md-9 home-top-cour-desc">
-                                <h4>IT/ICT</h4>
-                            </div>   
+                                <h4>ICT</h4>
+                            </div> 
+                            <div class="omschrijving">
+                                <p>Deze cursus begint op 11/07/2021</p>
+                            </div>
+                              
                             <div>
                                 <h4>€100</h4>
                             </div>
+<<<<<<< HEAD
+=======
+                                <div class="hom-list-share">
+                                    <ul>
+                                        <li><a href="course-details.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Aankop</a> </li>
+                                        <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i>10 Vrij plaatsen </a> </li>
+                                    </ul>
+                                </div>
+>>>>>>> ae68570bfa22a154b5b520927e22d109c01334db
                             <div>
                                 <button 
                                     data-product-id='1',
@@ -271,6 +327,8 @@
             </div>
         </div>
     </section>
+-->
+
     <!--SECTION END-->
     <section class="wed-hom-footer">
         <div class="container">
@@ -288,157 +346,254 @@
     </section>
     <!--END HEADER SECTION-->
 
-    <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
-    <section>
-        <!-- LOGIN SECTION -->
-        <div id="modal1" class="modal fade" role="dialog">
-            <div class="log-in-pop">
-                <div class="log-in-pop-left">
-                    <h1>Hello...</h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
+   <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
+   <section>
+    <!-- LOGIN SECTION -->
+    <div id="modal_bezoeker_inloggen" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-left">
+                <h1>Welkom bij DIT</h1>
+                <p>
+                    <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_registreren">Heb je geen account ? Maak een account aan.</a>
+                </p>
+            </div>
+            <div class="log-in-pop-right">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                </a>
+                <h4>Inloggen</h4>
+                <p>Bestaande klanten</p>
+                <form class="s12">
+                    <div>
+                        <div class="input-field s12">
+                            <input type="email" data-ng-model="email" class="validate" required>
+                            <label>E-mail adres</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-field s12">
+                            <input type="password" class="validate" required>
+                            <label>Wachtwoord</label>
+                        </div>
+                    </div>
+                    <div> 
+                        <div class="input-field s12"> 
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_wachtwoord_vergeten">Wachtwoord vergeten ?</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-field s4">
+                            <input type="submit" value="Inloggen" class="waves-effect waves-light log-in-btn"> </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- REGISTER SECTION -->
+    <div id="modal_bezoeker_registreren" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-left">
+                <h1>Welkom bij DIT</h1>
+                <p>Om je account te activeren vragen we volgende instellingen aan te passen.
+                </p>
+                <div>
+                    <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_inloggen">Heb je een account ? Hier inloggen</a> </div>
                 </div>
-                <div class="log-in-pop-right">
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-                    </a>
-                    <h4>Login</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <form class="s12">
+            </div>
+            <div class="log-in-pop-right">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                <h4>Maak een account aan</h4>
+                <form class="s12">
+                    <div class="col-md-12">
                         <div>
-                            <div class="input-field s12">
-                                <input type="text" data-ng-model="name" class="validate">
-                                <label>User name</label>
+                            <div class="input-field s12">Persoonlijke gegevens</div>
+                        </div>
+                        <div>
+                            <div class="s12 log-ch-bx">
+                                <input type="checkbox" id="ik_ben_bedrijf" />
+                                <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                <input type="text"  class="validate" id="btw_nummer">
+                                <label for="btw_nummer">BTW-nummer</label>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                <input type="text"  class="validate" id="naam_bedrijf">
+                                <label for="naam_bedrijf">Naam (bedrijf)</label>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 input-field s12 form_bedrijf">
+                                <input type="text"  class="validate" id="adres_bedrijf">
+                                <label for="adres_bedrijf">Adres (bedrijf)</label>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="number" data-ng-model="name1" id="postcode_bedrijf" min="1000" max="9999" class="validate">
+                                    <label for="postcode_bedrijf">Postcode (bedrijf)</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name1" id="registreren_stad_bedrijf" class="validate">
+                                    <label for="registreren_stad_bedrijf">Stad (bedrijf)</label>
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Password</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                <input type="text"  class="validate" id="registreren_naam" required>
+                                <label for="registreren_naam">Naam *</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                <input type="text" data-ng-model="name2" class="validate" id="registreren_voornaam" required>
+                                <label for="registreren_voornaam">Voornaam *</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 input-field s12">
+                                <input type="text" data-ng-model="name3" id="registreren_adres" class="validate">
+                                <label for="registreren_adres">Adres</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                <input type="number" data-ng-model="name1" id="postcode" min="1000" max="9999" class="validate" required>
+                                <label for="postcode">Postcode *</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                <input type="text" data-ng-model="name1" id="registreren_stad" class="validate" required>
+                                <label for="registreren_stad">Stad *</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                <input type="tel" data-ng-model="name1" id="registreren_phone" name="phone" pattern="[0-9]{10}" class="validate">
+                                <label for="registreren_phone">Telefoon</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div>
+                            <div class="input-field s12">Inloggegevens</div>
+                        </div>
+                        <div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                <input type="email" id="registreren_email" class="validate" required>
+                                <label for="registreren_email">Email adres *</label>
+                            </div>
+                        </div>
+                        <!--
+                        <div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
+                                <input type="email" class="validate" required>
+                                <label>Bevestig Email adres *</label>
+                            </div>
+                        </div>
+                        -->
+                        <div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                <input type="password" id="registreren_paswoord"class="validate" required>
+                                <label for="registreren_paswoord">Wachtwoord *</label>
+                            </div>
+                        </div>
+                        <!--
+                        <div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
+                                <input type="password" class="validate" required>
+                                <label>Bevestig Wachtwoord *</label>
+                            </div>
+                        </div>
+                        -->
+                        <div>
+                            <div class="s12 log-ch-bx">
+                                <p>
+                                    <input type="checkbox" id="gdpr3" required>
+                                    <label for="gdpr3"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
+                                        aanbiedingen. *</label>
+                                </p>
                             </div>
                         </div>
                         <div>
                             <div class="s12 log-ch-bx">
                                 <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Remember me</label>
+                                    <input type="checkbox" id="gdpr4" required>
+                                    <label for="gdpr4">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
+                                        inschrijving en boekhouding. *</label>
                                 </p>
                             </div>
                         </div>
-                        <div>
-                            <div class="input-field s4">
-                                <input type="submit" value="Login" class="waves-effect waves-light log-in-btn"> </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-field s4">
+                            <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="verplicht">* verplichte velden</p>
+                    </div>
+                    <div class="boodschap col-md-12">
+                        <div class="success_boodschap col-md-12">
+                            <p><i class="fas fa-check-circle fa-2x"></i></p>
+                            <p>Uw account is nu aangemaakt !
+                                <br> Er zal u een e-mail worden gestuurd om dit te bevestigen.
+                            </p>
                         </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                        <div class="fout_boodschap col-md-12">
+                            <p><i class="fas fa-times-circle fa-2x"></i></p> 
+                            <p>Er was een probleem.
+                                <br>Probeer het later nog eens of neem contact met ons op.
+                            </p>
                         </div>
-                    </form>
-                </div>
+                    </div>
+
+                </form>
             </div>
         </div>
-        <!-- REGISTER SECTION -->
-        <div id="modal2" class="modal fade" role="dialog">
-            <div class="log-in-pop">
-                <div class="log-in-pop-left">
-                    <h1>Hello...</h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
+    </div>
+    <!-- FORGOT SECTION -->
+    <div id="modal_wachtwoord_vergeten" class="modal fade" role="dialog">
+        <div class="log-in-pop">
+            <div class="log-in-pop-left">
+                <h1>Welkom terug ! </h1>
+                <p> 
+                    <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_registreren">Heb je geen account ? Maak een account aan.</a>
+                </p>
+                
+            </div>
+            <div class="log-in-pop-right">
+                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
+                </a>
+                <h4>Wachtwoord vergeten ?</h4>
+                <p>Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in. 
+                  We sturen dan binnen enkele minuten een e-mail waarmee een nieuw wachtwoord kan worden aangemaakt.
+                </p>
+                <form class="s12">
+                    <div>
+                        <div class="input-field s12">
+                            <input type="email" data-ng-model="name3" class="validate" required>
+                            <label>E-mail adres</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="input-field s4">
+                            <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
+                    </div>
+                </form>
+                <div class="success_boodschap col-md-12">
+                    <p><i class="fas fa-check-circle fa-2x"></i></p> 
+                    <p>Wij hebben u een e-mail gestuurd met een nieuw wachtwoord</p>
                 </div>
-                <div class="log-in-pop-right">
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-                    </a>
-                    <h4>Create an Account</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <form class="s12">
-                        <div>
-                            <div class="input-field s12">
-                                <input type="text" data-ng-model="name1" class="validate">
-                                <label>User name</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="email" class="validate">
-                                <label>Email id</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Password</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Confirm password</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s4">
-                                <input type="submit" value="Register" class="waves-effect waves-light log-in-btn"> </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div>
-                        </div>
-                    </form>
+                <div class="fout_boodschap col-md-12">
+                    <p><i class="fas fa-times-circle fa-2x"></i></p>
+                    <p>Er was een probleem.
+                        <br>Probeer het later nog eens of neem contact met ons op.
+                    </p>
                 </div>
+
             </div>
         </div>
-        <!-- FORGOT SECTION -->
-        <div id="modal3" class="modal fade" role="dialog">
-            <div class="log-in-pop">
-                <div class="log-in-pop-left">
-                    <h1>Hello... </h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="log-in-pop-right">
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-                    </a>
-                    <h4>Forgot password</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <form class="s12">
-                        <div>
-                            <div class="input-field s12">
-                                <input type="text" data-ng-model="name3" class="validate">
-                                <label>User name or email id</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s4">
-                                <input type="submit" value="Submit" class="waves-effect waves-light log-in-btn"> </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<<<<<<< HEAD
         <!--verwijderen product from lijst-->
         <div
             class="modal fade"
@@ -505,6 +660,10 @@
         </div>
 
     </section>
+=======
+    </div>
+</section>
+>>>>>>> ae68570bfa22a154b5b520927e22d109c01334db
     
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
