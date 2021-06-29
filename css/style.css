@@ -1855,10 +1855,13 @@ width: 40% !important;
    font-size: 13px;
 }
 .cor-apply{
-   background: #03294e;
+   
    padding: 10px 0px 18px 0px;
+   /*
+   background: #03294e;
    border: 4px dotted #333;
    border-radius: 4px;
+   */
 }
 .cor-apply form input{
    border: 1px solid #cecece;
@@ -2732,6 +2735,16 @@ width: 40% !important;
    color: #fff;
 }
 
+.btn-primary {
+   color: #fff;
+   border: 1px solid #149acc;
+   background: #1aa5d8;
+   background: linear-gradient(to bottom, #1aa5d8, #1386b1);
+   text-transform: uppercase;
+   font-weight: 700;
+   border-radius: 0%;
+}
+
 /*-------------------------------------------------*/
 /* =  14.USER DASHBOARD 
 /*-------------------------------------------------*/
@@ -3016,7 +3029,7 @@ iframe{
   /* bottom: 0px;
    */
    background: #fff;
-   width: 60%;
+   width: 70%;
    margin: 0 auto;
    margin-top: 5%;
 }
@@ -3085,13 +3098,17 @@ iframe{
 }
 .log-in-pop-right {
    float: left;
-   width: 100%;
-   padding: 50px;
+   width: 60%;
+   padding: 30px;
 }
 .inloggen_button {
    width: 100%;
    background: #f26838;
    text-transform: uppercase;
+}
+
+#admin_inloggen {
+   width: 100%;
 }
 .log-in-pop-right h4 {
    font-size: 24px;
