@@ -55,7 +55,7 @@ function categorieBewaren() {
     let categorie_naam = document.getElementById("input_categorie_naam").value;
     let categorie_omschrijving = document.getElementById("input_categorie_omschrijving").value;
 
-console.log(categorie_naam, categorie_omschrijving);
+
     // VERWERJING
     let form_categorie = document.getElementById("form_categorie");
     if (form_categorie.checkValidity()) {
@@ -269,7 +269,7 @@ function toonSorteerRichting() {
 }
 
 function verwerkResultaatNaCategorieActie(resultaat, modal_id) {
-      console.log(resultaat.status, modal_id);
+
     if (resultaat.status.success == true) {                              
         toonCategorieënTabel();
         $("#" + modal_id).modal('hide');
