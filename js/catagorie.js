@@ -1,4 +1,4 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMjQsImV4cCI6MTYyMTcyNDEzMCwiaXNzIjoiTGx1RzNnd1pLUHpDIiwiaWF0IjoxNjIxNjg4MTMwfQ.CZUa2nwdwFepcvUuV7mADgmZEvoDDIct8TI52IoGcfI";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjQ5ODg2MjQsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNDk1MjYyNH0.LfLNZxFzMbipADXygMXoNMQo5yiXlLtuxekPTsFiY7Q";
 const endpoint = "https://dwapi.dev/item";
 const project = "4nqmlRAiE5cG";
 
@@ -55,7 +55,7 @@ function categorieBewaren() {
     let categorie_naam = document.getElementById("input_categorie_naam").value;
     let categorie_omschrijving = document.getElementById("input_categorie_omschrijving").value;
 
-
+console.log(categorie_naam, categorie_omschrijving);
     // VERWERJING
     let form_categorie = document.getElementById("form_categorie");
     if (form_categorie.checkValidity()) {
@@ -269,7 +269,7 @@ function toonSorteerRichting() {
 }
 
 function verwerkResultaatNaCategorieActie(resultaat, modal_id) {
-
+      console.log(resultaat.status, modal_id);
     if (resultaat.status.success == true) {                              
         toonCategorieënTabel();
         $("#" + modal_id).modal('hide');
