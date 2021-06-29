@@ -238,7 +238,7 @@ p, li, a, span, table, tr, td, th, label{
    font-size: 1.5rem;
 }
 .winkel-top-cour div{
-   width: 15%;
+   width: 10%;
 }
 .winkel-top-cour div img{
    width: 100%;
@@ -254,10 +254,21 @@ p, li, a, span, table, tr, td, th, label{
    -o-transition: all 0.5s ease;
    transition: all 0.5s ease;
 }
-.omschrijving{
-width: 40% !important;
+.winkelwagentje_omschrijving{
+width: 30% !important;
 }
 
+.winkelwagentje_titel {
+   width: 30% !important;
+   margin-left: 20px;
+}
+
+.button_product_verwijderen {
+   color: #fff;
+   border: 1px solid #149acc;
+   background: #1aa5d8;
+   background: linear-gradient(to bottom, #1aa5d8, #1386b1); 
+}
 
 .betaal_bedrag{
    width: 30%;
