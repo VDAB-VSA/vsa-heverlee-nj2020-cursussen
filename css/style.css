@@ -257,6 +257,8 @@ p, li, a, span, table, tr, td, th, label{
 .omschrijving{
 width: 40% !important;
 }
+
+
 .betaal_bedrag{
    width: 30%;
    height: 150px;
