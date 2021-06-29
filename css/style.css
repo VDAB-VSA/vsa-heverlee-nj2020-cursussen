@@ -268,6 +268,14 @@ width: 30% !important;
    border: 1px solid #149acc;
    background: #1aa5d8;
    background: linear-gradient(to bottom, #1aa5d8, #1386b1); 
+   padding : 5px;
+}
+
+.button_pop_up {
+   color: #fff;
+   border: 1px solid #149acc;
+   background: #1aa5d8;
+   background: linear-gradient(to bottom, #1aa5d8, #1386b1);  
 }
 
 .betaal_bedrag{
@@ -344,12 +352,14 @@ width: 30% !important;
        font-weight: 600;
        text-transform: uppercase;
        padding: 13px;
+       margin-top: 15px;
        border: 1px solid #e25f30;
        border-top-right-radius: 2px;
        border-bottom-right-radius: 2px;
        background: #e05a2b;
        background: -webkit-linear-gradient(to top, #ef612f, #f36b3b);
        background: linear-gradient(to top, #de592a, #f36b3b);
+       font-family: 'Open Sans', sans-serif;
 }
 .home-top-cour-rat p:nth-child(2){
    text-decoration:line-through; 

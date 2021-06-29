@@ -190,7 +190,7 @@
                 <div class="cor about-sp">
                     <div class="ed-about-tit">
                         <div class="con-title">
-                            <h2>Bestelling<span> Process</span></h2>
+                            <h2><span>Kassa</span></h2>
                             <!--p>Geef al uw juiste informatie zorgvuldig.</p-->
                         </div>
                     </div>                    
@@ -200,10 +200,10 @@
                         <div class="row">
                             <div class="con-title">
                                 <div class="multisteps-form__progress">
-                                    <button class="multisteps-form__progress-btn js-active" type="button" title="Order Info">Bestelling Info</button>
-                                    <button class="multisteps-form__progress-btn" type="button" title="User Info">Aanmelden</button>
-                                    <button class="multisteps-form__progress-btn" type="button" title="Privacy">Privacy</button>
-                                    <button class="multisteps-form__progress-btn" type="button" title="Betaal">Betaal</button>
+                                    <button class="multisteps-form__progress-btn js-active" type="button" title="Order Info">Bevestig cursussen</button>
+                                    <button class="multisteps-form__progress-btn" type="button" title="User Info">Klantgegevens</button>
+                                    <button class="multisteps-form__progress-btn" type="button" title="Privacy">Overzicht</button>
+                                    <button class="multisteps-form__progress-btn" type="button" title="Betaal">Online betalen</button>
                                     <button class="multisteps-form__progress-btn" type="button" title="Factuur">Factuur</button> 
                                 </div>
                             </div>
@@ -212,44 +212,66 @@
                             <div class="col-12 col-lg-12 m-center">
                                 <form class="multisteps-form__form">
                                     <div class="multisteps-form__panel shadow p-4 rounded bg-white  js-active" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Jouw Bestelling Info</h3>
+                                        <h3 class="multisteps-form__title">Je bestelling</h3>
                                         <div class="multisteps-form__content">
                                         <div class="row">
-                                            <div class="col-12 col-md-6 mt-4">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                    <div class="home-top-cour">
-                                                        <div class="col-md-3 col-sm-3"> <img src="images/course/csharp.jfif" alt=""> </div>
-                                                        <div class="col-md-9 col-sm-9 home-top-cour-desc">
-                                                            <a href="course-details.html">
-                                                                <h3>C# Ontwikkelaar</h3>
-                                                            </a>
-                                                            <h4>ICT</h4>
-                                                            <p>Deze cursus begint op 01/10/2021</p> 
-                                                            <span class="home-top-cour-rat"><p>NU €150</p><p>€180/</p> </span>
-                                                        </div>
-                                                    </div>
+                                            <div class="winkel-top-cour">
+                                                <div class="home-top-cour-desc">
+                                                    <img src="images/course/csharp.jfif" alt="">
+                                                </div>
+                                                <div class="winkelwagentje_titel home-top-cour-desc">
+                                                    <a href="course-details.html">
+                                                        <h3>C# Ontwiklaar</h3>
+                                                    </a>
+                                                </div>
+                                                <div class="winkelwagentje_omschrijving home-top-cour-desc">
+                                                    <p>Deze cursus begint op 05/07/2021</p>
+                                                </div>
+                                                <div class="winkelwagentje_categorie home-top-cour-desc">
+                                                    <h4>ICT</h4>
+                                                </div>   
+                                                <div class="winkelwagentje_prijs">
+                                                    <h4>100€</h4>
+                                                </div>
+                                                <div>
+                                                    <button class="button_product_verwijderen"
+                                                        data-product-id='1',
+                                                        data-product-naam='zz',
+                                                        data-toggle='modal',
+                                                        data-target='#modal_product_verwijderen'>
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            </div>
-                                            <div class="col-12 col-md-6 mt-4">
-                                            <div class="card shadow-sm">
-                                                <div class="card-body">
-                                                    <div class="home-top-cour">
-                                                        <div class="col-md-3 col-sm-3"> <img src="images/course/java.png" alt=""> </div>
-                                                        <div class="col-md-9 col-sm-9 home-top-cour-desc">
-                                                            <a href="course-details.html">
-                                                                <h3>Java Ontwikkelaar</h3>
-                                                            </a>
-                                                            <h4>IT</h4>
-                                                            <p>Deze cursus begint op 24/07/2021</p>
-                                                            <span class="home-top-cour-rat"><p>€100</p></span>
-                                                        </div>
-                                                    </div>
+                                            <div class="winkel-top-cour">
+                                                <div class="home-top-cour-desc">
+                                                    <img src="images/course/java.png" alt="">
                                                 </div>
-                                            </div>
-                                            </div>
+                                                <div class="winkelwagentje_titel home-top-cour-desc">
+                                                    <a href="course-details.html">
+                                                        <h3>Java Ontwiklaar</h3>
+                                                    </a>
+                                                </div>
+                                                <div class="winkelwagentje_omschrijving home-top-cour-desc">
+                                                    <p>Deze cursus begint op 20/08/2021</p>
+                                                </div>
+                                                <div class="winkelwagentje_categorie home-top-cour-desc">
+                                                    <h4>ICT</h4>
+                                                </div>   
+                                                <div class="winkelwagentje_prijs">
+                                                    <h4>80€</h4>
+                                                </div>
+                                                <div>
+                                                    <button class="button_product_verwijderen" 
+                                                        data-product-id='1',
+                                                        data-product-naam='zz',
+                                                        data-toggle='modal',
+                                                        data-target='#modal_product_verwijderen'>
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </div>
                                         </div>
+                                    </div>
                                         <div class="row">
                                             <div class="button-row d-flex mt-4 col-12">
                                             <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
@@ -258,7 +280,7 @@
                                         </div>
                                     </div>
                                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Aanmelden</h3>
+                                        <h3 class="multisteps-form__title">Je gegevens</h3>
                                         <div class="multisteps-form__content">
                                         <div class="form-row mt-4">
                                             <!--div class="col-12 col-sm-6"-->
@@ -267,52 +289,72 @@
                                                 <form>
                                                     <div class="row">
                                                         <div class="input-field col s6">
-                                                            <input type="text" value="John" class="validate" required>
-                                                            <label class="">First name</label>
+                                                            <input type="text" class="validate" required>
+                                                            <label class="">Voornaam</label>
                                                         </div>
                                                         <div class="input-field col s6">
-                                                            <input type="text" value="Smith" class="validate" required>
-                                                            <label class="">Last name</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="input-field col s6">
-                                                            <input type="number" value="0198575241" class="validate" required>
-                                                            <label class="">Phone number</label>
-                                                        </div>
-                                                        <div class="input-field col s6">
-                                                            <input type="email" class="validate" value="john_smith@gmail.com" required>
-                                                            <label class="">Email is</label>
+                                                            <input type="text" class="validate" required>
+                                                            <label class="">Naam</label>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="input-field col s6">
-                                                            <input type="text" value="New york" class="validate">
-                                                            <label class="">City</label>
+                                                            <input type="number"  class="validate">
+                                                            <label class="">Telefoon</label>
                                                         </div>
                                                         <div class="input-field col s6">
-                                                            <input type="text" value="united states" class="validate">
-                                                            <label class="">Country</label>
+                                                            <input type="email" class="validate" required>
+                                                            <label class="">Email</label>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="input-field col s6">
-                                                            <input type="password" value="sdflg345609" class="validate">
-                                                            <label class="">Password</label>
+                                                            <input type="number" class="validate">
+                                                            <label class="">Postcode</label>
                                                         </div>
                                                         <div class="input-field col s6">
-                                                            <input type="password" value="asfgdkl678" class="validate">
-                                                            <label class="">Confirm Password</label>
+                                                            <input type="text" class="validate">
+                                                            <label class="">Plaats</label>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="input-field col s12">
-                                                            <input type="text" value="ST17241" class="validate">
-                                                            <label>Student id</label>
+                                                            <input type="text" class="validate">
+                                                            <label>Adres</label>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <input type="checkbox" id="ik_ben_bedrijf" />
+                                                        <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s6">
+                                                            <input type="text" class="validate" required>
+                                                            <label class="">Bedrijf</label>
+                                                        </div>
+                                                        <div class="input-field col s6">
+                                                            <input type="number" class="validate" required>
+                                                            <label class="">BTW-nummer</label>
+                                                        </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s6">
+                                                            <input type="number" class="validate">
+                                                            <label class="">Postcode</label>
+                                                        </div>
+                                                        <div class="input-field col s6">
+                                                            <input type="text" class="validate">
+                                                            <label class="">Plaats</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s12">
+                                                            <input type="text" class="validate">
+                                                            <label>Adres</label>
+                                                        </div>
+                                                    </div>
+                                                        
                                                 </form>
-                                            <!--/div-->
+                                            </div>
                                             </div>
                                         </div>
                                         <!--div class="form-row mt-4">
@@ -352,7 +394,48 @@
                                     </div>
 
                                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Privacytoestemming</h3>
+                                        <h3 class="multisteps-form__title">Overzicht</h3>
+                                        <div class="multisteps-form__content">
+                                            <div class="row">
+                                                <div class="winkel-top-cour">
+                                                    <div class="home-top-cour-desc">
+                                                        <img src="images/course/csharp.jfif" alt="">
+                                                    </div>
+                                                    <div class="winkelwagentje_titel home-top-cour-desc">
+                                                        <a href="course-details.html">
+                                                            <h3>C# Ontwiklaar</h3>
+                                                        </a>
+                                                    </div>
+                                                    <div class="winkelwagentje_omschrijving home-top-cour-desc">
+                                                        <p>Deze cursus begint op 05/07/2021</p>
+                                                    </div>
+                                                    <div class="winkelwagentje_categorie home-top-cour-desc">
+                                                        <h4>ICT</h4>
+                                                    </div>   
+                                                    <div class="winkelwagentje_prijs">
+                                                        <h4>100€</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="winkel-top-cour">
+                                                    <div class="home-top-cour-desc">
+                                                        <img src="images/course/java.png" alt="">
+                                                    </div>
+                                                    <div class="winkelwagentje_titel home-top-cour-desc">
+                                                        <a href="course-details.html">
+                                                            <h3>Java Ontwiklaar</h3>
+                                                        </a>
+                                                    </div>
+                                                    <div class="winkelwagentje_omschrijving home-top-cour-desc">
+                                                        <p>Deze cursus begint op 20/08/2021</p>
+                                                    </div>
+                                                    <div class="winkelwagentje_categorie home-top-cour-desc">
+                                                        <h4>ICT</h4>
+                                                    </div>   
+                                                    <div class="winkelwagentje_prijs">
+                                                        <h4>80€</h4>
+                                                    </div>
+                                                
+                                            </div>
                                         <div class="multisteps-form__content">
                                         <div class="form-row mt-4">
                                             <!--div class="col-12 col-sm-6"-->
@@ -361,8 +444,8 @@
                                                 <form>
                                                     <div class="row">
                                                         <div class="input-field col s12">
-                                                            <input type="checkbox" id="gebruikers gegevens" name="gebruikers gegevens">
-                                                            <label for="gebruikers gegevens">
+                                                            <input type="checkbox" id="voorwaarden_goedkeuring" name="voorwaarden goedkeuring">
+                                                            <label for="voorwaarden_goedkeuring">
                                                                 <ul>
                                                                     <li class="privacy-consent">Ik heb de algemene voorwaarden gelezen en ik ga ermee akkoord.</li>
                                                                 </ul>
@@ -371,11 +454,20 @@
                                                     </div>
                                                     <div class="row">
                                                         <div class="input-field col s12">
-                                                            <input type="checkbox" id="persoonlijke gegevens" name="inverkoop">
-                                                            <label for="persoonlijke gegevens">
+                                                            <input type="checkbox" id="info_goedkeuring" name="info goedkeuring">
+                                                            <label for="info_goedkeuring">
                                                                 <ul>
-                                                                    <li class="privacy-consent">Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
-                                                                    <li class="privacy-consent">Privacybeleid GDPR-conform: Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken. Het heeft niet alleen vijf eeuwen overleefd maar is ook, vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de jaren '60 populair geworden met de introductie van Letraset vellen met Lorem Ipsum passages en meer recentelijk door desktop publishing software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</li>
+                                                                    <li class="privacy-consent">Ik wens op de hoogte te blijven van aanbiedingen.</li>
+                                                                </ul>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="input-field col s12">
+                                                            <input type="checkbox" id="privacy_goedkeuring" name="privacy goedkeuring">
+                                                            <label for="privacy_goedkeuring">
+                                                                <ul>
+                                                                    <li class="privacy-consent">Ik bevistig dat mijn gegevens mogen gebruikt worden voor de afhandeling van de bestelling.</li>
                                                                     <li class="privacy-consent"><a href="privacy.html">Lees hier het volledige privacybeleid</a></li>
                                                                     </ul>
                                                             </label>
@@ -395,7 +487,7 @@
                                                 
                                    <!-- betaal info -->
                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h3 class="multisteps-form__title">Betaling Info</h3>
+                                        <h3 class="multisteps-form__title">Betaling</h3>
                                         <div class="multisteps-form__content">
                                         <div class="form-row mt-4">
                                             <div class="col-12 col-sm-6">
@@ -580,157 +672,284 @@
     <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
     <section>
         <!-- LOGIN SECTION -->
-        <div id="modal1" class="modal fade" role="dialog">
+        <div id="modal_bezoeker_inloggen" class="modal fade" role="dialog">
             <div class="log-in-pop">
                 <div class="log-in-pop-left">
-                    <h1>Hello...</h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
+                    <h1>Welkom bij DIT</h1>
+                    <p>
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_registreren">Heb je geen account ? Maak een account aan.</a>
+                    </p>
                 </div>
                 <div class="log-in-pop-right">
                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                     </a>
-                    <h4>Login</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                    <h4>Inloggen</h4>
+                    <p>Bestaande klanten</p>
                     <form class="s12">
                         <div>
                             <div class="input-field s12">
-                                <input type="text" data-ng-model="name" class="validate">
-                                <label>User name</label>
+                                <input type="email" data-ng-model="email" class="validate" required>
+                                <label>E-mail adres</label>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Password</label>
+                                <input type="password" class="validate" required>
+                                <label>Wachtwoord</label>
                             </div>
                         </div>
-                        <div>
-                            <div class="s12 log-ch-bx">
-                                <p>
-                                    <input type="checkbox" id="test5" />
-                                    <label for="test5">Remember me</label>
-                                </p>
+                        <div> 
+                            <div class="input-field s12"> 
+                                <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_wachtwoord_vergeten">Wachtwoord vergeten ?</a>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s4">
-                                <input type="submit" value="Login" class="waves-effect waves-light log-in-btn"> </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                                <input type="submit" value="Inloggen" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <!-- REGISTER SECTION -->
-        <div id="modal2" class="modal fade" role="dialog">
+        <div id="modal_bezoeker_registreren" class="modal fade" role="dialog">
             <div class="log-in-pop">
                 <div class="log-in-pop-left">
-                    <h1>Hello...</h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
+                    <h1>Welkom bij DIT</h1>
+                    <p>Om je account te activeren vragen we volgende instellingen aan te passen.
+                    </p>
+                    <div>
+                        <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_inloggen">Heb je een account ? Hier inloggen</a> </div>
+                    </div>
                 </div>
                 <div class="log-in-pop-right">
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
-                    </a>
-                    <h4>Create an Account</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    <h4>Maak een account aan</h4>
                     <form class="s12">
-                        <div>
-                            <div class="input-field s12">
-                                <input type="text" data-ng-model="name1" class="validate">
-                                <label>User name</label>
+                        <div class="col-md-12">
+                            <div>
+                                <div class="input-field s12">Persoonlijke gegevens</div>
+                            </div>
+                            <div>
+                                <div class="s12 log-ch-bx">
+                                    <input type="checkbox" id="ik_ben_bedrijf" />
+                                    <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="btw_nummer">
+                                    <label for="btw_nummer">BTW-nummer</label>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="naam_bedrijf">
+                                    <label for="naam_bedrijf">Naam (bedrijf)</label>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s12 form_bedrijf">
+                                    <input type="text"  class="validate" id="adres_bedrijf">
+                                    <label for="adres_bedrijf">Adres (bedrijf)</label>
+                                </div>
+                                <div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                        <input type="number" data-ng-model="name1" id="postcode_bedrijf" min="1000" max="9999" class="validate">
+                                        <label for="postcode_bedrijf">Postcode (bedrijf)</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                        <input type="text" data-ng-model="name1" id="registreren_stad_bedrijf" class="validate">
+                                        <label for="registreren_stad_bedrijf">Stad (bedrijf)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text"  class="validate" id="registreren_naam" required>
+                                    <label for="registreren_naam">Naam *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name2" class="validate" id="registreren_voornaam" required>
+                                    <label for="registreren_voornaam">Voornaam *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name3" id="registreren_adres" class="validate">
+                                    <label for="registreren_adres">Adres</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="number" data-ng-model="name1" id="postcode" min="1000" max="9999" class="validate" required>
+                                    <label for="postcode">Postcode *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="text" data-ng-model="name1" id="registreren_stad" class="validate" required>
+                                    <label for="registreren_stad">Stad *</label>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <input type="tel" data-ng-model="name1" id="registreren_phone" name="phone" pattern="[0-9]{10}" class="validate">
+                                    <label for="registreren_phone">Telefoon</label>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="email" class="validate">
-                                <label>Email id</label>
+                        <div class="col-md-12">
+                            <div>
+                                <div class="input-field s12">Inloggegevens</div>
+                            </div>
+                            <div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                    <input type="email" id="registreren_email" class="validate" required>
+                                    <label for="registreren_email">Email adres *</label>
+                                </div>
+                            </div>
+                            <!--
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
+                                    <input type="email" class="validate" required>
+                                    <label>Bevestig Email adres *</label>
+                                </div>
+                            </div>
+                            -->
+                            <div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 input-field s6">
+                                    <input type="password" id="registreren_paswoord"class="validate" required>
+                                    <label for="registreren_paswoord">Wachtwoord *</label>
+                                </div>
+                            </div>
+                            <!--
+                            <div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 input-field s6">
+                                    <input type="password" class="validate" required>
+                                    <label>Bevestig Wachtwoord *</label>
+                                </div>
+                            </div>
+                            -->
+                            <div>
+                                <div class="s12 log-ch-bx">
+                                    <p>
+                                        <input type="checkbox" id="gdpr3" required>
+                                        <label for="gdpr3"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
+                                            aanbiedingen. *</label>
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="s12 log-ch-bx">
+                                    <p>
+                                        <input type="checkbox" id="gdpr4" required>
+                                        <label for="gdpr4">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
+                                            inschrijving en boekhouding. *</label>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Password</label>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12">
-                                <input type="password" class="validate">
-                                <label>Confirm password</label>
-                            </div>
-                        </div>
-                        <div>
+                        <div class="col-md-12">
                             <div class="input-field s4">
-                                <input type="submit" value="Register" class="waves-effect waves-light log-in-btn"> </div>
+                                <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div>
+                        <div class="col-md-12">
+                            <p class="verplicht">* verplichte velden</p>
                         </div>
+                        <div class="boodschap col-md-12">
+                            <div class="success_boodschap col-md-12">
+                                <p><i class="fas fa-check-circle fa-2x"></i></p>
+                                <p>Uw account is nu aangemaakt !
+                                    <br> Er zal u een e-mail worden gestuurd om dit te bevestigen.
+                                </p>
+                            </div>
+                            <div class="fout_boodschap col-md-12">
+                                <p><i class="fas fa-times-circle fa-2x"></i></p> 
+                                <p>Er was een probleem.
+                                    <br>Probeer het later nog eens of neem contact met ons op.
+                                </p>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
         </div>
         <!-- FORGOT SECTION -->
-        <div id="modal3" class="modal fade" role="dialog">
+        <div id="modal_wachtwoord_vergeten" class="modal fade" role="dialog">
             <div class="log-in-pop">
                 <div class="log-in-pop-left">
-                    <h1>Hello... </h1>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
-                    <h4>Login with social media</h4>
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-google"></i> Google+</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
-                        </li>
-                    </ul>
+                    <h1>Welkom terug ! </h1>
+                    <p> 
+                        <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_registreren">Heb je geen account ? Maak een account aan.</a>
+                    </p>
+                    
                 </div>
                 <div class="log-in-pop-right">
                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" />
                     </a>
-                    <h4>Forgot password</h4>
-                    <p>Don't have an account? Create your account. It's take less then a minutes</p>
+                    <h4>Wachtwoord vergeten ?</h4>
+                    <p>Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in. 
+                    We sturen dan binnen enkele minuten een e-mail waarmee een nieuw wachtwoord kan worden aangemaakt.
+                    </p>
                     <form class="s12">
                         <div>
                             <div class="input-field s12">
-                                <input type="text" data-ng-model="name3" class="validate">
-                                <label>User name or email id</label>
+                                <input type="email" data-ng-model="name3" class="validate" required>
+                                <label>E-mail adres</label>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s4">
-                                <input type="submit" value="Submit" class="waves-effect waves-light log-in-btn">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
+                                <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                     </form>
+                    <div class="success_boodschap col-md-12">
+                        <p><i class="fas fa-check-circle fa-2x"></i></p> 
+                        <p>Wij hebben u een e-mail gestuurd met een nieuw wachtwoord</p>
+                    </div>
+                    <div class="fout_boodschap col-md-12">
+                        <p><i class="fas fa-times-circle fa-2x"></i></p>
+                        <p>Er was een probleem.
+                            <br>Probeer het later nog eens of neem contact met ons op.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>
-    </section>
-    
+       <!--verwijderen product from lijst-->
+       <div
+       class="modal fade"
+       id="modal_product_verwijderen"
+       tabindex="-1"
+       aria-labelledby="modal_product_verwijderen"
+       aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title">Weet je zeker dat je deze cursus van je winkelwagen wilt verwijderen?</h5>
+                   <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+               </div>
+               <div class="modal-body">                            
+                   <div class="form-outline mb-4">
+                       <button class="button_pop_up"
+                           type="button" 
+                           id="button_product_verwijderen" 
+                           class="btn btn-outline-primary">
+                           Verwijderen
+                       </button>
+                       <button class="button_pop_up" 
+                           type="button" 
+                           class="btn btn-outline-dark" 
+                           data-dismiss="modal">
+                           Annuleren
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   </section>  
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

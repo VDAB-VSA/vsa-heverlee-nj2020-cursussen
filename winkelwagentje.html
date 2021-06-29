@@ -188,7 +188,7 @@
                 <div class="cor about-sp">
                     <div class="ed-about-tit">
                         <div class="con-title">
-                            <h2>Uw <span>winkelwagentje </span></h2>
+                            <h2>Je <span>winkelwagen </span></h2>
                         </div>
                         <div class="winkel-top-cour">
                             <div class="home-top-cour-desc">
@@ -248,16 +248,16 @@
                         </div>
                     </div>
                     <div class="betaal_bedrag">
-                        <p>Subtotaal: €180</p>
-                        <p>Earlybird Korting: €28</p>
-                        <p>Inclusief BTW: €16.45</p>
-                        <h4>Totaal Bedrag: €168.45</h4>
+                        <p>Subtotaal: 180 €</p>
+                        <p>Earlybird Korting: 28 €</p>
+                        <p>Inclusief BTW: 16.45 €</p>
+                        <h4>Totaal Bedrag: 168.45 €</h4>
                         <button 
                         data-product-id='1',
                         data-product-naam='zz',
                         data-toggle='modal',
                         data-target='#bevestigen',
-                        class="verder_betalen">IK GA BESTELLEN</button>
+                        class="verder_betalen">Verder met bestellen</button>
                     </div>
                 </div>
             </div>
@@ -540,21 +540,18 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Product Verwijderen</h5>
+                        <h5 class="modal-title">Weet je zeker dat je deze cursus van je winkelwagen wilt verwijderen?</h5>
                         <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                     </div>
-                    <div class="modal-body">
-                        <label id="label_product_verwijderen_fout" class="note note-danger invisible"></label>
-                        <label class="form-outline mb-4" id="label_product_verwijderen">weet u zeker dat u dit product van de lijst wilt verwijderen. </label>
-                                                    
+                    <div class="modal-body">                            
                         <div class="form-outline mb-4">
-                            <button 
+                            <button class="button_pop_up"
                                 type="button" 
                                 id="button_product_verwijderen" 
                                 class="btn btn-outline-primary">
                                 Verwijderen
                             </button>
-                            <button 
+                            <button class="button_pop_up" 
                                 type="button" 
                                 class="btn btn-outline-dark" 
                                 data-dismiss="modal">
@@ -576,21 +573,23 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Betaal Bevestigen</h5>
+                        <h5 class="modal-title">Wil je doorgaan naar de bestelling?</h5>
                         <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                     </div>
                     <div class="modal-body">
-                        <label id="label_product_verwijderen_fout" class="note note-danger invisible"></label>
-                        <label class="form-outline mb-4" id="label_product_verwijderen">Bevestig om door te gaan met je bestelling</label>
-                                                    
+                        <p>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_bezoeker_inloggen">Je moet ingelogd zijn om uw bestelling te plaatsen.</a> 
+                        </p>
+                        
+
                         <div class="form-outline mb-4">
-                            <button 
+                            <button class="button_pop_up" 
                                 type="button" 
                                 id="button_aankoop_bevestig" 
                                 class="btn btn-outline-primary">
-                                Bevestig
+                                Verder met bestellen
                             </button>
-                            <button 
+                            <button class="button_pop_up" 
                                 type="button" 
                                 class="btn btn-outline-dark" 
                                 data-dismiss="modal">

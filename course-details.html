@@ -338,25 +338,41 @@
     <!--END HEADER SECTION-->
 
     <!-- MODAL AANKOOP-->
-    <div id="verder_bestellen_of_winkelen" class="modal fade" role="dialog">
-        <div class="log-in-pop">
-            <div class="log-in-pop-left">
-            </div>
-            <div class="log-in-pop-right">
-                <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
-                <div class="success_boodschap col-md-12">
-                    <p><i class="fas fa-check-circle fa-2x"></i>  Het artikel is toegevoegd aan je winkelwagen</p>
-                </div>
-                <div class="col-md-12"> 
-                    <a href="winkelwagentje.html">Verder naar bestellen ?</a>
-                </div>
-                <div class="col-md-12">
-                    <a href="all-courses.html">Of verder winkelen ?</a>
+
+    <div
+    class="modal fade"
+    id="verder_bestellen_of_winkelen"
+    tabindex="-1"
+    aria-labelledby="modal_product_verwijderen"
+    aria-hidden="true">
+        <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                            <div class="success_boodschap col-md-12">
+                                <p><i class="fas fa-check-circle fa-2x"></i>  Het artikel is toegevoegd aan je winkelwagen</p>
+                            </div>
+                        </h5>
+                        <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    </div>
+                    <div class="modal-body">                            
+                        <div class="form-outline mb-4">
+                            <button
+                                type="button" 
+                                class="btn btn-outline-primary button_pop_up">
+                                <a href="winkelwagentje.html">Verder naar bestellen ?</a>
+                            </button>
+                            <button
+                                type="button" 
+                                class="btn btn-outline-dark button_pop_up" >
+                                <a href="all-courses.html">Of verder winkelen ?</a>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
 
     <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
     <section>
