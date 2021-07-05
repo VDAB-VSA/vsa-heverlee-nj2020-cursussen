@@ -107,6 +107,35 @@
      .carousel {
          margin-top: 0px;
     }
+    .home-top-cour {
+        position: relative;
+        overflow: hidden;
+        width: 80%;
+        background: #ffffff;
+        padding: 15px 20px;
+        margin-bottom: 30px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        border: 1px solid #e4e4e4;
+        margin: 10px auto;
+    }
+    .home-top-cour:hover {
+        -moz-transform: scale(1.02);
+        -webkit-transform: scale(1.02);
+        -o-transform: scale(1.02);
+        transform: scale(1.02);
+        box-shadow: 0px 11px 9px -10px rgba(0, 0, 0, 0.52);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+    .home-top-cour img {
+        width: 100%;
+        height: 150px;
+    }
      .home-top-cour-desc h3{
          margin-top:20px;
     }

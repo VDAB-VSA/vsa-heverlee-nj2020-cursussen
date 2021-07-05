@@ -5,12 +5,14 @@ const project = "4nqmlRAiE5cG";
 let huidige_cursus_actie;
 let huidige_cursus_id;
 let huidige_filter_waardes = [];
-let huidige_sorteer_waarde = ["aankoop_id", "ASC"];
+let huidige_sorteer_waarde = ["cursus_id", "ASC"];
 
 window.onload = function(){
     toonCursussenTabel();
     toonSorteerRichting();
     eventListenersVoorStatischeElementen();
+    categorieenLadenInSelects();
+    locatiesLadenInSelects();
 }
 
 function toonCursussenTabel() {
@@ -18,48 +20,57 @@ function toonCursussenTabel() {
         "endpoint": endpoint, 
         "project": project,
         "token": token, 
-        "entity": "aankoop",
+        "entity": "cursus",
         "filter": huidige_filter_waardes,
         "sort": huidige_sorteer_waarde,
-        "relation": [{"pri_entity": "aankoop", "pri_key": "cursus_id", "sec_entity": "cursus", "sec_key": "cursus_id"}, {"pri_entity": "aankoop", "pri_key": "user_id", "sec_entity": "user", "sec_key": "user_id"}],
+        "relation": [{"pri_entity": "cursus", "pri_key": "categorie_id", "sec_entity": "categorie", "sec_key": "categorie_id"}, {"pri_entity": "cursus", "pri_key": "locatie_id", "sec_entity": "locatie", "sec_key": "locatie_id"}],
      }
     
     dwapiRead(parameters).then(
         data => {
-            let tabel_aankoop_html =  "<table>";
+            let tabel_cursussen_html =  "<table>";
             //console.log(data.result.assets_path);
-            data.result.items.forEach(function(aankoop) {
-                let user_naam = "";
-                let cursus_naam = "";
-                if (aankoop.user_id != null) {
-                    user_naam = aankoop.user.items[aankoop.user_id].Naam;
+            data.result.items.forEach(function(cursus) {
+                let locatie_naam = "";
+                let categorie_naam = "";
+                if (cursus.locatie_id != null) {
+                    locatie_naam = cursus.locatie.items[cursus.locatie_id].naam_campus;
                 }
-                if (aankoop.cursus_id != null) {
-                  cursus_naam = aankoop.cursus.items[aankoop.cursus_id].titel;
+                if (cursus.categorie_id != null) {
+                  categorie_naam = cursus.categorie.items[cursus.categorie_id].naam;
                 }
-                tabel_aankoop_html += "<tr>"+
-                    "<td>" + aankoop.aankoop_id + "</td>" +
-                    "<td>" + user_naam + "</td>" + 
-                    "<td>" + cursus_naam + "</td>" +
-                    "<td>" + aankoop.aankoop_datum + "</td>" +  
-                    "<td>" + aankoop.prijs + "</td>" +
-                    "<td>" + aankoop.btw + "</td>" + 
-                    "<td>" + aankoop.betaal_status + "</td>" +
-                    "<td>" + aankoop.betaal_datum + "</td>" + 
+                tabel_cursussen_html += "<tr>"+
+                    "<td>" + cursus.cursus_id + "</td>" +
+                    "<td>" + cursus.titel + "</td>" + 
+                    "<td>" + categorie_naam + "</td>" +
+                    "<td>" + locatie_naam + "</td>" +  
+                    "<td>" + cursus.docent + "</td>" +
+                    "<td>" + cursus.max_aantal_plaatsen + "</td>" + 
+                    "<td>" + cursus.aantal_lesuren + "</td>" +
+                    "<td>" + cursus.startdatum + "</td>" + 
+                    "<td>" + cursus.einddatum + "</td>" + 
                     "<td>"+
                     "<button "+
-                    "data-cursus-id='" + aankoop.aankoop_id + "' "+ 
+                    "data-cursus-id='" + cursus.cursus_id + "' "+ 
                     "data-cursus-actie='update' " +
-                    "class='button-toon-aanloop-modal btn btn-info' "+
+                    "class='button-toon-cursus-modal btn btn-outline-primary' "+
                     "data-mdb-ripple-color='dark'" +
                     "data-mdb-toggle='modal' " +
-                    "data-mdb-target='#modal_aankoop'>" +
-                    "<i class='fa fa-print'></i>" +
-                    "</button>"
-                    + "</td>" + "</tr>";
+                    "data-mdb-target='#modal_cursus'>" +
+                    "<i class='fa fa-pen'></i>" +
+                    "</button>" +
+                    "<button " +
+                    "data-cursus-id='" + cursus.cursus_id + "' " +
+                    "data-cursus-naam='" + cursus.titel + "' " +
+                    "class='button-toon-cursus-verwijderen-modal btn btn-outline-danger'" +
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_cursus_verwijderen'>" + 
+                    "<i class='fa fa-trash'></i>" +
+                     "</button>" + "</td>" + "</tr>";
                 });
            // tabel_cursussen_html += "</table>";
-            document.getElementById("tabel_aankopen").innerHTML = tabel_aankoop_html;
+            document.getElementById("tabel_cursussen").innerHTML = tabel_cursussen_html;
             eventListenersVoorDynamischeElementen();            
        }
     )
@@ -115,16 +126,16 @@ function cursusBewaren() {
             "afbeelding": cursus_beeld,
             "in_verkoop": cursus_verkoop 
         };
-
+       console.log(cursus);
         let parameters = {
             "endpoint": endpoint, 
             "project": project,
             "token": token, 
-            "entity": "aankoop",
+            "entity": "cursus",
             "values": cursus};
         
         if (huidige_cursus_actie == "update") {
-            parameters.filter = ["aankoop_id", "=", huidige_cursus_id];
+            parameters.filter = ["cursus_id", "=", huidige_cursus_id];
             dwapiUpdate(parameters).then(
                 resultaat => {
                     // UITVOER
@@ -168,14 +179,19 @@ function cursusVerwijderen(cursus_id) {
 function cursussenFilteren() {
     // INVOER
     huidige_filter_waardes = [];
-    let filter_naam = document.getElementById("input_filter_bestelling").value;
-
+    let filter_naam = document.getElementById("input_filter_cursus").value;
+    let filter_docent = document.getElementById("input_filter_docent").value;
+    let filter_datum = document.getElementById("input_filter_datum").value;
 
     // VERWERKING
     if (String(filter_naam) != "") {
-        huidige_filter_waardes.push(["aankoop_id", "=", filter_naam]);
-        huidige_filter_waardes.push(["prijs", "=", filter_naam]);
-        huidige_filter_waardes.push(["aankoop_datum", "=", filter_naam]);
+        huidige_filter_waardes.push(["titel", "LIKE", "%" + filter_naam + "%"]);
+    }
+    if (String(filter_docent) != "") {
+        huidige_filter_waardes.push(["docent", "=", filter_docent]);
+    }
+    if (String(filter_datum) != "") {
+        huidige_filter_waardes.push(["startdatum", "=", filter_datum]);
     }
     
     // UITVOER
@@ -203,7 +219,7 @@ function cursussenSorteren(link) {
 
 function eventListenersVoorStatischeElementen() {
 
-    document.getElementById("print").addEventListener('click', function() {
+    document.getElementById("button_cursus_bewaren").addEventListener('click', function() {
         cursusBewaren();
     })
 
@@ -211,7 +227,7 @@ function eventListenersVoorStatischeElementen() {
         cursusVerwijderen(huidige_cursus_id);
     })
 
-    document.getElementById("button_bestelling_zoek").addEventListener('click', function() {
+    document.getElementById("button_cursus_zoek").addEventListener('click', function() {
         cursussenFilteren();
     })
 
@@ -245,6 +261,53 @@ function eventListenersVoorDynamischeElementen() {
             });            
         }           
     }
+}
+
+function categorieenLadenInSelects() {
+    let parameters = {
+        "endpoint": endpoint, 
+        "project": project,
+        "token": token, 
+        "entity": "categorie"
+    }
+    
+    dwapiRead(parameters).then(
+        data => {
+            let categorie_opties = 
+                `<label class="form-label" for="select_cursus_categorie">Categorie</label>
+                <select required id="select_cursus_categorie" class="form-control select-input rounded">`;
+                data.result.items.forEach(function(categorie) {
+                    categorie_opties += "<option value='" + categorie.categorie_id + "'>" + categorie.naam + "</option>";
+                });
+            categorie_opties +=`
+            </select>    
+            <div class="invalid-feedback">Een categorie is verplicht.</div>`;
+            select_categorie.innerHTML = "<option value=''></option>" + categorie_opties;
+        });
+}
+
+function locatiesLadenInSelects() {
+    let parameters = {
+        "endpoint": endpoint, 
+        "project": project,
+        "token": token, 
+        "entity": "locatie"
+    }
+    
+    dwapiRead(parameters).then(
+        data => {
+            //let select_locatie = document.getElementById('select_categorie');
+            let locatie_opties = 
+                `<label class="form-label" for="select_cursus_locatie">Locatie</label>
+                <select required id="select_cursus_locatie" class="form-control select-input rounded">`;
+                data.result.items.forEach(function(locatie) {
+                    locatie_opties += "<option value='" + locatie.locatie_id + "'>" + locatie.naam_campus + "</option>";
+                });
+            locatie_opties +=`
+            </select>    
+            <div class="invalid-feedback">Een locatie is verplicht.</div>`;
+            select_locatie.innerHTML = locatie_opties;
+        });
 }
 
 function toonCursusModal(via_button) {

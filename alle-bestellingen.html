@@ -3,48 +3,34 @@
 <head>
     <title>DIT</title>
     <!-- META TAGS -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="EEducation master is one of the best eEducational html template, it's suitable for all eEducation websites like university,college,school,online eEducation,tution center,distance eEducation,computer eEducation">
-    <meta name="keyword" content="eEducation html template, university template, college template, school template, online eEducation template, tution center template">
-    <!-- FAV ICON(BROWSER TAB ICON) -->
-    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
-    <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
-    <!-- FONTAWESOME ICONS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- ALL CSS FILES -->
-    <link href="css/materialize.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet" />
-    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <script src="js/session.js"></script>
 </head>
-
 <body>
-    <!--== MAIN CONTRAINER ==-->
     <div class="container-fluid sb1">
-        <div class="row">
+        <div class="row navbar navbar-inverse">
             <!--== LOGO ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
-                <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <a href="index.html" class="logo">
+            <div class="navbar-header col-md-9 col-sm-3 col-xs-6 sb1-1">
+                <a href="index.html" class="logo navbar-brand">
                     <h1 class="white-text">DIT</h1>
                 </a>
             </div>
             <!--== MY ACCCOUNT ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-2 white-text">
-                <ul>
-                    <li><a href="#" class="ho-dr-con-last waves-effect white-text"><i class="fa fa-user" aria-hidden="true"></i>My account</a>
+            <div class="col-md-3 col-sm-3 col-xs-6 sb1-2 white-text">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="ho-dr-con-last waves-effect white-text">
+                        <i class="far fa-user"></i>My account</a>
                     </li>
-                    <li><a href="#" class="ho-dr-con-last waves-effect white-text"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    <li><a href="#" type="button" class="ho-dr-con-last waves-effect white-text" id="button_logout"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
                     </li>
                 </ul>
             </div>
@@ -64,29 +50,39 @@
                         <li>
                             <h5>Thomas H <span> Lennik</span></h5>
                         </li>
-                        <li></li>
+                     
                     </ul>
                 </div>
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                        <li><a href="admin.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
                         <li><a href="alle-cursisten.html"><i class="fa fa-users" aria-hidden="true"></i> Cursisten</a>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa fa-book" aria-hidden="true"></i>Cursussen</a>
-                            <div class="collapsible-body left-sub-menu">
+                       
+                        <li><a
+                            class="accordion-header collapsible-header"
+                            data-mdb-toggle="collapse"
+                            href="#collapseExample"
+                            role="button"
+                            aria-expanded="false"
+                            aria-controls="collapseExample"
+                          >
+                          <i class="fa fa fa-book" aria-hidden="false"></i>Cursussen
+                          </a>
+                            <div id="collapseExample" class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="alle-cursisten.html">Cursussen Beheren</a>
+                                    <li><a href="alle-cursussen.html">Cursussen Beheren</a>
                                     </li>
                                     <li><a href="alle-categorieën.html">Categorieën Beheren</a>
                                     </li>
                                 </ul>
                             </div>
-                        </li>
+                        </li>  
                         <li><a href="alle-locaties.html"><i class="fa fa-map-marker" aria-hidden="true"></i>Locaties</a>
                         </li>
-                        <li><a href="alle-bestellingen.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Bestellingen</a>
+                        <li><a href="alle-bestellingen.html" class="menu-active"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Bestellingen</a>
                         </li>
                     </ul>
                 </div>
@@ -110,55 +106,175 @@
                     <h2>BESTELLINGEN</h2>
                 </div>
 
-                <div class="search-top">
+                <div class="search-top-admin">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-9">
-                                <form>
-                                    <div class="sf-input col-md-9">
-                                    <div class="sf-type">
-                                        <div class="sf-input col-md-9">
-                                            <input type="text" id="input_filter_bestelling" placeholder="Bestellingen">
+                                <div class="row p-3 col-md-12">
+                                    
+                                        <div class="sf-input col-md-6">
+                                            <input id="input_filter_bestelling" type="search" class="form-control rounded" placeholder="Bestellingen" aria-label="Search" aria-describedby="search-addon" />
+                                        </div>
+                                        <!--div class="col-md-">
+                                            <select id="select_filter_categorie" class="form-control select-input rounded">
+                                                                   
+                                            </select>
+                                            <input id="input_filter_categorie" type="search" class="form-control rounded" placeholder="Categorie" aria-label="Search" aria-describedby="search-addon" />
+                                        </div-->
+                                        <div class="col-md-3">
+                                            <button type="button" id="button_bestelling_zoek" class="btn btn-outline-primary">Filter</button>
+                                        </div>
+                                  
+                                    <!--div class="col-md-3">
+                                        <button 
+                                        id="button_cursus_toevoegen"
+                                        type="button" 
+                                        class="btn btn-primary button-toon-cursus-modal" 
+                                        data-mdb-toggle="modal" 
+                                        data-mdb-target="#modal_cursus"        
+                                        data-product-actie="create"
+                                        >
+                                        + Nieuwe Cursus
+                                        </button>
+                                    </div-->
+                                </div>
+ 
+                                
+                                    <!--div class="sf-type col-md-9">
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_cursus" placeholder="Cursus">
+                                        </div>
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_docent" placeholder="Docent">
+                                        </div>
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_datum" placeholder="Datum">
+                                        </div>
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_categorie" placeholder="Categorie">
                                         </div>
                                     </div>
                                     <div class="sf-submit col-md-4">
-                                        <input type="button" id="button_bestelling_zoek" value="Zoek">
-                                    </div>
-                                    </div>
-                                </form> 
-                            </div>
+                                        <input type="button" id="button_cursus_zoek" value="Zoek">
+                                    </div-->
+                              
+                            
+                    
+                            <!--div class="sf-toevoegen form-outline col-sm-4">
+                                <input
+                                  id="button_cursus_toevoegen"
+                                  type="button" data-mdb-toggle="modal" 
+                                  data-mdb-target="#modal_cursus" 
+                                  class="btn btn-outline-primary button-toon-cursus-modal"        
+                                  data-locatie-actie="create" value="+ Nieuwe Cursus">
+                            </div-->
                         </div>
                     </div>
                 </div>
-            </section>
+            
 
-                <!--== User Details ==-->
+                <!--== cursussen Lijsts ==-->
                 <div class="sb2-2-3">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="box-inn-sp">
                                 <div class="inn-title">
                                     <h4>Bestellingen</h4>
-                                </div>
+                               </div>
                                 <div class="tab-inn">
-                                    <div class="table-responsive table-desi">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Bestelling Id</th>
-                                                    <th>Bestelling Nummer</th>
-                                                    <!--th>Cursist</th-->
-                                                    <th scope="col"><a class="link-bestellingen-sorteren" id="link_sorteer_op_user_id" data-sorteer-op="user_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i>Klant</a></th>
-                                                    <!--th>Cursus</th-->
-													<th>Aankoop Datum</th>
-                                                    <th>Bedrag</th>
-                                                    <th>Betaalstatus</th>
-                                                    <!--th>Betallingmethode</th-->
-													<th>Actie</th>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table datatable-table">
+                                            <thead class="datatable-header">
+                                                <tr id="hoofdrij">
+                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_aankoop_id" data-sorteer-op="aankoop_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
+                                                    <th scope="col">Klantnaam</th>
+                                                    <th scope="col">Cursus</th>
+                                                    <th scope="col">Aankoopdatum</th>
+                                                    <th scope="col">Prijs</th>
+                                                    <th scope="col">Btw</th>
+                                                    <th scope="col">Betaalstatus</th>
+                                                    <th scope="col">Betaaldatum</th>
+                                                    <th scope="col">Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="tabel_bestellingen">
-
+                                            <tbody class="datatable-body" id="tabel_aankopen">
+                                                <!--tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <a href="admin-cursus-details.html">
+                                                            <span class="list-enq-name">C#</span>
+                                                            <span class="list-enq-city">.Net, C#, OOP</span>
+                                                        </a>
+                                                    </td>
+                                                    <td>IT</td>
+                                                    <td>Leuven</td>
+                                                    <td>Bert J.</td>
+                                                    <td>20/06/2021</td>
+                                                    <td>120</td>
+                                                    <td>20</td>
+                                                    <td>€100</td>
+                                                    <td><i class="fa fa-check"></i></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td><a href="admin-cursus-details.html">
+                                                        <span class="list-enq-name">Full-Stack Ontwiklaar</span>
+                                                        <span class="list-enq-city">HTML, CSS, JS, Nodejs...</span></a>
+                                                    </td>
+                                                    <td>IT</td>
+                                                    <td>Antwerpen</td>
+                                                    <td>Evan.</td>
+                                                    <td>02/07/2021</td>
+                                                    <td>160</td>
+                                                    <td>20</td>
+                                                    <td>€80</td>
+                                                    <td></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td><a href="admin-cursus-details.html">
+                                                        <span class="list-enq-name">Nederlands</span>
+                                                        <span class="list-enq-city">Spreken, Luisteren, Lezen and Schrijven</span></a>
+                                                    </td>
+                                                    <td>Taalopleidingen</td>
+                                                    <td>Leuven</td>
+                                                    <td>Ilse H.</td>
+                                                    <td>10/07/2021</td>
+                                                    <td>150</td>
+                                                    <td>12</td>
+                                                    <td>€100</td>
+                                                    <td><i class="fa fa-check"></i></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td><a href="admin-cursus-details.html">
+                                                        <span class="list-enq-name">Secretaris </span>
+                                                        <span class="list-enq-city">administrative functies</span></a>
+                                                    </td>
+                                                    <td>Administratieve en commerciële functies</td>
+                                                    <td>Brussel</td>
+                                                    <td>Lola M.</td>
+                                                    <td>20/08/2021</td>
+                                                    <td>60</td>
+                                                    <td>10</td>
+                                                    <td>€80</td>
+                                                    <td><i class="fa fa-check"></i></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                </tr-->
                                             </tbody>
                                         </table>
                                     </div>
@@ -166,9 +282,176 @@
                             </div>
                         </div>
                     </div>
-                </div>				
+                </div>	
+                <!--Cursussen lijst einde-->			
             </div>
+        </div>
+    </div>
 
+    <!--Modal -->
+    <div
+    class="modal fade"
+    id="modal_aankoop"
+    tabindex="-1"
+    aria-labelledby="modal_aankoop"
+    aria-hidden="true"   
+    >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal_cursus_titel" class="modal-title">Aankoop Print</h5>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body col-ls=g-12">
+                    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
+                        <div class="card">
+                            <div class="card-header p-4">
+                                <a class="pt-2 d-inline-block" href="index.html" data-abc="true">DIT.be</a>
+                                <div class="float-right">
+                                    <h3 class="mb-0">Invoice #BBB10234</h3>
+                                    Date: 12 July,2021
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-4">
+                                    <div class="col-sm-6">
+                                        <h5 class="mb-3">From:</h5>
+                                        <h3 class="text-dark mb-1">DIT</h3>
+                                        <div>75 Straat</div>
+                                        <div>1750 Lennik, Belgium</div>
+                                        <div>Email: info@dit.be</div>
+                                        <div>Phone: +32666666666</div>
+                                    </div>
+                                    <div class="col-sm-6 ">
+                                        <h5 class="mb-3">To:</h5>
+                                        <h3 class="text-dark mb-1">Klant</h3>
+                                        <div>333 straat</div>
+                                        <div>Leuven, Belgium</div>
+                                        <div>Email: klant@gmail.com</div>
+                                        <div>Phone: +3234556666</div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive-sm">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="center">#</th>
+                                                <th>Item</th>
+                                                <th>Omschrijving</th>
+                                                <th class="right">Prijs</th>
+                                                <th class="center">BTW</th>
+                                                <th class="right">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="center">1</td>
+                                                <td class="left strong">Java</td>
+                                                <td class="left">Begin op 23.98/2021</td>
+                                                <td class="right">100</td>
+                                                <td class="center">10</td>
+                                                <td class="right">Euro115</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">2</td>
+                                                <td class="left strong">PHP</td>
+                                                <td class="left">Begin op 23.98/2021</td>
+                                                <td class="right">100</td>
+                                                <td class="center">10</td>
+                                                <td class="right">Euro115</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="center">3</td>
+                                                <td class="left strong">C# .Net</td>
+                                                <td class="left">Begin op 23.98/2021</td>
+                                                <td class="right">100</td>
+                                                <td class="center">10</td>
+                                                <td class="right">Euro115</td>
+                                            </tr>                                         
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-5">
+                                    </div>
+                                    <div class="col-lg-12 col-sm-5 ml-auto">
+                                        <table class="table table-clear">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="left">
+                                                        <strong class="text-dark">Subtotal</strong>
+                                                    </td>
+                                                    <td class="right">$28,809,00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <strong class="text-dark">Discount (20%)</strong>
+                                                    </td>
+                                                    <td class="right">$5,761,00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <strong class="text-dark">VAT (10%)</strong>
+                                                    </td>
+                                                    <td class="right">$2,304,00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">
+                                                        <strong class="text-dark">Total</strong> </td>
+                                                    <td class="right">
+                                                        <strong class="text-dark">$20,744,00</strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <p class="mb-0">Dit, 1750 Lennik, Belgium  +32466666666</p>
+                            </div>
+                            <div>
+                                <form>
+                                    <input type="button" value="Print" id="print" />
+                                  </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="modal_cursus_verwijderen"
+    tabindex="-1"
+    aria-labelledby="modal_cursus_verwijderen"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cursus verwijderen</h5>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_cursus_verwijderen_fout" class="note note-danger invisible"></label>
+                    <label class="form-outline mb-4" id="label_cursus_verwijderen">
+                    </label>                      
+                    <div class="form-outline mb-4">
+                        <button 
+                        type="button" 
+                        id="button_cursus_verwijderen" 
+                        class="btn btn-outline-primary">Verwijderen</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-mdb-dismiss="modal">Annuleren</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

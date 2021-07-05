@@ -159,18 +159,18 @@
                             <form>
                                 <div class="sf-type">
                                     <div class="sf-input">
-                                        <input type="text" id="sf-box" placeholder="Titel of categorie">
+                                        <input type="text" id="input_cursus_naam" placeholder="Cursus Titel" />
                                     </div>
-                                    <div class="sf-list">
+                                    <!--div class="sf-list">
                                         <ul>
-                                            <li><a href="course-details.html">IT</a></li>
+                                            <li><a href="course-details.html">ICT</a></li>
                                             <li><a href="course-details.html">Talen</a></li>
                                             <li><a href="course-details.html">Mode & Decoratie</a></li>
                                         </ul>
-                                    </div>
+                                    </div-->
                                 </div>
                                 <div class="sf-submit">
-                                    <input type="submit" value="Zoek Cursus">
+                                    <input type="button" value="Zoek Cursus" id="button_cursus_zoek">
                                 </div>
                             </form>
                         </div>
@@ -181,6 +181,8 @@
     </section>
     <!--END HEADER SECTION-->
     
+
+    <!--div class="container com-sp pad-bot-70" id="toon-cursus"-->
     <!-- SLIDER -->
     <section>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -231,10 +233,10 @@
                     <p>Wil je snel beginnen ? Ontdek de cursussen die deze maand beginnen !</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row" id="toon-deze-maand-cursus">
+                <!--div class="col-md-6">
                     <div>
-                        <!--POPULAR COURSES 1-->
+                        
                         <div class="home-top-cour">
                             <div class="col-md-3 col-sm-3 col-xs-3"> <img src="images/course/sew.jfif" alt=""> </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 home-top-cour-desc">
@@ -252,7 +254,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--POPULAR COURSES 2-->
+                       
                         <div class="home-top-cour">
                             <div class="col-md-3 col-sm-3 col-xs-3"> <img src="images/course/java.png" alt=""> </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 home-top-cour-desc">
@@ -270,7 +272,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--POPULAR COURSES 3-->
+                       
                         <div class="home-top-cour">
                             <div class="col-md-3 col-sm-3 col-xs-3"> <img src="images/course/php.jfif" alt=""> </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 home-top-cour-desc">
@@ -292,7 +294,7 @@
                 </div>
                 <div class="col-md-6">
                     <div>
-                        <!--POPULAR COURSES 4-->
+                        
                         <div class="home-top-cour">
                             <div class="col-md-3 col-sm-3 col-xs-3"> <img src="images/course/talen.jfif" alt=""> </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 home-top-cour-desc">
@@ -310,7 +312,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--POPULAR COURSES 5-->
+                        
                         <div class="home-top-cour">
                             <div class="col-md-3 col-sm-3 col-xs-3"> <img src="images/course/english.jfif" alt=""> </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 home-top-cour-desc">
@@ -328,7 +330,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--POPULAR COURSES 6-->
+                       
                         <div class="home-top-cour">
                             <div class="col-md-3 col-sm-3 col-xs-3"> <img src="images/course/handbag.jfif" alt=""> </div>
                             <div class="col-md-9 col-sm-9 col-xs-9 home-top-cour-desc">
@@ -347,7 +349,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div-->
             </div>
             
         </div>
@@ -728,6 +730,8 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/winkel.js"></script>
+    <script src="js/dwapi.js"></script>
+    <script src="js/dezemaandcursus.js"></script>
 </body>
 
 </html>
