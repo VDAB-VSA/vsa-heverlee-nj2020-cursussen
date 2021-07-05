@@ -1,53 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <title>DIT</title>
     <!-- META TAGS -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="EEducation master is one of the best eEducational html template, it's suitable for all eEducation websites like university,college,school,online eEducation,tution center,distance eEducation,computer eEducation">
-    <meta name="keyword" content="eEducation html template, university template, college template, school template, online eEducation template, tution center template">
-    <!-- FAV ICON(BROWSER TAB ICON) -->
-    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
-    <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
-    <!-- FONTAWESOME ICONS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- ALL CSS FILES -->
-    <link href="css/materialize.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet" />
-    <script src="js/catagorie.js"></script>
-    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <script src="js/session.js"></script>
 </head>
-
 <body>
-    <!--== MAIN CONTRAINER ==-->
     <div class="container-fluid sb1">
-        <div class="row">
+        <div class="row navbar navbar-inverse">
             <!--== LOGO ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
-                <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <a href="index.html" class="logo">
+            <div class="navbar-header col-md-9 col-sm-3 col-xs-6 sb1-1">
+                <a href="index.html" class="logo navbar-brand">
                     <h1 class="white-text">DIT</h1>
                 </a>
             </div>
             <!--== MY ACCCOUNT ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-2 white-text">
-                <ul>
-                    <li><a href="#" class="ho-dr-con-last waves-effect white-text"><i class="fa fa-user" aria-hidden="true"></i>My account</a>
+            <div class="col-md-3 col-sm-3 col-xs-6 sb1-2 white-text">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="ho-dr-con-last waves-effect white-text">
+                        <i class="far fa-user"></i>My account</a>
                     </li>
-                    <li><a href="#" class="ho-dr-con-last waves-effect white-text"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    <li><a href="#" type="button" class="ho-dr-con-last waves-effect white-text" id="button_logout">
+                        <i class="fas fa-sign-out-alt"></i>Logout</a>
                     </li>
                 </ul>
             </div>
@@ -67,22 +51,32 @@
                         <li>
                             <h5>Thomas H <span> Lennik</span></h5>
                         </li>
-                        <li></li>
+                     
                     </ul>
                 </div>
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                        <li><a href="admin.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
                         <li><a href="alle-cursisten.html"><i class="fa fa-users" aria-hidden="true"></i> Cursisten</a>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa fa-book" aria-hidden="true"></i>Cursussen</a>
-                            <div class="collapsible-body left-sub-menu">
+                       
+                            <li><a
+                                class="accordion-header menu-active"
+                                data-mdb-toggle="collapse"
+                                href="#collapseExample"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                              >
+                              <i class="fa fa fa-book" aria-hidden="true"></i>Cursussen
+                              </a>
+                            <div id="collapseExample" class="collapsible-body left-sub-menu">
                                 <ul>
                                     <li><a href="alle-cursussen.html">Cursussen Beheren</a>
                                     </li>
-                                    <li><a href="alle-categorieën.html">Categorieën Beheren</a>
+                                    <li><a href="alle-categorieën.html" class="menu-active-sub">Categorieën Beheren</a>
                                     </li>
                                 </ul>
                             </div>
@@ -102,7 +96,7 @@
                     <ul>
                         <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                         </li>
-                        <li class="active-bre"><a href="#">Alle Categorieën </a>
+                        <li class="active-bre"><a href="#">Alle Categorieën</a>
                         </li>
                         <li class="page-back"><a href="index.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                         </li>
@@ -113,87 +107,172 @@
                     <h2>CATEGORIEËN</h2>
                 </div>
 
-                <div class="search-top">
+                <div class="search-top-admin">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-9">
-                                <form>
-                                    <div class="sf-input col-md-9">
-                                    <div class="sf-type">
-                                        <div class="sf-input col-md-9">
-                                            <input type="text" id="input_filter_categorie" placeholder="Catagorie">
+                            
+                                <div class="row p-3 col-md-12">
+                                    
+                                        <div class="sf-input col-md-6">
+                                            <input id="input_filter_categorie" type="search" class="form-control rounded" placeholder="Categorie Naam" aria-label="Search" aria-describedby="search-addon" />
+                                        </div>
+                                        <!--div class="col-md-">
+                                            <select id="select_filter_categorie" class="form-control select-input rounded">
+                                                                   
+                                            </select>
+                                            <input id="input_filter_categorie" type="search" class="form-control rounded" placeholder="Categorie" aria-label="Search" aria-describedby="search-addon" />
+                                        </div-->
+                                        <div class="col-md-3">
+                                            <button type="button" id="button_categorie_zoek" class="btn btn-outline-primary">Filter</button>
+                                        </div>
+                                  
+                                    <div class="col-md-3">
+                                        <button 
+                                        id="button_categorie_toevoegen"
+                                        type="button" 
+                                        class="btn btn-primary button-toon-categorie-modal" 
+                                        data-mdb-toggle="modal" 
+                                        data-mdb-target="#modal_categorie"        
+                                        data-product-actie="create"
+                                        >
+                                        + Nieuwe Categorie
+                                        </button>
+                                    </div>
+                                </div>
+ 
+                                
+                                    <!--div class="sf-type col-md-9">
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_cursus" placeholder="Cursus">
+                                        </div>
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_docent" placeholder="Docent">
+                                        </div>
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_datum" placeholder="Datum">
+                                        </div>
+                                        <div class="sf-input col-md-3">
+                                            <input type="text" id="input_filter_categorie" placeholder="Categorie">
                                         </div>
                                     </div>
                                     <div class="sf-submit col-md-4">
-                                        <input type="button" id="button_categorie_zoek" value="Zoek">
-                                    </div>
-                                    </div>
-                                </form> 
-                            </div>
-                            <div class="sf-toevoegen form-outline col-sm-6">
+                                        <input type="button" id="button_cursus_zoek" value="Zoek">
+                                    </div-->
+                              
+                            
+                    
+                            <!--div class="sf-toevoegen form-outline col-sm-4">
                                 <input
-                                  id="button_categorie_toevoegen"
-                                  type="button" data-toggle="modal" 
-                                  data-target="#modal_categorie" 
-                                  class="btn btn-outline-primary button-toon-categorie-modal"        
-                                  data-catagorie-actie="create" value="+ Nieuwe Catagorie">
-                            </div>
+                                  id="button_cursus_toevoegen"
+                                  type="button" data-mdb-toggle="modal" 
+                                  data-mdb-target="#modal_cursus" 
+                                  class="btn btn-outline-primary button-toon-cursus-modal"        
+                                  data-locatie-actie="create" value="+ Nieuwe Cursus">
+                            </div-->
                         </div>
                     </div>
                 </div>
-            </section>
+            
 
-                <!--== User Details ==-->
+                <!--== cursussen Lijsts ==-->
                 <div class="sb2-2-3">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="box-inn-sp">
                                 <div class="inn-title">
                                     <h4>Categorieën</h4>
-                                </div>
+                               </div>
                                 <div class="tab-inn">
-                                    <div class="table-responsive table-desi">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Catagorie Id</th>
-                                                    <th scope="col"><a class="link-categorieën-sorteren" id="link_sorteer_op_naam" data-sorteer-op="naam" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i>Titel</a></th>
-                                                    <th>Omschrijving</th>
-													<th>Actie</th>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table datatable-table">
+                                            <thead class="datatable-header">
+                                                <tr id="hoofdrij">
+                                                    <th scope="col"><a class="link-categorieën-sorteren" id="link_sorteer_op_categorie_id" data-sorteer-op="categorie_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
+                                                    <th scope="col"><a class="link-categorieën-sorteren" id="link_sorteer_op_naam" data-sorteer-op="naam" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Naam</a></th>
+                                                    <th scope="col"><a class="link-categorieën-sorteren" id="link_sorteer_op_omschrijving" data-sorteer-op="omschrijving" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Omschrijving</a></th>
+                                                    <th scope="col">Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="tabel_categorieën">
-                                                <!--Toon categorieën here-->
-                                             </tbody>
-                                            <!--tbody>
-                                                <tr>
+                                            <tbody class="datatable-body" id="tabel_categorieën">
+                                                <!--tr>
                                                     <td>1</td>
-                                                    <td>IT/ICT</td>
-                                                    <td><a href="admin-student-details.html">
-                                                        <span class="list-enq-name">IT of ICT</span>
-                                                        <span class="list-enq-city">Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem</span></a>
-                                                    </td>
                                                     <td>
-                                                        <a href="admin-student-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                        <a href="admin-cursus-details.html">
+                                                            <span class="list-enq-name">C#</span>
+                                                            <span class="list-enq-city">.Net, C#, OOP</span>
+                                                        </a>
                                                     </td>
-													<td><a href="cursist-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                    <td>IT</td>
+                                                    <td>Leuven</td>
+                                                    <td>Bert J.</td>
+                                                    <td>20/06/2021</td>
+                                                    <td>120</td>
+                                                    <td>20</td>
+                                                    <td>€100</td>
+                                                    <td><i class="fa fa-check"></i></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Boekhouding</td>
-                                                    <td><a href="admin-student-details.html">
-                                                        <span class="list-enq-name">Boekhouding</span>
-                                                        <span class="list-enq-city">Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem</span></a>
+                                                    <td><a href="admin-cursus-details.html">
+                                                        <span class="list-enq-name">Full-Stack Ontwiklaar</span>
+                                                        <span class="list-enq-city">HTML, CSS, JS, Nodejs...</span></a>
                                                     </td>
+                                                    <td>IT</td>
+                                                    <td>Antwerpen</td>
+                                                    <td>Evan.</td>
+                                                    <td>02/07/2021</td>
+                                                    <td>160</td>
+                                                    <td>20</td>
+                                                    <td>€80</td>
+                                                    <td></td>    
                                                     <td>
-                                                        <a href="admin-student-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
                                                     </td>
-													<td><a href="cursist-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
                                                 </tr>
-
-
-                                               
-                                                </tbody-->
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td><a href="admin-cursus-details.html">
+                                                        <span class="list-enq-name">Nederlands</span>
+                                                        <span class="list-enq-city">Spreken, Luisteren, Lezen and Schrijven</span></a>
+                                                    </td>
+                                                    <td>Taalopleidingen</td>
+                                                    <td>Leuven</td>
+                                                    <td>Ilse H.</td>
+                                                    <td>10/07/2021</td>
+                                                    <td>150</td>
+                                                    <td>12</td>
+                                                    <td>€100</td>
+                                                    <td><i class="fa fa-check"></i></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td><a href="admin-cursus-details.html">
+                                                        <span class="list-enq-name">Secretaris </span>
+                                                        <span class="list-enq-city">administrative functies</span></a>
+                                                    </td>
+                                                    <td>Administratieve en commerciële functies</td>
+                                                    <td>Brussel</td>
+                                                    <td>Lola M.</td>
+                                                    <td>20/08/2021</td>
+                                                    <td>60</td>
+                                                    <td>10</td>
+                                                    <td>€80</td>
+                                                    <td><i class="fa fa-check"></i></td>    
+                                                    <td>
+                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
+                                                    </td>
+                                                    <td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
+                                                </tr-->
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -202,9 +281,9 @@
                     </div>
                 </div>				
             </div>
-
         </div>
     </div>
+
     <!--Modal -->
     <div
     class="modal fade"
@@ -217,31 +296,34 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 id="modal_categorie_titel" class="modal-title">Categorie</h5>
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
                 <div class="modal-body">
                     <label id="label_categorie_fout" class="note note-danger invisible">fout</label>
                     <form class="row g-3 needs-validation" id="form_categorie" novalidate>    
-                        <!-- categorie input -->
+                        <!-- locatie input -->
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_categorie_naam">Categorietitel</label>
+                            <label class="form-label" for="input_categorie_naam">Titel</label>
                             <input required type="text" id="input_categorie_naam" class="form-control" validate/>
                             <div class="invalid-feedback">Een categorienaam is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
                             <label class="form-label" for="input_categorie_omschrijving">Omschrijving</label>
-                            <input required type="text" id="input_categorie_omschrijving" class="form-control validate" />
+                            <textarea id="input_categorie_omschrijving" class="form-control" rows="4"></textarea>
+                            <!--input required type="text" id="input_cursus_omschrijving" class="form-control validate" /-->
                             <div class="invalid-feedback">Een omschrijving is verplicht.</div>
                         </div>
+
                         <!-- Submit button -->
                         <div class="form-outline mb-4">
                             <button 
                             id="button_categorie_bewaren" 
+                            type="button"
                             class="btn btn-outline-primary">Bewaren</button>
                             <button 
                             type="button" 
                             class="btn btn-outline-dark" 
-                            data-dismiss="modal">Annuleren</button>
+                            data-mdb-dismiss="modal">Annuleren</button>
                         </div>
                     </form>
                 </div>
@@ -260,7 +342,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Categorie verwijderen</h5>
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
                 <div class="modal-body">
                     <label id="label_categorie_verwijderen_fout" class="note note-danger invisible"></label>
@@ -287,6 +369,7 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/dwapi.js"></script>
+    <script src="js/catagorie.js"></script>
 </body>
 
 

@@ -13,13 +13,17 @@ async function dwapiRead(parameters) {
     if (typeof parameters.relation !== "undefined" && parameters.relation.length > 0) {
         url = url + "&relation=" + encodeURIComponent(JSON.stringify(parameters.relation))
     }
+    if (typeof parameters.paging !== "undefined") {
+        url = url + "&paging=" + encodeURIComponent(JSON.stringify(parameters.paging))
+    }
 
     let response = await fetch(url, {
         method: 'GET'
     });
 
     return response.json()
-        .then(data => {             
+        .then(data => {    
+            console.log(data);          
             return data; 
         });
 }   
@@ -40,7 +44,8 @@ async function dwapiCreate(parameters) {
     });
 
     return response.json()
-        .then(data => {             
+        .then(data => {  
+            console.log(data);           
             return data; 
         }); 
 }
@@ -70,7 +75,7 @@ async function dwapiUpdate(parameters) {
 
 // DELETE
 async function dwapiDelete(parameters) {   
-    let url = parameters.endpoint + 
+    let url = parameters.endpoint +
         "?project=" + parameters.project + 
         "&entity=" + parameters.entity;
  
@@ -85,7 +90,7 @@ async function dwapiDelete(parameters) {
     }); 
 
     return response.json()
-        .then(data => {             
+        .then(data => {            
             return data; 
         }); 
 }
@@ -101,4 +106,79 @@ function prepareBody(values) {
         }
     } 
     return data;
+}
+
+// LOGIN
+async function dwapiLogin(parameters) {   
+    let url = parameters.endpoint +
+        "?project=" + parameters.project;
+
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"email": parameters.email, "password": parameters.password, "project": parameters.project})
+    });
+    return response.json()
+        .then(data => {   
+            console.log(data);     
+            return data; 
+        }); 
+}
+
+// LOGOUT
+async function dwapiLogout(parameters) {   
+    let url = parameters.endpoint +
+        "?project=" + parameters.project;
+
+    const response = await fetch(url, {
+        method: 'GET',  
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + parameters.token,
+        },      
+    });
+
+    return response.json()
+        .then(data => {
+            console.log(data);             
+            return data; 
+        }); 
+}
+
+// REGISTER
+async function dwapiRegister(parameters) {   
+    let url = parameters.endpoint +
+        "?project=" + parameters.project;
+
+    const response = await fetch(url, {
+        method: 'POST',          
+        body: prepareBody(parameters.values)   
+    });
+
+    return response.json()
+        .then(data => {             
+            return data; 
+        }); 
+}
+
+// RESET PASSWORD
+async function dwapiResetPassword(parameters) {   
+
+    let url = parameters.endpoint +
+        "?project=" + parameters.project +
+        "&email=" + encodeURIComponent(parameters.email);
+
+    const response = await fetch(url, {
+        method: 'GET',  
+        headers: { 
+            'Content-Type': 'application/json'
+        },      
+    });
+
+    return response.json()
+        .then(data => {             
+            return data; 
+        }); 
 }

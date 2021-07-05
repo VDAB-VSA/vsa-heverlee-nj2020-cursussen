@@ -5,13 +5,12 @@ const project = "4nqmlRAiE5cG";
 let huidige_locatie_actie;
 let huidige_locatie_id;
 let huidige_filter_waardes = [];
-let huidige_sorteer_waarde = ["naam_campus", "ASC"];
+let huidige_sorteer_waarde = ["locatie_id", "ASC"];
 
 window.onload = function(){
     toonLocatiesTabel();
     toonSorteerRichting();
     eventListenersVoorStatischeElementen();
-   // categorieenLadenInSelects();
 }
 
 function toonLocatiesTabel() {
@@ -22,29 +21,40 @@ function toonLocatiesTabel() {
         "entity": "locatie",
         "filter": huidige_filter_waardes,
         "sort": huidige_sorteer_waarde
-    }
+     }
     
     dwapiRead(parameters).then(
         data => {
             let tabel_locaties_html =  "<table>";
-            data.result.items.forEach(function(locatie) {
 
-                tabel_locaties_html += `<tr><td>${locatie.locatie_id}</td>
-                    <td>${locatie.naam_campus}</td>  
-                    <td>${locatie.adres}</td> 
-                    <td>${locatie.postcode}</td> 
-                    <td>${locatie.stad}</td>
-                    <td>
-                    <button data-locatie-id='${locatie.locatie_id}' 
-                    data-locatie-actie='update' class='button-toon-locatie-modal waves-effect'
-                    data-toggle='modal' data-target='#modal_locatie'><i class='fa fa-edit bg-edit'></i></button>
-                    <button data-locatie-id='${locatie.locatie_id}'
-                    data-locatie-naam='${locatie.naam_campus}'
-                    data-toggle='modal' data-target='#modal_locatie_verwijderen'>
-                    <i class='fa fa-trash bg-remove'></i>
-                    </button></td></tr></tbody>`;
+            data.result.items.forEach(function(locatie) {
+                tabel_locaties_html += "<tr>"+
+                    "<td>" + locatie.locatie_id + "</td>" +
+                    "<td>" + locatie.naam_campus + "</td>" +
+                    "<td>" + locatie.adres + "</td>" + 
+                    "<td>" + locatie.postcode + "</td>" +                   
+                    "<td>" + locatie.stad + "</td>" +     
+                    "<td>"+
+                    "<button "+
+                    "data-locatie-id='" + locatie.locatie_id + "' "+ 
+                    "data-locatie-actie='update' " +
+                    "class='button-toon-locatie-modal btn btn-outline-primary' "+
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_locatie'>" +
+                    "<i class='fa fa-pen'></i>" +
+                    "</button>" +
+                    "<button " +
+                    "data-locatie-id='" + locatie.locatie_id + "' " +
+                    "data-locatie-naam='" + locatie.naam_campus + "' " +
+                    "class='button-toon-locatie-verwijderen-modal btn btn-outline-danger'" +
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_locatie_verwijderen'>" + 
+                    "<i class='fa fa-trash'></i>" +
+                     "</button>" + "</td>" + "</tr>";
                 });
-            tabel_locaties_html += "</table>";
+           // tabel_categoriesen_html += "</table>";
             document.getElementById("tabel_locaties").innerHTML = tabel_locaties_html;
             eventListenersVoorDynamischeElementen();            
        }
@@ -53,28 +63,29 @@ function toonLocatiesTabel() {
 
 function locatieBewaren() {
     // INVOER
-    let locatie_naam = document.getElementById("input_locatie_naam").value;
-    let locatie_adres = document.getElementById("input_locatie_adres").value;
-    let locatie_postcode = document.getElementById("input_locatie_postcode").value;
-    let locatie_stad = document.getElementById("input_locatie_stad").value;
+   let locatie_naam = document.getElementById("input_locatie_naam").value;
+   let locatie_adres = document.getElementById("input_locatie_adres").value;
+   let locatie_postcode = document.getElementById("input_locatie_postcode").value;
+   let locatie_stad = document.getElementById("input_locatie_stad").value;
 
+  
     // VERWERJING
     let form_locatie = document.getElementById("form_locatie");
     if (form_locatie.checkValidity()) {
         let locatie = {
-            "naam": locatie_naam, 
-            "adres": locatie_adres, 
-            "postcode": locatie_postcode, 
-            "stad": locatie_stad,
+            "naam_campus": locatie_naam, 
+            "adres": locatie_adres,
+            "postcode": locatie_postcode,
+            "stad": locatie_stad            
         };
- 
+
         let parameters = {
             "endpoint": endpoint, 
             "project": project,
             "token": token, 
             "entity": "locatie",
             "values": locatie};
-
+        
         if (huidige_locatie_actie == "update") {
             parameters.filter = ["locatie_id", "=", huidige_locatie_id];
             dwapiUpdate(parameters).then(
@@ -106,7 +117,8 @@ function locatieVerwijderen(locatie_id) {
         "project": project,
         "token": token, 
         "entity": "locatie",
-        "filter": ["locatie_id", "=", locatie_id]}
+        "filter": ["locatie_id", "=", locatie_id]
+    }
 
     // VERWERKING
     dwapiDelete(parameters).then(
@@ -120,12 +132,12 @@ function locatiesFilteren() {
     // INVOER
     huidige_filter_waardes = [];
     let filter_naam = document.getElementById("input_filter_locatie").value;
-
+    
     // VERWERKING
     if (String(filter_naam) != "") {
         huidige_filter_waardes.push(["naam_campus", "LIKE", "%" + filter_naam + "%"]);
     }
-    
+
     // UITVOER
     toonLocatiesTabel();
 }
@@ -133,7 +145,6 @@ function locatiesFilteren() {
 function locatiesSorteren(link) {
     // INVOER
     let sorteer_op = link.dataset.sorteerOp;
-
 
     // VERWERKING    
     let sorteer_richting = "ASC";
@@ -167,7 +178,7 @@ function eventListenersVoorStatischeElementen() {
     let sorteer_links;
     sorteer_links = document.querySelectorAll('.link-locaties-sorteren');
     for (var i = 0; i < sorteer_links.length; i++) {
-        sorteer_links[i].addEventListener('click', function() {            
+        sorteer_links[i].addEventListener('click', function() {     
             locatiesSorteren(this);
         })
     }
@@ -180,7 +191,7 @@ function eventListenersVoorDynamischeElementen() {
     if (toon_locatie_modal_buttons) {
         for (var i = 0; i < toon_locatie_modal_buttons.length; i++) {
             toon_locatie_modal_buttons[i].addEventListener('click', function() {            
-                toonLocatieModal(this);
+                toonlocatieModal(this);
             });            
         }        
     }
@@ -189,43 +200,44 @@ function eventListenersVoorDynamischeElementen() {
     buttons = document.querySelectorAll('.button-toon-locatie-verwijderen-modal');
     if (buttons) {
         for (var i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function() {                
-                toonLocatieVerwijderenModal(this);
+            buttons[i].addEventListener('click', function() {               
+                toonlocatieVerwijderenModal(this);
             });            
         }           
     }
 }
 
-function toonLocatieModal(via_button) {
+
+function toonlocatieModal(via_button) {
 
     // INVOER
     huidige_locatie_actie = via_button.dataset.locatieActie;
     huidige_locatie_id = via_button.dataset.locatieId;
- 
+
     // UITVOER
-    resetLocatieFormulier();  
-    if (huidige_locatie_actie == "create") {
-        document.getElementById("modal_locatie_titel").innerHTML = "Nieuw locatie toevoegen";
-    }
+     resetlocatieFormulier();  
     if (huidige_locatie_actie == "update") {
         document.getElementById("modal_locatie_titel").innerHTML = "Locatie wijzigen";
-        toonHuidigLocatieInFormulier();
+        toonHuidiglocatieInFormulier();
+    }
+    else {
+        document.getElementById("modal_locatie_titel").innerHTML = "Nieuw locatie toevoegen";
     }
 
     // verwijder vorige validatie
     document.getElementById("form_locatie").classList.remove('was-validated');
 }
 
-function toonLocatieVerwijderenModal(via_button) {
+function toonlocatieVerwijderenModal(via_button) {
     // VERWERKING
     huidige_locatie_id = via_button.dataset.locatieId;
-
+    
     // UITVOER
     document.getElementById("label_locatie_verwijderen").innerHTML = "Wil u locatie <strong>" + via_button.dataset.locatieNaam + "</strong> echt verwijderen?";
 }
 
 
-function toonHuidigLocatieInFormulier() {
+function toonHuidiglocatieInFormulier() {
 
     let parameters = {
         "endpoint": endpoint, 
@@ -238,6 +250,7 @@ function toonHuidigLocatieInFormulier() {
     dwapiRead(parameters).then(
         data => {
             let locatie = data.result.items[0];
+
             document.getElementById("input_locatie_naam").value = locatie.naam_campus;
             document.getElementById("input_locatie_adres").value = locatie.adres;
             document.getElementById("input_locatie_postcode").value = locatie.postcode;
@@ -245,11 +258,12 @@ function toonHuidigLocatieInFormulier() {
         }); 
 }
 
-function resetLocatieFormulier() {
+function resetlocatieFormulier() {
     document.getElementById("input_locatie_naam").value = "";
     document.getElementById("input_locatie_adres").value = "";
     document.getElementById("input_locatie_postcode").value = "";
     document.getElementById("input_locatie_stad").value = "";
+    
   
     document.getElementById("label_locatie_fout").classList.remove("visible");
     document.getElementById("label_locatie_fout").classList.add("invisible");
@@ -277,9 +291,10 @@ function toonSorteerRichting() {
 
 function verwerkResultaatNaLocatieActie(resultaat, modal_id) {
 
-    if (resultaat.status.success == true) {                              
+    if (resultaat.status.success == true) {                         
         toonLocatiesTabel();
         $("#" + modal_id).modal('hide');
+        $("#success").modal('hide');
     }
     else {
         label_fout = document.getElementById(modal_id).getElementsByClassName("note-danger")[0];

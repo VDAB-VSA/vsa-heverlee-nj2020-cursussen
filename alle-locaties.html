@@ -1,52 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <title>DIT</title>
     <!-- META TAGS -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="EEducation master is one of the best eEducational html template, it's suitable for all eEducation websites like university,college,school,online eEducation,tution center,distance eEducation,computer eEducation">
-    <meta name="keyword" content="eEducation html template, university template, college template, school template, online eEducation template, tution center template">
-    <!-- FAV ICON(BROWSER TAB ICON) -->
-    <link rel="shortcut icon" href="images/fav.ico" type="image/x-icon">
-    <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
-    <!-- FONTAWESOME ICONS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- ALL CSS FILES -->
-    <link href="css/materialize.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet" />
-    <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+    <script src="js/session.js"></script>
 </head>
-
 <body>
-    <!--== MAIN CONTRAINER ==-->
     <div class="container-fluid sb1">
-        <div class="row">
+        <div class="row navbar navbar-inverse">
             <!--== LOGO ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
-                <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
-                <a href="index.html" class="logo">
+            <div class="navbar-header col-md-9 col-sm-3 col-xs-6 sb1-1">
+                <a href="index.html" class="logo navbar-brand">
                     <h1 class="white-text">DIT</h1>
                 </a>
             </div>
             <!--== MY ACCCOUNT ==-->
-            <div class="col-md-2 col-sm-3 col-xs-6 sb1-2 white-text">
-                <ul>
-                    <li><a href="#" class="ho-dr-con-last waves-effect white-text"><i class="fa fa-user" aria-hidden="true"></i>My account</a>
+            <div class="col-md-3 col-sm-3 col-xs-6 sb1-2 white-text">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="ho-dr-con-last waves-effect white-text">
+                        <i class="far fa-user"></i>My account</a>
                     </li>
-                    <li><a href="#" class="ho-dr-con-last waves-effect white-text"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    <li><a href="#" type="button" class="ho-dr-con-last waves-effect white-text" id="button_logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                 </ul>
             </div>
@@ -66,27 +51,37 @@
                         <li>
                             <h5>Thomas H <span> Lennik</span></h5>
                         </li>
-                        <li></li>
+                     
                     </ul>
                 </div>
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                        <li><a href="admin.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
                         <li><a href="alle-cursisten.html"><i class="fa fa-users" aria-hidden="true"></i> Cursisten</a>
                         </li>
-                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa fa-book" aria-hidden="true"></i>Cursussen</a>
-                            <div class="collapsible-body left-sub-menu">
+                       
+                            <li><a
+                                class="accordion-header collapsible-header"
+                                data-mdb-toggle="collapse"
+                                href="#collapseExample"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                              >
+                              <i class="fa fa fa-book" aria-hidden="false"></i>Cursussen
+                              </a>
+                            <div id="collapseExample" class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="alle-cursisten.html">Cursussen Beheren</a>
+                                    <li><a href="alle-cursussen.html">Cursussen Beheren</a>
                                     </li>
                                     <li><a href="alle-categorieën.html">Categorieën Beheren</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="alle-locaties.html"><i class="fa fa-map-marker" aria-hidden="true"></i>Locaties</a>
+                        <li><a href="alle-locaties.html" class="menu-active"><i class="fa fa-map-marker" aria-hidden="true"></i>Locaties</a>
                         </li>
                         <li><a href="alle-bestellingen.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Bestellingen</a>
                         </li>
@@ -101,7 +96,7 @@
                     <ul>
                         <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                         </li>
-                        <li class="active-bre"><a href="#">Alle Locaties</a>
+                        <li class="active-bre"><a href="#">Alle Locatie</a>
                         </li>
                         <li class="page-back"><a href="index.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                         </li>
@@ -111,63 +106,68 @@
                 <div class="sb2-2-1">
                     <h2>LOCATIES</h2>
                 </div>
-
-                <div class="search-top">
+                <!--div class="alert alert-success">
+                    <strong>Success!</strong> This alert box could indicate a successful or positive action
+                </div-->
+                <div class="search-top-admin">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-9">
-                                <form>
-                                    <div class="sf-input col-md-9">
-                                    <div class="sf-type">
-                                        <div class="sf-input col-md-9">
-                                            <input type="text" id="input_filter_locatie" placeholder="Locatie">
+                                <div class="row p-3 col-md-12">
+                                    
+                                        <div class="sf-input col-md-6">
+                                            <input id="input_filter_locatie" type="search" class="form-control rounded" placeholder="Locatie Naam" aria-label="Search" aria-describedby="search-addon" />
                                         </div>
+                                        <!--div class="col-md-">
+                                            <select id="select_filter_categorie" class="form-control select-input rounded">
+                                                                   
+                                            </select>
+                                            <input id="input_filter_categorie" type="search" class="form-control rounded" placeholder="Categorie" aria-label="Search" aria-describedby="search-addon" />
+                                        </div-->
+                                        <div class="col-md-3">
+                                            <button type="button" id="button_locatie_zoek" class="btn btn-outline-primary">Filter</button>
+                                        </div>
+                                  
+                                    <div class="col-md-3">
+                                        <button 
+                                        id="button_locatie_toevoegen"
+                                        type="button" 
+                                        class="btn btn-primary button-toon-locatie-modal" 
+                                        data-mdb-toggle="modal" 
+                                        data-mdb-target="#modal_locatie"        
+                                        data-product-actie="create"
+                                        >
+                                        + Nieuwe Locatie
+                                        </button>
                                     </div>
-                                    <div class="sf-submit col-md-4">
-                                        <input type="button" id="button_locatie_zoek" value="Zoek">
-                                    </div>
-                                    </div>
-                                </form> 
-                            </div>
-                            <div class="sf-toevoegen form-outline col-sm-6">
-                                <input
-                                  id="button_locatie_toevoegen"
-                                  type="button" data-toggle="modal" 
-                                  data-target="#modal_locatie" 
-                                  class="btn btn-outline-primary button-toon-locatie-modal"        
-                                  data-locatie-actie="create" value="+ Locatie">
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            
 
-                <!--== User Details ==-->
+                <!--== cursussen Lijsts ==-->
                 <div class="sb2-2-3">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="box-inn-sp">
                                 <div class="inn-title">
                                     <h4>Locaties</h4>
-                                </div>
+                               </div>
                                 <div class="tab-inn">
-                                    <div class="table-responsive table-desi">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Locatie Id</th>
-                                                    <!--th>Naam</th-->
-                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_naam_campus" data-sorteer-op="naam_campus" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i> Naam</a></th>
-                                                 
-                                                    <th scope="col">Adres</th>
-                                                    <!--th>Postcode</th-->
-                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_postcode" data-sorteer-op="postcode" href="#"><i id="sort-col-1" class="datatable-sort-icon fa"></i> Postcode</a></th>
-													<th>Stad</th>
-													<th>Actie</th>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table datatable-table">
+                                            <thead class="datatable-header">
+                                                <tr id="hoofdrij">
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_locatie_id" data-sorteer-op="locatie_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_naam_campus" data-sorteer-op="naam_campus" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Naam</a></th>
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_adres" data-sorteer-op="adres" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Adres</a></th>
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_postcode" data-sorteer-op="postcode" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Postcode</a></th>
+                                                    <th scope="col"><a class="link-locaties-sorteren" id="link_sorteer_op_stad" data-sorteer-op="stad" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Stad</a></th>
+                                                    <th scope="col">Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody id="tabel_locaties">
-                                               <!--Toon locaties here-->
+                                            <tbody class="datatable-body" id="tabel_locaties">
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -177,7 +177,6 @@
                     </div>
                 </div>				
             </div>
-
         </div>
     </div>
 
@@ -193,41 +192,42 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 id="modal_locatie_titel" class="modal-title">Locatie</h5>
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
                 <div class="modal-body">
                     <label id="label_locatie_fout" class="note note-danger invisible">fout</label>
                     <form class="row g-3 needs-validation" id="form_locatie" novalidate>    
                         <!-- locatie input -->
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_locatie_naam">Campusnaam</label>
+                            <label class="form-label" for="input_locatie_naam">Naam</label>
                             <input required type="text" id="input_locatie_naam" class="form-control" validate/>
-                            <div class="invalid-feedback">Een campusnaam is verplicht.</div>
+                            <div class="invalid-feedback">Een locatienaam is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
                             <label class="form-label" for="input_locatie_adres">Adres</label>
-                            <input required type="text" id="input_locatie_adres" class="form-control validate" />
-                            <div class="invalid-feedback">Een Adres is verplicht.</div>
+                            <input required type="text" id="input_locatie_adres" class="form-control" validate/>
+                            <div class="invalid-feedback">Een adres is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
                             <label class="form-label" for="input_locatie_postcode">Postcode</label>
-                            <input required type="number" id="input_locatie_postcode" class="form-control validate" />
-                            <div class="invalid-feedback">Een Postcode is verplicht.</div>
+                            <input required type="number" id="input_locatie_postcode" class="form-control" validate/>
+                            <div class="invalid-feedback">Een postcode is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
                             <label class="form-label" for="input_locatie_stad">Stad</label>
-                            <input required type="text" id="input_locatie_stad" class="form-control validate" />
-                            <div class="invalid-feedback">Een Stad is verplicht.</div>
-                        </div>    
+                            <input required type="text" id="input_locatie_stad" class="form-control" validate/>
+                            <div class="invalid-feedback">Een stad is verplicht.</div>
+                        </div>
                         <!-- Submit button -->
                         <div class="form-outline mb-4">
                             <button 
                             id="button_locatie_bewaren" 
+                            type="button"
                             class="btn btn-outline-primary">Bewaren</button>
                             <button 
                             type="button" 
                             class="btn btn-outline-dark" 
-                            data-dismiss="modal">Annuleren</button>
+                            data-mdb-dismiss="modal">Annuleren</button>
                         </div>
                     </form>
                 </div>
@@ -246,7 +246,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Locatie verwijderen</h5>
-                    <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
                 <div class="modal-body">
                     <label id="label_locatie_verwijderen_fout" class="note note-danger invisible"></label>

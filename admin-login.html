@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
     <title>DIT</title>
-    <meta charset="utf-8">
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Education master is one of the best educational html template, it's suitable for all education websites like university,college,school,online education,tution center,distance education,computer education">
-    <meta name="keyword" content="education html template, university template, college template, school template, online education template, tution center template">
-    <!-- FAV ICON(BROWSER TAB ICON) -->
-    <link rel="shortcut icon" href="images/logo_fav.png" type="image/x-icon">
-    <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
-    <!-- FONTAWESOME ICONS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- ALL CSS FILES -->
-    <link href="css/materialize.css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
+    
 </head>
 
 <body>
@@ -31,31 +27,33 @@
                     <div class="log-in-pop-right" id="admin_inloggen">
                         <h4>Inloggen</h4>
                         <!--p>Heb je geen account? Maak binnen 1 minuten een account aan.</p-->
-                        <form class="s12">
+                        <form class="s12 needs-validation" id="form_inloggen" novalidate>
                             <div>
                                 <div class="input-field s12">
-                                    <input type="text" data-ng-model="name" class="validate">
-                                    <label class="">Gebruikersnaam</label>
+                                    <label for="email" class="form-label">Gebruikersemail</label>
+                                    <input required id="email" type="email" class="form-control rounded" placeholder="E-mail" validate/>
+                                    <div class="invalid-feedback">Een gebruikeremail is verplicht.</div>
                                 </div>
                             </div>
                             <div>
                                 <div class="input-field s12">
-                                    <input type="password" class="validate">
-                                    <label>Wachtwoord</label>
+                                    <label for="wachtwoord" class="form-label">Wachtwoord</label>
+                                    <input required id="wachtwoord" type="password" class="form-control rounded" placeholder="Paswoord" validate/>
+                                    <div class="invalid-feedback">Een Wachtwoord is verplicht.</div>
                                 </div>
                             </div>
                             <div>
                                 <div class="s12 log-ch-bx">
                                     <p>
-                                        <input type="checkbox" id="test5">
-                                        <label for="test5">Onthoud</label>
+                                        <input type="checkbox" id="onthoud">
+                                        <label for="onthoud">Onthoud</label>
                                     </p>
                                 </div>
                             </div>
                             <hr>
                             <div>
                                 <div>
-                                    <input type="submit" value="Inloggen" class="inloggen_button">
+                                    <input id="button_inloggin" type="button" value="Inloggen" class="inloggen_button">
                                 </div>
                             </div>
                             <!--div>
@@ -73,6 +71,9 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/dwapi.js"></script>
+    <script src="js/login.js"></script>
+    <!--script src="js/session.js"></script-->
 </body>
 
 </html>

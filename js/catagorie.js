@@ -5,13 +5,12 @@ const project = "4nqmlRAiE5cG";
 let huidige_categorie_actie;
 let huidige_categorie_id;
 let huidige_filter_waardes = [];
-let huidige_sorteer_waarde = ["naam", "ASC"];
+let huidige_sorteer_waarde = ["categorie_id", "ASC"];
 
 window.onload = function(){
     toonCategorieënTabel();
     toonSorteerRichting();
     eventListenersVoorStatischeElementen();
-   // categorieenLadenInSelects();
 }
 
 function toonCategorieënTabel() {
@@ -22,55 +21,64 @@ function toonCategorieënTabel() {
         "entity": "categorie",
         "filter": huidige_filter_waardes,
         "sort": huidige_sorteer_waarde
-    }
+     }
     
     dwapiRead(parameters).then(
         data => {
             let tabel_categorieën_html =  "<table>";
-            data.result.items.forEach(function(categorie) {
 
-                tabel_categorieën_html += `<tr><td>${categorie.categorie_id}</td>
-                    <td>${categorie.naam}</td>  
-                    <td>${categorie.omschrijving}</td> 
-                    <td>
-                    <button data-categorie-id='${categorie.categorie_id}' 
-                    data-categorie-actie='update' class='button-toon-categorie-modal waves-effect'
-                    data-toggle='modal' data-target='#modal_categorie'><i class='fa fa-edit bg-edit'></i></button>
-                    <button data-categorie-id='${categorie.categorie_id}'
-                    data-categorie-naam='${categorie.naam}'
-                    data-toggle='modal' data-target='#modal_categorie_verwijderen'>
-                    <i class='fa fa-trash bg-remove'></i>
-                    </button></td></tr></tbody>`;
+            data.result.items.forEach(function(categorie) {
+                tabel_categorieën_html += "<tr>"+
+                    "<td>" + categorie.categorie_id + "</td>" +
+                    "<td>" + categorie.naam + "</td>" +
+                    "<td>" + categorie.omschrijving + "</td>" +               
+                    "<td>"+
+                    "<button "+
+                    "data-categorie-id='" + categorie.categorie_id + "' "+ 
+                    "data-categorie-actie='update' " +
+                    "class='button-toon-categorie-modal btn btn-outline-primary' "+
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_categorie'>" +
+                    "<i class='fa fa-pen'></i>" +
+                    "</button>" +
+                    "<button " +
+                    "data-categorie-id='" + categorie.categorie_id + "' " +
+                    "data-categorie-naam='" + categorie.naam + "' " +
+                    "class='button-toon-categorie-verwijderen-modal btn btn-outline-danger'" +
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_categorie_verwijderen'>" + 
+                    "<i class='fa fa-trash'></i>" +
+                     "</button>" + "</td>" + "</tr>";
                 });
-            tabel_categorieën_html += "</table>";
+           // tabel_categoriesen_html += "</table>";
             document.getElementById("tabel_categorieën").innerHTML = tabel_categorieën_html;
             eventListenersVoorDynamischeElementen();            
        }
     )
 }
 
-
 function categorieBewaren() {
     // INVOER
-    let categorie_naam = document.getElementById("input_categorie_naam").value;
-    let categorie_omschrijving = document.getElementById("input_categorie_omschrijving").value;
-
-
+   let categorie_naam = document.getElementById("input_categorie_naam").value;
+   let categorie_omschrijving = document.getElementById("input_categorie_omschrijving").value;
+  
     // VERWERJING
     let form_categorie = document.getElementById("form_categorie");
     if (form_categorie.checkValidity()) {
         let categorie = {
             "naam": categorie_naam, 
-            "omschrijving": categorie_omschrijving, 
+            "omschrijving": categorie_omschrijving 
         };
- 
+
         let parameters = {
             "endpoint": endpoint, 
             "project": project,
             "token": token, 
             "entity": "categorie",
             "values": categorie};
-
+        
         if (huidige_categorie_actie == "update") {
             parameters.filter = ["categorie_id", "=", huidige_categorie_id];
             dwapiUpdate(parameters).then(
@@ -102,7 +110,8 @@ function categorieVerwijderen(categorie_id) {
         "project": project,
         "token": token, 
         "entity": "categorie",
-        "filter": ["categorie_id", "=", categorie_id]}
+        "filter": ["categorie_id", "=", categorie_id]
+    }
 
     // VERWERKING
     dwapiDelete(parameters).then(
@@ -116,12 +125,12 @@ function categorieënFilteren() {
     // INVOER
     huidige_filter_waardes = [];
     let filter_naam = document.getElementById("input_filter_categorie").value;
-
+    
     // VERWERKING
     if (String(filter_naam) != "") {
         huidige_filter_waardes.push(["naam", "LIKE", "%" + filter_naam + "%"]);
     }
-    
+
     // UITVOER
     toonCategorieënTabel();
 }
@@ -129,7 +138,6 @@ function categorieënFilteren() {
 function categorieënSorteren(link) {
     // INVOER
     let sorteer_op = link.dataset.sorteerOp;
-
 
     // VERWERKING    
     let sorteer_richting = "ASC";
@@ -163,65 +171,66 @@ function eventListenersVoorStatischeElementen() {
     let sorteer_links;
     sorteer_links = document.querySelectorAll('.link-categorieën-sorteren');
     for (var i = 0; i < sorteer_links.length; i++) {
-        sorteer_links[i].addEventListener('click', function() {            
+        sorteer_links[i].addEventListener('click', function() {     
             categorieënSorteren(this);
         })
     }
 }
 
 function eventListenersVoorDynamischeElementen() {
-    /* "categorie toevoegen" knop (statisch) en "categorie wijzigen" knoppen (dynamisch) */
+    /* "locatie toevoegen" knop (statisch) en "locatie wijzigen" knoppen (dynamisch) */
     let toon_categorie_modal_buttons;
     toon_categorie_modal_buttons = document.querySelectorAll('.button-toon-categorie-modal');
     if (toon_categorie_modal_buttons) {
         for (var i = 0; i < toon_categorie_modal_buttons.length; i++) {
             toon_categorie_modal_buttons[i].addEventListener('click', function() {            
-                toonCategorieModal(this);
+                tooncategorieModal(this);
             });            
         }        
     }
 
-    /* "categorie verwijderen" knoppen */
+    /* "locatie verwijderen" knoppen */
     buttons = document.querySelectorAll('.button-toon-categorie-verwijderen-modal');
     if (buttons) {
         for (var i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function() {                
-                toonCategorieVerwijderenModal(this);
+            buttons[i].addEventListener('click', function() {               
+                tooncategorieVerwijderenModal(this);
             });            
         }           
     }
 }
 
-function toonCategorieModal(via_button) {
+
+function tooncategorieModal(via_button) {
 
     // INVOER
     huidige_categorie_actie = via_button.dataset.categorieActie;
     huidige_categorie_id = via_button.dataset.categorieId;
- 
+
     // UITVOER
-    resetCategorieFormulier();  
-    if (huidige_categorie_actie == "create") {
-        document.getElementById("modal_categorie_titel").innerHTML = "Nieuw categorie toevoegen";
-    }
+     resetcategorieFormulier();  
     if (huidige_categorie_actie == "update") {
         document.getElementById("modal_categorie_titel").innerHTML = "Categorie wijzigen";
-        toonHuidigCategorieInFormulier();
+        toonHuidigcategorieInFormulier();
+    }
+    else {
+        document.getElementById("modal_categorie_titel").innerHTML = "Nieuw categorie toevoegen";
     }
 
     // verwijder vorige validatie
     document.getElementById("form_categorie").classList.remove('was-validated');
 }
 
-function toonCategorieVerwijderenModal(via_button) {
+function tooncategorieVerwijderenModal(via_button) {
     // VERWERKING
     huidige_categorie_id = via_button.dataset.categorieId;
-
+    
     // UITVOER
     document.getElementById("label_categorie_verwijderen").innerHTML = "Wil u categorie <strong>" + via_button.dataset.categorieNaam + "</strong> echt verwijderen?";
 }
 
 
-function toonHuidigCategorieInFormulier() {
+function toonHuidigcategorieInFormulier() {
 
     let parameters = {
         "endpoint": endpoint, 
@@ -234,15 +243,15 @@ function toonHuidigCategorieInFormulier() {
     dwapiRead(parameters).then(
         data => {
             let categorie = data.result.items[0];
+
             document.getElementById("input_categorie_naam").value = categorie.naam;
             document.getElementById("input_categorie_omschrijving").value = categorie.omschrijving;
         }); 
 }
 
-function resetCategorieFormulier() {
+function resetcategorieFormulier() {
     document.getElementById("input_categorie_naam").value = "";
     document.getElementById("input_categorie_omschrijving").value = "";
-
   
     document.getElementById("label_categorie_fout").classList.remove("visible");
     document.getElementById("label_categorie_fout").classList.add("invisible");
