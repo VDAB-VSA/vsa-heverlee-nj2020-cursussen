@@ -285,6 +285,12 @@ width: 30% !important;
    font-family: 'Courier New', Courier, monospace;
    float: right;
 }
+
+.betaal_bedrag h4 {
+   border: #e25f30 solid 2px;
+   border-radius: 1px;
+   padding: 5px;
+}
 .home-top-cour {
     position: relative;
     overflow: hidden;
