@@ -3253,15 +3253,14 @@ iframe{
 .log-ch-bx p input {
 }
 
-/* to hide if checkbox "ik ben bedrijf" not checked
-.form_btw_nummer {
+/* to hide if checkbox "ik ben bedrijf" not checked */
+
+.form_bedrijf {
   display: none;
 }
 
-input[type=checkbox]:checked ~ input[type=text] {
-  display: inline;
-}
-*/
+
+
 
 .success_boodschap p {
    color : green
