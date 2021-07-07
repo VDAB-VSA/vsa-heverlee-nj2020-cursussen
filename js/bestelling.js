@@ -21,29 +21,29 @@ function toonCursussenTabel() {
         "entity": "aankoop",
         "filter": huidige_filter_waardes,
         "sort": huidige_sorteer_waarde,
-        "relation": [{"pri_entity": "aankoop", "pri_key": "cursus_id", "sec_entity": "cursus", "sec_key": "cursus_id"}, {"pri_entity": "aankoop", "pri_key": "user_id", "sec_entity": "user", "sec_key": "user_id"}],
+        "relation": [{"pri_entity": "aankoop", "pri_key": "user_id", "sec_entity": "user", "sec_key": "user_id"}, {"pri_entity": "aankoop", "pri_key": "aankoop_id", "sec_entity": "aankoop_cursus", "sec_key": "aankoop_id"}, {"pri_entity": "cursus", "pri_key": "cursus_id", "sec_entity": "aankoop_cursus", "sec_key": "cursus_id"}],
      }
     
     dwapiRead(parameters).then(
         data => {
             let tabel_aankoop_html =  "<table>";
-            //console.log(data.result.assets_path);
+
             data.result.items.forEach(function(aankoop) {
                 let user_naam = "";
-                let cursus_naam = "";
                 if (aankoop.user_id != null) {
-                    user_naam = aankoop.user.items[aankoop.user_id].Naam;
+                    let naam = aankoop.user.items[aankoop.user_id].naam;
+                    let voornaam = aankoop.user.items[aankoop.user_id].voornaam;
+                    user_naam = voornaam + "," + naam;
                 }
-                if (aankoop.cursus_id != null) {
-                  cursus_naam = aankoop.cursus.items[aankoop.cursus_id].titel;
-                }
+                let cursus = aankoop.aankoop_cursus.items[aankoop.aankoop_id].cursus_id;
+
                 tabel_aankoop_html += "<tr>"+
                     "<td>" + aankoop.aankoop_id + "</td>" +
                     "<td>" + user_naam + "</td>" + 
-                    "<td>" + cursus_naam + "</td>" +
+                    "<td>€" + aankoop.subtotaal + "</td>" +
+                    "<td>€" + aankoop.btw + "</td>" + 
+                    "<td>€" + aankoop.totaal_bedrag + "</td>" + 
                     "<td>" + aankoop.aankoop_datum + "</td>" +  
-                    "<td>" + aankoop.prijs + "</td>" +
-                    "<td>" + aankoop.btw + "</td>" + 
                     "<td>" + aankoop.betaal_status + "</td>" +
                     "<td>" + aankoop.betaal_datum + "</td>" + 
                     "<td>"+
@@ -56,7 +56,8 @@ function toonCursussenTabel() {
                     "data-mdb-target='#modal_aankoop'>" +
                     "<i class='fa fa-print'></i>" +
                     "</button>"
-                    + "</td>" + "</tr>";
+                    + "</td>" + "</tr>" +
+                    `<tr><td colspan="9">Cursus ${cursus}</td></tr>`;
                 });
            // tabel_cursussen_html += "</table>";
             document.getElementById("tabel_aankopen").innerHTML = tabel_aankoop_html;
@@ -174,8 +175,8 @@ function cursussenFilteren() {
     // VERWERKING
     if (String(filter_naam) != "") {
         huidige_filter_waardes.push(["aankoop_id", "=", filter_naam]);
-        huidige_filter_waardes.push(["prijs", "=", filter_naam]);
-        huidige_filter_waardes.push(["aankoop_datum", "=", filter_naam]);
+        //huidige_filter_waardes.push(["prijs", "=", filter_naam]);
+        //huidige_filter_waardes.push(["aankoop_datum", "=", filter_naam]);
     }
     
     // UITVOER
@@ -301,7 +302,7 @@ function toonHuidigCursusInFormulier() {
             document.getElementById("input_cursus_uren").value = cursus.aantal_lesuren;
             document.getElementById("input_cursus_omschrijving").value = cursus.omschrijving;
             document.getElementById("input_cursus_platsen").value = cursus.max_aantal_plaatsen;
-            console.log(cursus.afbeelding);
+            
             let cursus_beeld_origineel = "";
             if (cursus.afbeelding != "") {
                 cursus_beeld_origineel = JSON.stringify(cursus.afbeelding);

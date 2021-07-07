@@ -84,9 +84,11 @@ function toonCursussenTabel() {
                     </div>`
                 });
                 tabel_cursussen_html += "</div>";
+                
                 if(document.getElementById("toon-cursus")){
                     document.getElementById("toon-cursus").innerHTML =  tabel_cursussen_html;
                 }
+              
         })
 }
 

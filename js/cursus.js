@@ -8,14 +8,31 @@ let huidige_filter_waardes = [];
 let huidige_sorteer_waarde = ["cursus_id", "ASC"];
 
 window.onload = function(){
+    checkSessie();
     toonCursussenTabel();
     toonSorteerRichting();
     eventListenersVoorStatischeElementen();
     categorieenLadenInSelects();
     locatiesLadenInSelects();
 }
-
+function checkSessie() {
+let gebruiker = JSON.parse(window.sessionStorage.getItem("user"));
+console.log(gebruiker);
+//console.log('sess', gebruiker);
+  if(gebruiker == null){
+   /*  let session = gebruiker[0].token != null ? "true" : "false";
+    if(session == false) {
+      //alert("Your Session has expired");
+      window.location.replace("index.html");
+    }
+  }
+  else { */
+  //setTimeout(() => redirectMessage, 40000);
+  window.location = "index.html";
+  }
+}
 function toonCursussenTabel() {
+    
     let parameters = {
         "endpoint": endpoint, 
         "project": project,
@@ -25,7 +42,12 @@ function toonCursussenTabel() {
         "sort": huidige_sorteer_waarde,
         "relation": [{"pri_entity": "cursus", "pri_key": "categorie_id", "sec_entity": "categorie", "sec_key": "categorie_id"}, {"pri_entity": "cursus", "pri_key": "locatie_id", "sec_entity": "locatie", "sec_key": "locatie_id"}],
      }
-    
+     /* Gebrukers Profiel naam */
+     let profiel_naam = '';
+     let gebruiker = JSON.parse(window.sessionStorage.getItem("user"));
+     (gebruiker) ? profiel_naam = `<h5>${gebruiker[0].voornaam}<span> ${gebruiker[0].naam}</span></h5>`:profiel_naam = `<h5>Geen Naam<span>Admin</span></h5>` 
+     document.getElementById('gebruiker_naam').innerHTML = profiel_naam;
+     
     dwapiRead(parameters).then(
         data => {
             let tabel_cursussen_html =  "<table>";
@@ -218,18 +240,34 @@ function cursussenSorteren(link) {
 // ------------------ //
 
 function eventListenersVoorStatischeElementen() {
-
-    document.getElementById("button_cursus_bewaren").addEventListener('click', function() {
+    let cursus_bewaren = document.getElementById("button_cursus_bewaren");
+    if(cursus_bewaren){
+        cursus_bewaren.addEventListener('click', function() {
+            cursusBewaren();
+        })
+    }
+    let cursus_verwijdren = document.getElementById("button_cursus_verwijderen");
+    if(cursus_verwijdren){
+        cursus_verwijdren.addEventListener('click', function() {
+            cursusVerwijderen(huidige_cursus_id);
+        })
+    }
+    let cursus_zoek = document.getElementById("button_cursus_zoek");
+    if(cursus_zoek){
+        cursus_zoek.addEventListener('click', function() {
+            cursussenFilteren();
+        })
+    }
+    /*document.getElementById("button_cursus_bewaren").addEventListener('click', function() {
         cursusBewaren();
     })
-
     document.getElementById("button_cursus_verwijderen").addEventListener('click', function() {
         cursusVerwijderen(huidige_cursus_id);
     })
 
     document.getElementById("button_cursus_zoek").addEventListener('click', function() {
         cursussenFilteren();
-    })
+    })*/
 
     let sorteer_links;
     sorteer_links = document.querySelectorAll('.link-cursussen-sorteren');
