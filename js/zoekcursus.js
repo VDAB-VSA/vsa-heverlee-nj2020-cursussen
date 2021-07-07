@@ -1,7 +1,3 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjQ5ODg2MjQsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNDk1MjYyNH0.LfLNZxFzMbipADXygMXoNMQo5yiXlLtuxekPTsFiY7Q";
-const endpoint = "https://dwapi.dev/item";
-const project = "4nqmlRAiE5cG";
-
 let huidige_cursus_actie;
 let huidige_cursus_id;
 let huidige_filter_waardes = [];
@@ -114,6 +110,7 @@ function cursussenFilteren() {
     if (String(filter_naam) != "") {
         huidige_filter_waardes.push(["titel", "LIKE", "%" + filter_naam + "%"]);
     }
+    
     tabel_hoofd = `<div class="row">
         <div class="con-title">
             <h2>Cursus<span>Zoekresultaat</span></h2>
@@ -550,7 +547,7 @@ function eventListenersVoorStatischeElementen() {
         cursussenFilteren();
     });
 }
-if(document.getElementById("button_cursus_zoek")){
+if(document.getElementById("button-toon-cursus-detail")){
     document.getElementById("button-toon-cursus-detail").addEventListener('click', function() {
       //  let id = window.location.id;
         detailFilteren();

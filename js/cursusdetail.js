@@ -124,7 +124,7 @@ function detailFilteren() {
     let url = window.location.href;
     let id = url.substring(url.lastIndexOf("=")+1);
 
-    // VERWERKING
+    // VERWERK
     if (id) {
         huidige_filter_waardes.push(["cursus_id", "=", id]);
     }
@@ -227,9 +227,8 @@ function toonZoekResultaatTabel() {
                 });
                }
               tabel_cursussen_html += "</div>";
-            if(document.getElementById("index-cursus-zoek")){
-                document.getElementById("index-cursus-zoek").innerHTML =  tabel_cursussen_html;
-            }
+            
+                document.getElementById("cursus-zoek-rusaltaat").innerHTML =  tabel_cursussen_html;
         })
 }
 
@@ -346,51 +345,17 @@ function toonDetailTabel(){
 
 //Gelijkaardige cursusen
 function gelijkaardigeCursus(categorie, id){
-
     // INVOER
     huidige_filter_waardes = [];
 
     //VERWERKING
-    huidige_filter_waardes = ["categorie_id", "=", categorie];
+    huidige_filter_waardes = [["categorie_id", "=", categorie], ["cursus_id", "<>", id] ];
 
     //UITVOER 
-   let aa = toooon(id);
-   console.log(aa);
-   // toonGelijkaardigeCursusTabel(); 
+   toonGelijkaardigeCursusTabel(); 
 }
 
 
-function toooon(id){
-    //let cursussen;
-    let parameters = {
-        "endpoint": endpoint, 
-        "project": project,
-        "token": token, 
-        "entity": "cursus",
-        "filter": huidige_filter_waardes,
-        "sort": huidige_sorteer_waarde,
-        "relation": [{"pri_entity": "cursus", "pri_key": "categorie_id", "sec_entity": "categorie", "sec_key": "categorie_id"}, {"pri_entity": "cursus", "pri_key": "locatie_id", "sec_entity": "locatie", "sec_key": "locatie_id"}],
-     }
-     dwapiRead(parameters).then(
-        data => {
-           let items = data.result.items;
-           let idds;
-           items.forEach(cc => {
-              // console.log(cc.cursus_id);
-              idds.push(cc.id);
-           })
-           
-           /*for(let i = 0; i < items.length; i ++){
-            let result = items[i];
-            if(result.cursus_id !== id){
-                console.log(result);
-            }
-        }*/
-    })
-    //return;
-}
-
-//Toon GelijkaardigeCursusen
 function toonGelijkaardigeCursusTabel(){
 
     //INVOER
@@ -410,7 +375,19 @@ function toonGelijkaardigeCursusTabel(){
             let gelijkaardige_cursussen =  `<div class="cor-p4">
             <h3>Gelijkaardige cursussen</h3>
             <div>`;
+
             let cursussen = data.result;
+            if(cursussen.item_count == 0){
+               gelijkaardige_cursussen += `
+                <div class="com-sp pad-bot-70">
+                    <div class="row">
+                        <p class="no-cursus alert alert-danger">
+                          Geen gelijkaardige cursus vinden. 
+                        </p>
+                    </div>
+                </div>`;
+            }
+           else {
             cursussen.items.forEach(function(cursus) {            
                     let locatie_naam = "";
                     let categorie_naam = "";
@@ -457,6 +434,7 @@ function toonGelijkaardigeCursusTabel(){
                             </div>
                          </div>`
                 });
+            }
               gelijkaardige_cursussen += "</div></div>";
         
               //UITVOER
