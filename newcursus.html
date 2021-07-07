@@ -29,7 +29,8 @@
                     <li><a href="#" class="ho-dr-con-last waves-effect white-text">
                         <i class="far fa-user"></i>My account</a>
                     </li>
-                    <li><a href="#" type="button" class="ho-dr-con-last waves-effect white-text" id="button_logout" onclick="logout();"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    <li><a href="#" class="ho-dr-con-last waves-effect white-text">
+                        <i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                 </ul>
             </div>
@@ -60,28 +61,28 @@
                         <li><a href="alle-cursisten.html"><i class="fa fa-users" aria-hidden="true"></i> Cursisten</a>
                         </li>
                        
-                        <li><a
-                            class="accordion-header collapsible-header"
-                            data-mdb-toggle="collapse"
-                            href="#collapseExample"
-                            role="button"
-                            aria-expanded="false"
-                            aria-controls="collapseExample"
-                          >
-                          <i class="fa fa fa-book" aria-hidden="false"></i>Cursussen
-                          </a>
+                            <li><a
+                                class="accordion-header menu-active"
+                                data-mdb-toggle="collapse"
+                                href="#collapseExample"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                              >
+                              <i class="fa fa fa-book" aria-hidden="true"></i>Cursussen
+                              </a>
                             <div id="collapseExample" class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="alle-cursussen.html">Cursussen Beheren</a>
+                                    <li><a href="alle-cursussen.html"  class="menu-active-sub">Cursussen Beheren</a>
                                     </li>
                                     <li><a href="alle-categorieën.html">Categorieën Beheren</a>
                                     </li>
                                 </ul>
                             </div>
-                        </li>  
+                        </li>
                         <li><a href="alle-locaties.html"><i class="fa fa-map-marker" aria-hidden="true"></i>Locaties</a>
                         </li>
-                        <li><a href="alle-bestellingen.html" class="menu-active"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Bestellingen</a>
+                        <li><a href="alle-bestellingen.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Bestellingen</a>
                         </li>
                     </ul>
                 </div>
@@ -94,7 +95,7 @@
                     <ul>
                         <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
                         </li>
-                        <li class="active-bre"><a href="#">Alle Bestellingen</a>
+                        <li class="active-bre"><a href="#">Alle Cursussen</a>
                         </li>
                         <li class="page-back"><a href="index.html"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
                         </li>
@@ -102,16 +103,23 @@
                 </div>
                 <!--== DASHBOARD INFO ==-->
                 <div class="sb2-2-1">
-                    <h2>BESTELLINGEN</h2>
+                    <h2>CURSUSSEN</h2>
                 </div>
 
                 <div class="search-top-admin">
                     <div class="container">
                         <div class="row">
+                            
                                 <div class="row p-3 col-md-12">
                                     
-                                        <div class="sf-input col-md-6">
-                                            <input id="input_filter_bestelling" type="search" class="form-control rounded" placeholder="Bestellingen" aria-label="Search" aria-describedby="search-addon" />
+                                        <div class="sf-input col-md-2">
+                                            <input id="input_filter_cursus" type="search" class="form-control rounded" placeholder="Cursus" aria-label="Search" aria-describedby="search-addon" />
+                                        </div>
+                                        <div class="sf-input col-md-2">
+                                            <input id="input_filter_docent" type="search" class="form-control rounded" placeholder="Docent" aria-label="Search" aria-describedby="search-addon" />
+                                        </div>
+                                        <div class="sf-input col-md-2">
+                                            <input id="input_filter_datum" type="search" class="form-control rounded" placeholder="Start Datum" aria-label="Search" aria-describedby="search-addon" />
                                         </div>
                                         <!--div class="col-md-">
                                             <select id="select_filter_categorie" class="form-control select-input rounded">
@@ -120,10 +128,10 @@
                                             <input id="input_filter_categorie" type="search" class="form-control rounded" placeholder="Categorie" aria-label="Search" aria-describedby="search-addon" />
                                         </div-->
                                         <div class="col-md-3">
-                                            <button type="button" id="button_bestelling_zoek" class="btn btn-outline-primary">Filter</button>
+                                            <button type="button" id="button_cursus_zoek" class="btn btn-outline-primary">Filter</button>
                                         </div>
                                   
-                                    <!--div class="col-md-3">
+                                    <div class="col-md-3">
                                         <button 
                                         id="button_cursus_toevoegen"
                                         type="button" 
@@ -134,7 +142,7 @@
                                         >
                                         + Nieuwe Cursus
                                         </button>
-                                    </div-->
+                                    </div>
                                 </div>
  
                                 
@@ -177,25 +185,28 @@
                         <div class="col-md-12">
                             <div class="box-inn-sp">
                                 <div class="inn-title">
-                                    <h4>Bestellingen</h4>
+                                    <h4>Cursussen</h4>
                                </div>
                                 <div class="tab-inn">
                                     <div class="table-responsive">
                                         <table class="table table-hover table datatable-table">
                                             <thead class="datatable-header">
                                                 <tr id="hoofdrij">
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_aankoop_id" data-sorteer-op="aankoop_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
-                                                    <th scope="col">Klantnaam</th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_subtotaal" data-sorteer-op="subtotaal" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Subtotal</a></th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_btw" data-sorteer-op="btw" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Btw</a></th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_totaal_bedrag" data-sorteer-op="totaal_bedrag" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Totalprijs</a></th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_aankoop_datum" data-sorteer-op="aankoop_datum" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Aankoopdatum</a></th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_betaal_status" data-sorteer-op="betaal_status" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Betaalstatus</a></th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_betaal_methode" data-sorteer-op="betaal_methode" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Betaaldatum</a></th>
+                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_cursus_id" data-sorteer-op="cursus_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
+                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_titel" data-sorteer-op="titel" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Titel</a></th>
+                                                    <th scope="col">Catagorie</th>
+                                                    <th scope="col">Locatie</th>
+                                                    <!--th>Docent</th-->
+                                                    <th scope="col">
+                                                        <a class="link-cursussen-sorteren" id="link_sorteer_op_docent" data-sorteer-op="docent" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Docent</a></th>
+                                                    <th scope="col">Max plaatsen</th>
+                                                    <th scope="col">Uren</th>
+                                                    <th scope="col">Begin Datum</th>
+                                                    <th scope="col">Eind Datum</th>
                                                     <th scope="col">Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="datatable-body" id="tabel_aankopen">
+                                            <tbody class="datatable-body" id="tabel_cursussen">
                                                 <!--tr>
                                                     <td>1</td>
                                                     <td>
@@ -290,133 +301,111 @@
     <!--Modal -->
     <div
     class="modal fade"
-    id="modal_aankoop"
+    id="modal_cursus"
     tabindex="-1"
-    aria-labelledby="modal_aankoop"
-    aria-hidden="true"   
+    aria-labelledby="modal_cursus"
+    aria-hidden="true"        
     >
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modal_cursus_titel" class="modal-title">Aankoop Print</h5>
+                    <h5 id="modal_cursus_titel" class="modal-title">Cursus</h5>
                     <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
-                <div class="modal-body col-ls=g-12">
-                    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 padding">
-                        <div class="card">
-                            <div class="card-header p-4">
-                                <a class="pt-2 d-inline-block" href="index.html" data-abc="true">DIT.be</a>
-                                <div class="float-right">
-                                    <h3 class="mb-0">Invoice #BBB10234</h3>
-                                    Date: 12 July,2021
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="row mb-4">
-                                    <div class="col-sm-6">
-                                        <h5 class="mb-3">From:</h5>
-                                        <h3 class="text-dark mb-1">DIT</h3>
-                                        <div>75 Straat</div>
-                                        <div>1750 Lennik, Belgium</div>
-                                        <div>Email: info@dit.be</div>
-                                        <div>Phone: +32666666666</div>
-                                    </div>
-                                    <div class="col-sm-6 ">
-                                        <h5 class="mb-3">To:</h5>
-                                        <h3 class="text-dark mb-1">Klant</h3>
-                                        <div>333 straat</div>
-                                        <div>Leuven, Belgium</div>
-                                        <div>Email: klant@gmail.com</div>
-                                        <div>Phone: +3234556666</div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive-sm">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th class="center">#</th>
-                                                <th>Item</th>
-                                                <th>Omschrijving</th>
-                                                <th class="right">Prijs</th>
-                                                <th class="center">BTW</th>
-                                                <th class="right">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="center">1</td>
-                                                <td class="left strong">Java</td>
-                                                <td class="left">Begin op 23.98/2021</td>
-                                                <td class="right">100</td>
-                                                <td class="center">10</td>
-                                                <td class="right">Euro115</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="center">2</td>
-                                                <td class="left strong">PHP</td>
-                                                <td class="left">Begin op 23.98/2021</td>
-                                                <td class="right">100</td>
-                                                <td class="center">10</td>
-                                                <td class="right">Euro115</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="center">3</td>
-                                                <td class="left strong">C# .Net</td>
-                                                <td class="left">Begin op 23.98/2021</td>
-                                                <td class="right">100</td>
-                                                <td class="center">10</td>
-                                                <td class="right">Euro115</td>
-                                            </tr>                                         
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-4 col-sm-5">
-                                    </div>
-                                    <div class="col-lg-12 col-sm-5 ml-auto">
-                                        <table class="table table-clear">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="left">
-                                                        <strong class="text-dark">Subtotal</strong>
-                                                    </td>
-                                                    <td class="right">$28,809,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="left">
-                                                        <strong class="text-dark">Discount (20%)</strong>
-                                                    </td>
-                                                    <td class="right">$5,761,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="left">
-                                                        <strong class="text-dark">VAT (10%)</strong>
-                                                    </td>
-                                                    <td class="right">$2,304,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="left">
-                                                        <strong class="text-dark">Total</strong> </td>
-                                                    <td class="right">
-                                                        <strong class="text-dark">$20,744,00</strong>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white">
-                                <p class="mb-0">Dit, 1750 Lennik, Belgium  +32466666666</p>
-                            </div>
-                            <div>
-                                <form>
-                                    <input type="button" value="Print" id="print" />
-                                  </form>
-                            </div>
-
+                <div class="modal-body">
+                    <label id="label_cursus_fout" class="note note-danger invisible">fout</label>
+                    <form class="row g-3 needs-validation" id="form_cursus" novalidate>    
+                        <!-- locatie input -->
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_naam">Titel</label>
+                            <input required type="text" id="input_cursus_naam" class="form-control" validate/>
+                            <div class="invalid-feedback">Een cursustitel is verplicht.</div>
                         </div>
-                    </div>
+                        <div class="form-group mb-4" id="select_locatie">
+
+                            <!--label class="form-label" for="input_cursus_locatie">Locatie</label>
+                            <input required type="text" id="input_cursus_locatie" class="form-control" validate/>
+                            <div class="invalid-feedback">Een cursuslocatie is verplicht.</div-->
+                        </div>
+                        <div class="form-group mb-4" id="select_categorie">
+                            <!--label class="form-label" for="select_cursus_categorie">Categorie</label>
+                            <select required id="select_cursus_categorie" class="form-control select-input rounded">
+                                <option></option>
+                            </select>    
+                            <div class="invalid-feedback">Een categorie is verplicht.</div-->                            
+                        </div>
+                        <!--div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_categorie">Categorie</label>
+                            <input required type="text" id="input_cursus_categorie" class="form-control" validate/>
+                            <div class="invalid-feedback">Een cursuscategorie is verplicht.</div>
+                        </div-->
+                        <!--div class="form-group mb-4" id="select_categorie">
+                            <label class="form-label" for="select_cursus_categorie">Categorie</label>
+                            <select id="select_filter_categorie" class="form-control select-input rounded">
+                                <option value="" selected>alle</option>                    
+                              </select-->
+                            <!--label class="form-label" for="select_cursus_categorie">Categorie</label>
+                            <select required id="select_cursus_categorie" class="form-control select-input rounded">
+                                <option></option>
+                            </select>    
+                            <div class="invalid-feedback">Een categorie is verplicht.</div-->                            
+                        <!--/div-->
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_docent">Docent</label>
+                            <input required type="text" id="input_cursus_docent" class="form-control" validate/>
+                            <div class="invalid-feedback">Een docent is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_start">Startdatum</label>
+                            <input required type="date" id="input_cursus_start" class="form-control" validate/>
+                            <div class="invalid-feedback">Een startdatum is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_eind">Einddatum</label>
+                            <input required type="date" id="input_cursus_eind" class="form-control" validate/>
+                            <div class="invalid-feedback">Een einddatum is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_uren">Aantallesuren</label>
+                            <input required type="number" id="input_cursus_uren" class="form-control" validate/>
+                            <div class="invalid-feedback">Een aantallesuren is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_omschrijving">Omschrijving</label>
+                            <textarea id="input_cursus_omschrijving" class="form-control" rows="4"></textarea>
+                            <!--input required type="text" id="input_cursus_omschrijving" class="form-control validate" /-->
+                            <div class="invalid-feedback">Een omschrijving is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_platsen">Max Aantalplatsen</label>
+                            <input required type="number" id="input_cursus_platsen" class="form-control" validate/>
+                            <div class="invalid-feedback">Een maxaantalplatsen is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label data-error="wrong" data-success="right" for="input_cursus_beeld">Beeld</label>
+                            <div class="custom-file">
+                                <input type="hidden" id="input_cursus_beeld_origineel" />
+                                <input type="file" id="input_cursus_beeld" aria-describedby="update_beeld">
+                                <label class="custom-file-label" id="label_cursus_beeld" for="cursus_beeld">Kies (nieuw) beeld</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4 form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="check_cursus_in_verkoop" />
+                            <label class="form-check-label" for="check_cursus_in_verkoop">in verkoop</label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="form-outline mb-4">
+                            <button 
+                            id="button_cursus_bewaren" 
+                            type="submit"
+                            class="btn btn-outline-primary">Bewaren</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-mdb-dismiss="modal">Annuleren</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -459,10 +448,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/session.js"></script>
     <script src="js/dwapi.js"></script>
-    <script src="js/bestelling.js"></script>
-    <!--script src="js/session.js"></script-->
+    <script src="js/cursus.js"></script>
 </body>
 
 

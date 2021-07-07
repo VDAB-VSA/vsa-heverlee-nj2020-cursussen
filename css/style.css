@@ -363,6 +363,19 @@ width: 30% !important;
    margin: auto;
    font-family: 'Open Sans', sans-serif;
 }
+.not-found{
+   display: block;
+   background-color: #00d499;
+   height: 80vh;
+   width: 100%;
+
+}
+.not-found-text {
+   text-align: center;
+   height: 90vh;
+   font-size: 4.25rem;
+   padding: 40px;
+ }
 .verder_betalen{
        width: 100%;
        border: 0px;

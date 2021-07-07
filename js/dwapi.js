@@ -118,7 +118,7 @@ async function dwapiLogin(parameters) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({"email": parameters.email, "password": parameters.password, "project": parameters.project})
+        body: JSON.stringify({"email": parameters.email, "password": parameters.password})
     });
     return response.json()
         .then(data => {   
