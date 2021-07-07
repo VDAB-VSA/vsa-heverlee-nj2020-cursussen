@@ -1,7 +1,3 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjQ5ODg2MjQsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNDk1MjYyNH0.LfLNZxFzMbipADXygMXoNMQo5yiXlLtuxekPTsFiY7Q";
-const endpoint = "https://dwapi.dev/item";
-const project = "4nqmlRAiE5cG";
-
 let huidige_cursus_actie;
 let huidige_cursus_id;
 let huidige_filter_waardes = [];
@@ -66,7 +62,7 @@ function toonCursussenTabel() {
                                 ${beeld}
                             </div>
                             <div class="col-md-9 col-sm-9 home-top-cour-desc">
-                                <a id='${cursus.cursus_id}' class="button-toon-cursus-modal" >
+                                <a href="course-details.html?id=${cursus.cursus_id}" id='${cursus.cursus_id}' class="button-toon-cursus-detail" >
                                     <h3>${cursus.titel}<h3>
                                 </a>
                                 <h4>${categorie_naam}</h4>
@@ -75,7 +71,7 @@ function toonCursussenTabel() {
                                 <div class="hom-list-share">
                                     <ul>
                                         <li>
-                                        <a href="course-details.html" type="button" class="button-toon-cursus-modal" id='${cursus.cursus_id}'><i class="fa fa-eye" aria-hidden="true"></i> Lees meer</a> </li>
+                                        <a href="course-details.html?id=${cursus.cursus_id}" type="button" class="button-toon-cursus-detail" id='${cursus.cursus_id}'><i class="fa fa-eye" aria-hidden="true"></i>Lees meer</a> </li>
                                         <li><a href="#"><i class="fa fa-map" aria-hidden="true"></i>${locatie_naam} </a> </li>
                                     </ul>
                                 </div>
