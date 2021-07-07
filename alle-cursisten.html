@@ -13,7 +13,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
-    <script src="js/session.js"></script>
 </head>
 <body>
     <div class="container-fluid sb1">
@@ -30,7 +29,7 @@
                     <li><a href="#" class="ho-dr-con-last waves-effect white-text">
                         <i class="far fa-user"></i>My account</a>
                     </li>
-                    <li><a href="#" type="button" class="ho-dr-con-last waves-effect white-text" id="button_logout">
+                    <li><a href="#" type="button" class="ho-dr-con-last waves-effect white-text" id="button_logout" onclick="logout();">
                         <i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                 </ul>
@@ -71,7 +70,7 @@
                                 aria-expanded="false"
                                 aria-controls="collapseExample"
                               >
-                              <i class="fa fa fa-book" aria-hidden="true"></i>Cursisten
+                              <i class="fa fa fa-book" aria-hidden="true"></i>Cursussen
                               </a>
                             <div id="collapseExample" class="collapsible-body left-sub-menu">
                                 <ul>
@@ -446,6 +445,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/session.js"></script>
     <script src="js/dwapi.js"></script>
     <script src="js/cursisten.js"></script>
 </body>

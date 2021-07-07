@@ -13,7 +13,33 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
-    
+    <script language="JavaScript">
+       /* window.onload = function() {
+            SubmitButton();
+            Online();            
+        }
+        function SubmitButton()
+        {
+            if(navigator.onLine)
+            {
+                    document.getElementById('button_inloggin').style.visibility='visible';
+            }
+            else
+            {
+                document.getElementById('button_inloggin').style.visibility='hidden';
+            }
+        }
+        function Online() 
+        { 
+            var status=false;
+            status= navigator.onLine;
+            if(status!= true)
+            {
+                alert('Network connectivity is lost, please try again later');
+            }
+        }
+        */
+        </script>
 </head>
 
 <body>
@@ -25,6 +51,8 @@
 				</div>
 				<div class="ad-log-in-con">
                     <div class="log-in-pop-right" id="admin_inloggen">
+                        <label id="label_inloggen_fout" class="note note-danger invisible"></label>
+                        <label id="label_inloggen_success" class="note note-success invisible">cc</label>
                         <h4>Inloggen</h4>
                         <!--p>Heb je geen account? Maak binnen 1 minuten een account aan.</p-->
                         <form class="s12 needs-validation" id="form_inloggen" novalidate>

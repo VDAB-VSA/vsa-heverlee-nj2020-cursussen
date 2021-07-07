@@ -29,6 +29,16 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+    <script src="js/cursusdetail.js"></script>
+    <script>
+         let url = window.location.href;
+
+         //console.log(window.history.state);
+        // console.log(window.location.id);
+        let id = url.substring(url.lastIndexOf("=")+1);
+       // detailFilteren(id);
+        
+    </script>
 </head>
 
 <body>
@@ -165,18 +175,18 @@
                             <form>
                                 <div class="sf-type">
                                     <div class="sf-input">
-                                        <input type="text" id="sf-box" placeholder="Titel of categorie">
+                                        <input type="text" id="sf-box" placeholder="Cursus Titel">
                                     </div>
-                                    <div class="sf-list">
+                                    <!--div class="sf-list">
                                         <ul>
                                             <li><a href="course-details.html">IT</a></li>
                                             <li><a href="course-details.html">Talen</a></li>
                                             <li><a href="course-details.html">Mode & Decoratie</a></li>
                                         </ul>
-                                    </div>
+                                    </div-->
                                 </div>
                                 <div class="sf-submit">
-                                    <input type="submit" value="Zoek Cursus">
+                                    <input type="submit" value="Zoek Cursus" id="button_cursus_zoek">
                                 </div>
                             </form>
                         </div>
@@ -197,9 +207,8 @@
                             <div class="cor-top-deta">
                                 <div class="ho-st-login cor-apply field-com">
                                     <div class="col s12">
-                                        <div class="cor-mid-img">
-                                            <img src="images/course/csharp2.jfif" alt="">
-                                            <span class="inverkoop">In Verkoop</span>
+                                        <div class="cor-mid-img" id="cursus_beeld">
+                                            <!--span class="inverkoop">In Verkoop</span-->
                                         </div>
                                     </div>
                                 </div>
@@ -208,107 +217,12 @@
                     </div>
                     <div class="col-md-6 col-sm-6">
                         <div class="cor-con-mid">
-                            <div class="cor-p1">
-                                <h2>C# Ontwikelaar </h2>
-                                <span class="home-top-cour-rat"><p>NU 65€</p><p>80€</p></span>
-                                <span>Categorie: ICT</span>
+                            <div class="container-fluid col-md-12" id='cursus-detail'>
+                                    <!-- cursus detail-->
                             </div>
-                            <div class="cor-p4">
-                                <h3>Inhoud</h3>
-                                <p>Er zijn veel variaties van passages van Lorem Ipsum beschikbaar, maar de meerderheid heeft op de een of andere manier te lijden gehad van veranderingen, door ingevoegde humor of willekeurige woorden die er niet eens een beetje geloofwaardig uitzien. Als je gaat
-                                    om een passage van Lorem Ipsum te gebruiken, moet je er zeker van zijn dat er niets gênants verborgen</p>
-                                <p> Het werd in de jaren zestig populair met de introductie van Letraset-vellen met Lorem Ipsum-passages en meer recentelijk met desktop publishing-software zoals Aldus PageMaker die versies van Lorem Ipsum bevatten.</p>     
-                                <!--
-                                <input class="inschrijven" id="inschrijven" type="submit" value="Aankoop" data-mdb-toggle="modal" data-mdb-target="#verder_bestellen_of_winkelen" onclick="winkel();">
-                                -->
-                                <a href="#!" class="btn btn-primary" data-toggle="modal" data-target="#verder_bestellen_of_winkelen">Aankoop</a>
-                        
-                            </div>
-                            <div class="cor-p5">
-                                <h3>Cursus details</h3>
-                                <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#home">
-									<img src="images/icon/cor4.png" alt=""> <span>Informatie</span></a></li>
-                                    <li><a data-toggle="tab" href="#menu1"><img src="images/icon/cor3.png" alt=""><span>Prijs</span></a></li>
-                                    <li><a data-toggle="tab" href="#menu2"><img src="images/icon/cor1.png" alt=""><span>Locatie</span></a></li>
-                                </ul>
-
-                                <div class="tab-content">
-                                    <div id="home" class="tab-pane fade in active">
-                                        <h4>Over de cursus</h4>
-                                        <ul>
-                                            <li>In verkoop tot 10/07/2021</li>
-                                            <li>Maximum aantal plaatsen: 20 lerlingen</li>
-                                            <li>Docent : Bert J.</li>
-                                            <li>Stardatum: 12/07/2021</li>
-                                            <li>Einddtum: 28/12/2021</li>
-                                            <li>Aantal lesuren: 100 Uren</li>
-                                        </ul>
-                                    </div>
-                                    <div id="menu1" class="tab-pane fade">
-                                        <h4>Prijs</h4>
-                                        <ul>
-                                            <li>Normaal prijs is 80€</li>
-                                            <li>NU 65€ met Earlybird korting !</li>
-                                        </ul>
-                                    </div>
-                                    <div id="menu2" class="tab-pane fade">
-                                        <h4>Campus</h4>
-                                        <p>De les zal fysiek zijn met corena-regels</p>
-                                        <ul>
-                                            <li>Adres: 1234Straat </li>
-                                            <li>3000 Leuven</li>
-                                            <li>DIT Campus</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cor-p4">
-                                <h3>Gelijkaardige cursussen</h3>
-                                <div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="home-top-cour">
-                                                <div class="col-md-3 col-sm-3"> <img src="images/course/java.png" alt=""> </div>
-                                                <div class="col-md-9 col-sm-9 home-top-cour-desc">
-                                                    <a href="course-details.html">
-                                                        <h3>Java Ontwikkelaar</h3>
-                                                    </a>
-                                                    <h4>IT</h4>
-                                                    <p>Deze cursus begint op 24/07/2021</p>
-                                                    <span class="home-top-cour-rat"><p>€100</p></span>
-                                                    <div class="hom-list-share">
-                                                        <ul>
-                                                            <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i> Lees meer</a> </li>
-                                                            <li><a href="course-details.html"><i class="fas fa-book-reader" aria-hidden="true"></i>2 Vrije plaatsen </a> </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="home-top-cour">
-                                                <div class="col-md-3 col-sm-3"> <img src="images/course/php.jfif" alt=""> </div>
-                                                <div class="col-md-9 col-sm-9 home-top-cour-desc">
-                                                    <a href="course-details.html">
-                                                        <h3>PHP Ontwikkelaar</h3>
-                                                    </a>
-                                                    <h4>ICT</h4>
-                                                    <p>Deze cursus begint op 18/08/2021</p> 
-                                                    <span class="home-top-cour-rat"><p>NU €50</p><p>€80/</p> </span>
-                                                    <div class="hom-list-share">
-                                                        <ul>
-                                                            <li><a href="course-details.html"><i class="fa fa-eye" aria-hidden="true"></i> Lees meer</a> </li>
-                                                            <li><a href="course-details.html"><i class="fas fa-book-reader" aria-hidden="true"></i>11 Vrije plaatsen </a> </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            <div class="container-fluid col-md-12" id='cursus-gerelateerd'>
+                                    <!-- gerelateerdcursussen-->
+                            </div>  
                         </div>
                     </div>
                 </div>
@@ -631,7 +545,7 @@
     <script src="js/custom.js"></script>
     <!--script src="js/winkel.js"></script-->
     <script src="js/dwapi.js"></script>
-    <script src="js/cursus-frontend.js"></script>
+ 
 </body>
 
 
