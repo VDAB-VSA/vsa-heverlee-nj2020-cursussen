@@ -1,6 +1,7 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjQ5ODg2MjQsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNDk1MjYyNH0.LfLNZxFzMbipADXygMXoNMQo5yiXlLtuxekPTsFiY7Q";
-const endpoint = "https://dwapi.dev/item";
-const project = "4nqmlRAiE5cG";
+let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjUxMjY3OTAsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTA5MDc5MH0.CNT_o_QaqvgWfGyM6V4ta6DwB8yj2PVbN5ThJNQq3BE";
+let endpoint = "https://dwapi.dev";
+let project = "4nqmlRAiE5cG";
+
 
 let huidige_cursus_actie;
 let huidige_cursus_id;
@@ -551,7 +552,7 @@ function eventListenersVoorStatischeElementen() {
     });
 }
 if(document.getElementById("button_cursus_zoek")){
-    document.getElementById("button-toon-cursus-detail").addEventListener('click', function() {
+    document.getElementById("button_cursus_zoek").addEventListener('click', function() {
       //  let id = window.location.id;
         detailFilteren();
     })
