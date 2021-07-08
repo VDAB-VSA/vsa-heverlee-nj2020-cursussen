@@ -12,8 +12,67 @@ window.onload = function(){
     toonSorteerRichting();
     eventListenersVoorStatischeElementen();
 }
-
 function toonCursussenTabel() {
+    let parameters = {
+        "endpoint": endpoint, 
+        "project": project,
+        "token": token, 
+        "entity": "aankoop",
+        "filter": huidige_filter_waardes,
+        "sort": huidige_sorteer_waarde,
+        "relation": [{"pri_entity": "aankoop", "pri_key": "user_id", "sec_entity": "user", "sec_key": "user_id"}, {"pri_entity": "aankoop", "pri_key": "aankoop_id", "sec_entity": "aankoop_cursus", "sec_key": "aankoop_id"}, {"pri_entity": "aankoop_cursus", "pri_key": "cursus_id", "sec_entity": "cursus", "sec_key": "cursus_id"}],
+        //"relation": [{"pri_entity": "aankoop_cursus", "pri_key": "aankoop_id", "sec_entity": "aankoop", "sec_key": "aankoop_id"}, {"pri_entity": "aankoop_cursus", "pri_key": "cursus_id", "sec_entity": "cursus", "sec_key": "cursus_id"}, {"pri_entity": "aankoop", "pri_key": "user_id", "sec_entity": "user", "sec_key": "user_id"}],
+     }
+    
+    dwapiRead(parameters).then(
+        data => {
+            let tabel_aankoop_html =  "<table>";
+
+            data.result.items.forEach(function(aankoop) {
+                let user_naam = "";
+                if (aankoop.aankoop_id != null) {
+                    let naam = aankoop.user.items[aankoop.user_id].naam;
+                    let voornaam = aankoop.user.items[aankoop.user_id].voornaam;
+                    //let cursus_naam = aankoop_cursus.cursus.items[aankoop_cursus.cursus_id].titel;
+                    //console.log(aankoop_cursus.aankoop.items[aankoop_id].user.items);
+                    //console.log(aankoop_id, cursus_id);
+                    //let voornaam = aankoop.user.items[aankoop.user_id].voornaam;
+                    user_naam = voornaam + "," + naam;
+                    let cursus_naam = aankoop_cursus.cursus.items[aankoop_cursus.cursus_id].titel;
+                    console.log(cursus_naam);
+                }
+                let cursus = aankoop.aankoop_cursus.items[aankoop.aankoop_id].cursus_id;
+
+                tabel_aankoop_html += "<tr>"+
+                    "<td>" + aankoop.aankoop_id + "</td>" +
+                    "<td>" + user_naam + "</td>" + 
+                    "<td>€" + aankoop.subtotaal + "</td>" +
+                    "<td>€" + aankoop.btw + "</td>" + 
+                    "<td>€" + aankoop.totaal_bedrag + "</td>" + 
+                    "<td>" + aankoop.aankoop_datum + "</td>" +  
+                    "<td>" + aankoop.betaal_status + "</td>" +
+                    "<td>" + aankoop.betaal_datum + "</td>" + 
+                    "<td>"+
+                    "<button "+
+                    "data-cursus-id='" + aankoop.aankoop_id + "' "+ 
+                    "data-cursus-actie='update' " +
+                    "class='button-toon-aanloop-modal btn btn-info' "+
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_aankoop'>" +
+                    "<i class='fa fa-print'></i>" +
+                    "</button>"
+                    + "</td>" + "</tr>" +
+                    `<tr><td colspan="9">Cursus ${cursus}</td></tr>`;
+                });
+           // tabel_cursussen_html += "</table>";
+            document.getElementById("tabel_aankopen").innerHTML = tabel_aankoop_html;
+            eventListenersVoorDynamischeElementen();            
+       }
+    )
+}
+
+/*function toonCursussenTabel() {
     let parameters = {
         "endpoint": endpoint, 
         "project": project,
@@ -64,7 +123,7 @@ function toonCursussenTabel() {
             eventListenersVoorDynamischeElementen();            
        }
     )
-}
+}*/
 
 function cursusBewaren() {
     // INVOER
