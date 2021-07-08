@@ -1,31 +1,22 @@
-let token_1 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjUxMjY3OTAsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTA5MDc5MH0.CNT_o_QaqvgWfGyM6V4ta6DwB8yj2PVbN5ThJNQq3BE";
-const endpoint_1 = "https://dwapi.dev";
-const project_1 = "4nqmlRAiE5cG";
+let boodschap_success = `<div class="success_boodschap col-md-12">
+                          <p><i class="fas fa-check-circle fa-2x"></i></p>
+                          <p>Uw account is nu aangemaakt ! <br> Er zal u een e-mail worden gestuurd om dit te bevestigen</p>
+                          </div>`;
 
-let boodschap_success = 
-  '<div class="success_boodschap col-md-12">'
-  + '<p><i class="fas fa-check-circle fa-2x"></i></p>'
-  + '<p>Uw account is nu aangemaakt !'
-  + '<br> Er zal u een e-mail worden gestuurd om dit te bevestigen</p>'
-  + '</div>'
-;
+let boodschap_fout = `<div class="fout_boodschap col-md-12">
+                         <p><i class="fas fa-times-circle fa-2x"></i></p>
+                        <p>Er was een probleem. <br>Probeer het later nog eens of neem contact met ons op.</p>
+                      </div>`;
 
-let boodschap_fout = 
-  '<div class="fout_boodschap col-md-12">'
-  + '<p><i class="fas fa-times-circle fa-2x"></i></p>'
-  + '<p>Er was een probleem. <br>Probeer het later nog eens of neem contact met ons op.</p>'
-  + '</div>'
-;
+window.addEventListener('load', (event) => {
+  document.getElementById("button_verzenden_regisreren").addEventListener('click', function() {
+      registreren();
+   })
+});
 
-window.onload = function(){
-  /* registreren nieuwe gebruiker */
-  document.getElementById("button_verzenden_regisreren").addEventListener('click', registreren);
-}
 
 function registreren() {
-
   //INVOER
-
   /* invoer modal formulier ophalen */
   let naam_user = document.getElementById("registreren_naam").value;
   let voornaam_user = document.getElementById("registreren_voornaam").value;
@@ -42,7 +33,6 @@ function registreren() {
   let wachtwoord_user = document.getElementById("registreren_paswoord").value;
 
   // VERVERKING
-
   let form_registreren = document.getElementById("form_registreren");
   
   /*frontend validatie */
@@ -64,20 +54,18 @@ function registreren() {
     };
 
     let parameters = {
-      "endpoint" : endpoint_1 + "/user/register",
-      "project" : project_1,
+      "endpoint" : tweede_endpoint + "/user/register",
+      "project" : project,
       "entity" : "user",
       "values" : values_user,
-      "token" : token_1,
+      "token" : token,
     };
 
     /*fetch create uitvoeren: dwapiRegister */
-    let register_request = dwapiRegister(parameters);
-    register_request.then(
+    dwapiRegister(parameters).then(
       resultaat => {
 
         // UITVOER
-        
         /*Resultaat boodschap tonen (succesvol of niet succesvol)*/
         if (resultaat.status.success == true) { 
           document.getElementById("form_registreren").innerHTML = boodschap_success;
