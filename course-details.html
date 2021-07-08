@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <title>DIT</title>
     <!-- META TAGS -->
@@ -23,24 +22,8 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="css/style-mob.css" rel="stylesheet" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
- 
-    <script>
-         let url = window.location.href;
-
-         //console.log(window.history.state);
-        // console.log(window.location.id);
-        let id = url.substring(url.lastIndexOf("=")+1);
-       // detailFilteren(id);
-        
-    </script>
+    <script src="js/project_instelling.js"></script>
 </head>
-
 <body>
 
     <!-- MOBILE MENU -->
@@ -59,7 +42,7 @@
                             <li class="ed-mm-menu-icon"><a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a></li>
                             <li class="ed-mm-menu-icon" id="winkelwagentje_icon_mobile"><a href="winkelwagentje.html">
                                 <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
-                                <span class="badge bg-danger ms-2" id="badge">2</span></a>
+                                <span class="badge bg-danger ms-2" id="mob-badge"></span></a>
                             </li>
                         </ul>
                         <div class="ed-mm-inn">
@@ -135,7 +118,7 @@
                                 <li class="about-menu"><a href="about.html" class="mm-arr">Over Ons</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                                 <li><a href="winkelwagentje.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span class="badge bg-danger ms-2" id="badge">2</span></a>
+                                    <span class="badge bg-danger ms-2" id="cart-badge"></span></a>
                                 </li>
                                 <!-- Button triggers collapse -->
                                 <!--
@@ -273,15 +256,16 @@
                     <div class="modal-body">                            
                         <div class="form-outline mb-4">
                             <button
-                                type="button" 
-                                class="btn btn-outline-primary button_pop_up">
-                                <a href="winkelwagentje.html">Verder naar bestellen ?</a>
+                            type="button" 
+                            class="btn btn-primary">
+                            <a href="winkelwagentje.html">Verder naar bestellen ?</a>
                             </button>
                             <button
                                 type="button" 
-                                class="btn btn-outline-dark button_pop_up" >
+                                class="btn btn-default" >
                                 <a href="all-courses.html">Of verder winkelen ?</a>
                             </button>
+
                         </div>
                     </div>
                 </div>
@@ -529,7 +513,7 @@
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/cursusdetail.js"></script>
-    <!--script src="js/winkel.js"></script-->
+    <script src="js/winkel.js"></script>
     <script src="js/dwapi.js"></script>
  
 </body>

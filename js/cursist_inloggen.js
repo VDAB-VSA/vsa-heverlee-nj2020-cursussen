@@ -1,11 +1,11 @@
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjUxMjY3OTAsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTA5MDc5MH0.CNT_o_QaqvgWfGyM6V4ta6DwB8yj2PVbN5ThJNQq3BE";
+/* let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjUxMjY3OTAsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTA5MDc5MH0.CNT_o_QaqvgWfGyM6V4ta6DwB8yj2PVbN5ThJNQq3BE";
 let endpoint = "https://dwapi.dev";
 let project = "4nqmlRAiE5cG";
-
-window.onload = function(){
+ */
+/*window.onload = function(){
    eventListenersVoorStatischeElementen();
    console.log('inloggen1');
-};
+};*/
 
 function eventListenersVoorStatischeElementen() {
     console.log('inloggen2');

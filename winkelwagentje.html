@@ -22,7 +22,7 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
     <link href="css/style-mob.css" rel="stylesheet" />
- 
+    <script src="js/project_instelling.js"></script>
 </head>
 
 <body>
@@ -43,7 +43,7 @@
                             <li class="ed-mm-menu-icon"><a href="#!" class="ed-micon"><i class="fa fa-bars"></i></a></li>
                             <li class="ed-mm-menu-icon" id="winkelwagentje_icon_mobile"><a href="winkelwagentje.html">
                                 <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i>
-                                <span class="badge bg-danger ms-2" id="badge">2</span></a>
+                                <span class="badge bg-danger ms-2" id="mob-badge">2</span></a>
                             </li>
                         </ul>
                         <div class="ed-mm-inn">
@@ -119,7 +119,7 @@
                                 <li class="about-menu"><a href="about.html" class="mm-arr">Over Ons</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                                 <li><a href="winkelwagentje.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span class="badge bg-danger ms-2" id="badge">2</span></a>
+                                    <span class="badge bg-danger ms-2" id="cart-badge"></span></a>
                                 </li>
                                 <!-- Button triggers collapse -->
                                 <!--
@@ -180,7 +180,7 @@
         </div>
     </section>
     <!--END HEADER SECTION-->
-    
+
     <!--SECTION START-->
     <section>
         <div class="container com-sp com-sp pad-bot-70" id="index-cursus-zoek">
@@ -189,77 +189,57 @@
                     <div class="ed-about-tit">
                         <div class="con-title">
                             <h2>Je <span>winkelwagen </span></h2>
-                        </div>
-                        <div class="winkel-top-cour">
+                        </div>     
+                        <div class="winkelwagantje-lijst">
                             <div class="home-top-cour-desc">
                                 <img src="images/course/csharp.jfif" alt="">
                             </div>
-                            <div class="winkelwagentje_titel home-top-cour-desc">
+                            <div class="">
                                 <a href="course-details.html">
                                     <h3>C# Ontwiklaar</h3>
+                                    <h4>ICT</h4>
                                 </a>
                             </div>
                             <div class="winkelwagentje_omschrijving home-top-cour-desc">
                                 <p>Deze cursus begint op 05/07/2021</p>
+                                <p>Deze cursus begint op 05/07/2021</p>
                             </div>
-                            <div class="winkelwagentje_categorie home-top-cour-desc">
-                                <h4>ICT</h4>
-                            </div>   
-                            <div class="winkelwagentje_prijs">
-                                <h4>100€</h4>
+                            <div class="d-flex winklewandje-verwijderen">
+                                <div>
+                                    <h4 class="text-warning">100€</h4>
+                                </div>
+                                <div class="col-md-1 col-lg-1 col-xl-1 text-end" >
+                                    <a 
+                                        href="#!"
+                                        class="text-danger"
+                                        data-product-id='1',
+                                        data-product-naam='zz',
+                                        data-toggle='modal',
+                                        data-target='#modal_product_verwijderen'>
+                                        <i class="fas fa-trash fa-lg"></i>
+                                    </a>
+                                </div>
                             </div>
+                        </div>
+                        <h5 class="fw-bold mb-6 text-primary" style="position: relative; bottom: 0;">
+                            <a href="all-courses.html"><i class="fas fa-angle-left me-2 fa-2x"></i>TERUG NAAR WINKELEN</a>
+                        </h5>
+                        <div class="betaal_bedrag">
+                            <p>Subtotaal: 180 €</p>
+                            <p>Earlybird Korting: 28 €</p>
+                            <p>Inclusief BTW: 16.45 €</p>
+                            <h4>Totaal Bedrag: 168.45 €</h4>
                             <div>
-                                <button class="button_product_verwijderen"
+                                    <a 
                                     data-product-id='1',
                                     data-product-naam='zz',
                                     data-toggle='modal',
-                                    data-target='#modal_product_verwijderen'>
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="winkel-top-cour">
-                            <div class="home-top-cour-desc">
-                                <img src="images/course/java.png" alt="">
-                            </div>
-                            <div class="winkelwagentje_titel home-top-cour-desc">
-                                <a href="course-details.html">
-                                    <h3>Java Ontwiklaar</h3>
-                                </a>
-                            </div>
-                            <div class="winkelwagentje_omschrijving home-top-cour-desc">
-                                <p>Deze cursus begint op 20/08/2021</p>
-                            </div>
-                            <div class="winkelwagentje_categorie home-top-cour-desc">
-                                <h4>ICT</h4>
-                            </div>   
-                            <div class="winkelwagentje_prijs">
-                                <h4>80€</h4>
-                            </div>
-                            <div>
-                                <button class="button_product_verwijderen" 
-                                    data-product-id='1',
-                                    data-product-naam='zz',
-                                    data-toggle='modal',
-                                    data-target='#modal_product_verwijderen'>
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
+                                    data-target='#bevestigen',
+                                    class="btn btn-warning btn-block button_product_verwijderen">Verder met bestellen</a>
+                            </div>  
                         </div>
                     </div>
-                    <div class="betaal_bedrag">
-                        <p>Subtotaal: 180 €</p>
-                        <p>Earlybird Korting: 28 €</p>
-                        <p>Inclusief BTW: 16.45 €</p>
-                        <h4>Totaal Bedrag: 168.45 €</h4>
-                        <button 
-                        data-product-id='1',
-                        data-product-naam='zz',
-                        data-toggle='modal',
-                        data-target='#bevestigen',
-                        class="verder_betalen">Verder met bestellen</button>
-                    </div>
-                </div>
+                </div>               
             </div>
         </div>
     </section>
@@ -595,6 +575,7 @@
     <script src="js/winkel.js"></script>
     <script src="js/dwapi.js"></script>
     <script src="js/zoekcursus.js"></script>
+    <script src="js/winkelwagantje.js"></script>
 </body>
 
 

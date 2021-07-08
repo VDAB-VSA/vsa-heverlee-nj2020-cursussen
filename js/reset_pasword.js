@@ -1,6 +1,6 @@
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjU2NzU1NzEsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTYzOTU3MX0.55I8x7U4XHDULfgDwBOlm4eGvQLhV0WeptRW3IUD7nk";
+/* let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjU2NzU1NzEsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTYzOTU3MX0.55I8x7U4XHDULfgDwBOlm4eGvQLhV0WeptRW3IUD7nk";
 let endpoint = "https://dwapi.dev";
-let project = "4nqmlRAiE5cG";
+let project = "4nqmlRAiE5cG"; */
 
 window.onload = function(){
    eventListenersVoorStatischeElementen();
