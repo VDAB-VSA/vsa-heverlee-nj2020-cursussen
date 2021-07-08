@@ -18,20 +18,6 @@ let boodschap_fout =
 ;
 
 window.onload = function(){
-
-  let ik_ben_bedrijf = document.querySelector("input[name='ik_ben_bedrijf']");
-
-  ik_ben_bedrijf.addEventListener('change', function() {
-    if (this.checked) {
-      console.log("Checkbox is checked..");
-    } else {
-      console.log("Checkbox is not checked..");
-    }
-  });
-
-  /* bedrijf velden tonen als checkbox 'ik ben bedrijf' is ja */
-  //document.getElementById("ik_ben_bedrijf").addEventListener('click', tonenVeldenBedrijf);
-
   /* registreren nieuwe gebruiker */
   document.getElementById("button_verzenden_regisreren").addEventListener('click', registreren);
 }
@@ -113,77 +99,3 @@ function registreren() {
     form_registreren.classList.add('was-validated');
   }
 }
-
-
-
-let ik_ben_bedrijf = document.querySelector("input[name=ik_ben_bedrijf]");
-
-ik_ben_bedrijf.addEventListener('change', function() {
-  if (this.checked) {
-    console.log("Checkbox is checked..");
-  } else {
-    console.log("Checkbox is not checked..");
-  }
-});
-
-//let ik_ben_bedrijf = document.getElementById("ik_ben_bedrijf");
-/*
-let velden_te_tonen = document.getElementsByClassName("form_bedrijf");
-
-console.log(velden_te_tonen)
-
-ik_ben_bedrijf.onclick = function() {
-  if (this.checked) {
-    velden_te_tonen.style.display = 'block';
-  }
-};
-*/
-
-/*
-function tonenVeldenBedrijf() {
-  let ik_ben_bedrijf = document.getElementById("ik_ben_bedrijf");
-  let velden_te_tonen = document.getElementsByClassName("form_bedrijf");
-  if (ik_ben_bedrijf.checked == true){
-    velden_te_tonen.style.display = "block";
-  } else {
-    velden_te_tonen.style.display = "none";
-  }
-}
-*/
-
-
-
-/*
-function myFunction() {
-  // Get the checkbox
-  let ik_ben_bedrijf = document.getElementById("ik_ben_bedrijf");
-  // Get the output text
-  let velden_te_tonen = document.getElementsById("btw_nummer");
-
-
-  // If the checkbox is checked, display the output text
-  if (ik_ben_bedrijf.checked == true){
-    velden_te_tonen.style.display = "block";
-  } else {
-    velden_te_tonen.style.display = "none";
-  }
-}
-*/
-
-/*
-checkbox = document.getElementById('checkbox');
-var box = document.getElementById('box');
-checkbox.onclick = function() {
-    console.log(this);
-    if (this.checked) {
-        box.style['display'] = 'block';
-    } else {
-        box.style['display'] = 'none';
-    }
-};   
-function bedrijfVeldenTonen() {
-  //let ik_ben_bedrijf = document.getElementById("ik_ben_bedrijf").checked;
-}
-*/
-
-

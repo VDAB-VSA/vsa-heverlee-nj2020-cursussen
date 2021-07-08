@@ -344,22 +344,22 @@
                 <div class="log-in-pop-right">
                     <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                     <h4>Maak een account aan</h4>
-                    <form class="s12">
+                    <form id="form_registreren" class="s12">
                         <div class="col-md-12">
                             <div>
                                 <div class="input-field s12">Persoonlijke gegevens</div>
                             </div>
                             <div>
                                 <div class="s12 log-ch-bx">
-                                    <input type="checkbox" id="ik_ben_bedrijf" />
+                                    <input type="checkbox" id="ik_ben_bedrijf" name="ik_ben_bedrijf" />
                                     <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
-                                    <input type="text"  class="validate" id="btw_nummer">
+                                    <input type="text"  class="validate form_bedrijf" id="btw_nummer">
                                     <label for="btw_nummer">BTW-nummer</label>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
-                                    <input type="text"  class="validate" id="naam_bedrijf">
+                                    <input type="text"  class="validate form_bedrijf" id="naam_bedrijf">
                                     <label for="naam_bedrijf">Naam (bedrijf)</label>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 input-field s12 form_bedrijf">
@@ -367,13 +367,13 @@
                                     <label for="adres_bedrijf">Adres (bedrijf)</label>
                                 </div>
                                 <div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
                                         <input type="number" data-ng-model="name1" id="postcode_bedrijf" min="1000" max="9999" class="validate">
                                         <label for="postcode_bedrijf">Postcode (bedrijf)</label>
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 input-field s12 form_bedrijf">
                                         <input type="text" data-ng-model="name1" id="registreren_stad_bedrijf" class="validate">
                                         <label for="registreren_stad_bedrijf">Stad (bedrijf)</label>
                                     </div>
@@ -469,26 +469,11 @@
                         </div>
                         <div class="col-md-12">
                             <div class="input-field s4">
-                                <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
+                                <input id="button_verzenden_regisreren" type="button" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                         <div class="col-md-12">
                             <p class="verplicht">* verplichte velden</p>
                         </div>
-                        <div class="boodschap col-md-12">
-                            <div class="success_boodschap col-md-12">
-                                <p><i class="fas fa-check-circle fa-2x"></i></p>
-                                <p>Uw account is nu aangemaakt !
-                                    <br> Er zal u een e-mail worden gestuurd om dit te bevestigen.
-                                </p>
-                            </div>
-                            <div class="fout_boodschap col-md-12">
-                                <p><i class="fas fa-times-circle fa-2x"></i></p> 
-                                <p>Er was een probleem.
-                                    <br>Probeer het later nog eens of neem contact met ons op.
-                                </p>
-                            </div>
-                        </div>
-
                     </form>
                 </div>
             </div>

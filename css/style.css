@@ -2053,6 +2053,7 @@ width: 30% !important;
 /*-------------------------------------------------*/
 /* =  7.SEARCH BOX
 /*-------------------------------------------------*/
+
 .search-top{
    background: #002147;
    padding: 12px 0px;
@@ -2074,8 +2075,8 @@ width: 30% !important;
    float: left;
    width: 75%;
 }
-.sf-input{
-}
+
+
 .sf-input input{
    width: 100%;
    border: 0px;
@@ -2093,6 +2094,8 @@ width: 30% !important;
    border-bottom-left-radius: 2px;
    font-size: 14px;
 }
+
+
 .sf-list{
    display:none;
    position: absolute;
@@ -2163,6 +2166,47 @@ width: 30% !important;
   background: linear-gradient(to top, #2a87de, #3bb9f3);
 }
 
+
+#form_cursus_zoeken {
+   display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#input_cursus_naam {
+   width: 100%;
+    border: 1px solid #cecece;
+    background: #ffffff;
+    background-size: 17px;
+    background-position-x: 12px;
+    color: #464646;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 8px;
+    /* border: 1px solid #ffffff; */
+    padding: 8px 45px;
+    margin: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    font-size: 14px;
+
+}
+#zoeken_door_categorie {
+   position: relative;
+   background: white;
+    border: 1px solid #cecece; 
+    height: 48px;
+    background: #fff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-bottom: 4px;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+
+}
 /*-------------------------------------------------*/
 /* =  8.SLIDER
 /*-------------------------------------------------*/
@@ -3254,11 +3298,11 @@ iframe{
 }
 
 /* to hide if checkbox "ik ben bedrijf" not checked */
-
+/*
 .form_bedrijf {
   display: none;
 }
-
+*/
 
 
 
