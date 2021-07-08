@@ -80,16 +80,13 @@ function inLoggen() {
                     }                        
                   
                  else {
-                        console.log(resultaat.status.message);
+                        let fout_boodshap ="";
+                        (resultaat.status.error_code == 9008) ? fout_boodshap = 'Actieve gebruiker met dit e-mailadres/wachtwoord niet gevonden.' : fout_boodshap = resultaat.status.message;                  
                         label_fout = document.getElementById("label_inloggen_fout");
-                        //.getElementsByClassName("note-danger")[0];
-                        label_fout.innerHTML = resultaat.status.message;
+                        label_fout.innerHTML = fout_boodshap;
                         label_fout.classList.remove("invisible");
                         label_fout.classList.add("visible");
                     }
-              // }
-            //)
-        //}
     })}
     else {
         //UITVOER

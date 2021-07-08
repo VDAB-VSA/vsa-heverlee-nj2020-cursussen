@@ -2,10 +2,10 @@
 let endpoint = "https://dwapi.dev";
 let project = "4nqmlRAiE5cG";
  */
-window.onload = function(){
+/*window.onload = function(){
    eventListenersVoorStatischeElementen();
    console.log('inloggen1');
-};
+};*/
 
 function eventListenersVoorStatischeElementen() {
     console.log('inloggen2');
