@@ -2,7 +2,7 @@
 let endpoint = "https://dwapi.dev";
 let project = "4nqmlRAiE5cG"; */
 
-window.onload = function(){
+/*window.onload = function(){
    eventListenersVoorStatischeElementen();
 };
 
@@ -11,7 +11,20 @@ function eventListenersVoorStatischeElementen() {
     document.getElementById("reset_paswoord_button").addEventListener('click', function() {
         nieuwePaswoord();
     })
-}
+}*/
+window.addEventListener('load', (event) => {
+    console.log("onload");
+    document.getElementById("reset_paswoord_button").addEventListener('click', function() {
+        nieuwePaswoord();
+     })
+    console.log('pass');
+  });
+
+/*function eventListenersVoorStatischeElementen() {
+    console.log("eventListenersVoorStatischeElementen");
+  
+    
+}*/
 
 
 function nieuwePaswoord() {
@@ -23,7 +36,7 @@ function nieuwePaswoord() {
     let form_reset = document.getElementById("form_reset_paswoord");
     if (form_reset.checkValidity()) {
         let parameters = {
-            "endpoint": endpoint + "/user/reset_password",
+            "endpoint": tweede_endpoint + "/user/reset_password",
             "project": project,               
             "email": gebruikeremail
         };

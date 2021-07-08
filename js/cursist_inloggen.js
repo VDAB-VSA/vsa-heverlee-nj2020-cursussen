@@ -1,19 +1,26 @@
 /* let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjUxMjY3OTAsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNTA5MDc5MH0.CNT_o_QaqvgWfGyM6V4ta6DwB8yj2PVbN5ThJNQq3BE";
 let endpoint = "https://dwapi.dev";
-let project = "4nqmlRAiE5cG";
- */
+let project = "4nqmlRAiE5cG"; */
+ 
+/*console.log("hallo?");
 window.onload = function(){
-   eventListenersVoorStatischeElementen();
-   console.log('inloggen1');
-};
+    console.log("onload");
+};*/
 
-function eventListenersVoorStatischeElementen() {
-    console.log('inloggen2');
-
+window.addEventListener('load', (event) => {
+    console.log("onload");
     document.getElementById("bezoeker_inloggen").addEventListener('click', function() {
         inLoggen();
-    })
-}
+     })
+    console.log('inloggen1');
+  });
+
+/*function eventListenersVoorStatischeElementen() {
+    console.log("eventListenersVoorStatischeElementen");
+    
+  
+    
+}*/
 
 
 function inLoggen() {
@@ -27,7 +34,7 @@ function inLoggen() {
     let form_inloggen = document.getElementById("form_bezoeker_inloggen");
     if (form_inloggen.checkValidity()) {
         let parameters = {
-            "endpoint": endpoint + "/user/login",
+            "endpoint": tweede_endpoint + "/user/login",
             "project": project,               
             "email": gebruikeremail,
             "password": wachtwoord
