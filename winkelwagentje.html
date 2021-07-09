@@ -189,42 +189,14 @@
                     <div class="ed-about-tit">
                         <div class="con-title">
                             <h2>Je <span>winkelwagen </span></h2>
-                        </div>     
-                        <div class="winkelwagantje-lijst">
-                            <div class="home-top-cour-desc">
-                                <img src="images/course/csharp.jfif" alt="">
-                            </div>
-                            <div class="">
-                                <a href="course-details.html">
-                                    <h3>C# Ontwiklaar</h3>
-                                    <h4>ICT</h4>
-                                </a>
-                            </div>
-                            <div class="winkelwagentje_omschrijving home-top-cour-desc">
-                                <p>Deze cursus begint op 05/07/2021</p>
-                                <p>Deze cursus begint op 05/07/2021</p>
-                            </div>
-                            <div class="d-flex winklewandje-verwijderen">
-                                <div>
-                                    <h4 class="text-warning">100€</h4>
-                                </div>
-                                <div class="col-md-1 col-lg-1 col-xl-1 text-end" >
-                                    <a 
-                                        href="#!"
-                                        class="text-danger"
-                                        data-product-id='1',
-                                        data-product-naam='zz',
-                                        data-toggle='modal',
-                                        data-target='#modal_product_verwijderen'>
-                                        <i class="fas fa-trash fa-lg"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        </div>  
+                         <div id="winkelwagantje-lijst">
+                          <!--winkelwagantje lijst-->
+                         </div>  
                         <h5 class="fw-bold mb-6 text-primary" style="position: relative; bottom: 0;">
                             <a href="all-courses.html"><i class="fas fa-angle-left me-2 fa-2x"></i>TERUG NAAR WINKELEN</a>
                         </h5>
-                        <div class="betaal_bedrag">
+                        <div class="betaal_bedrag" id="betaal_bedrag">
                             <p>Subtotaal: 180 €</p>
                             <p>Earlybird Korting: 28 €</p>
                             <p>Inclusief BTW: 16.45 €</p>
@@ -525,7 +497,7 @@
                     </div>
                     <div class="modal-body">                            
                         <div class="form-outline mb-4">
-                            <button class="button_pop_up"
+                            <button class="button_pop_up modal_product_verwijderen"
                                 type="button" 
                                 id="button_product_verwijderen" 
                                 class="btn btn-outline-primary">
@@ -587,7 +559,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/winkel.js"></script>
+    <!--script src="js/winkel.js"></script-->
     <script src="js/dwapi.js"></script>
     <script src="js/zoekcursus.js"></script>
     <script src="js/winkelwagantje.js"></script>
