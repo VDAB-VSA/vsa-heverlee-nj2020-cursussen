@@ -16,8 +16,6 @@
     <link href="css/style-mob.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <script src="js/project_instelling.js"></script>
-    <!--JAVASCRIPT FILES-->
-    <!--script src="js/contact_ons.js"></script-->
 </head>
 
 <body>
@@ -235,29 +233,80 @@
                         <h2>Contact<span> Formulier</span></h2>
                     </div>
                     <!-- ENQUIRY FORM -->
-                    <form id="contact_form" name="contact_form" action="#">
+                    <form class="s12 needs-validation" id="contact_form" name="contact_form" action="#">
+                        <!--div>
+                            <div class="col-md-6 input-field s12">
+                                <label for="na" class="form-label">GebruikerNAAM</label>
+                                <input required id="na" type="text" class="form-control rounded" placeholder="naam *" validate/>
+                                <div class="invalid-feedback invisible">Een gebruikeremail is verplicht.</div>
+                            </div>
+                            <div class="col-md-6 input-field s12">
+                                <label for="em" class="form-label">Gebruikersemail</label>
+                                <input required id="em" type="email" class="form-control rounded" placeholder="E-mail *" validate/>
+                                <div class="invalid-feedback invisible">Een gebruikeremail is verplicht.</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="col-md-6 input-field s12">
+                                <label for="telefoon_contactpersoon1" class="form-label">telefoon</label>
+                                <input required id="telefoon_contactpersoon1" type="text" class="form-control rounded" placeholder="telefoon" validate/>
+                                
+                            </div>
+                            <div class="col-md-6 input-field s12">
+                                <label for="inschrijvingsnummer1" class="form-label">inschrijvingnummer</label>
+                                <input required id="inschrijvingsnummer1" type="number" class="form-control rounded" placeholder="inschrijvingnummer" validate/>
+                            
+                            </div>
+                        </div>
+                        <div class="col-md-6 input-field s12 contact-input-spac">
+                            <select name='field{$i}type' class='form-control' required>
+                                <option disabled value="" selected hidden>Type vraag</option>
+                                <option value="html">Algemeen</option>
+                                <option value="css">Over inschrijving</option>
+                            </select></li>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                            <textarea id="bericht_contactpersoon" name="bericht_contactpersoon" placeholder="Uw bericht.... *" required=""></textarea>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="col-md-12 contact-input-spac">
+                                    <input type="checkbox" id="gdpr1" required>
+                                    <label for="gdpr1"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
+                                        aanbiedingen. *</label></li>
+                                <li class="col-md-12 contact-input-spac">
+                                    <input type="checkbox" id="gdpr2" required>
+                                    <label for="gdpr2">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
+                                        inschrijving en boekhouding. *</label></li>
+                                <li class="col-md-12">
+                                    <input id="verstuur_button" class="inloggen_button" type="button" value="Verstuur"> </li>
+                                <li class="col md-6">
+                                    <p class="verplicht">* verplichte velden</p></li>
+                            </ul>
+                        </div-->
+                        
                         <ul>
-                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                            <li class="col-md-6 contact-input-spac">
                                 <input type="text" id="naam_contactpersoon" value="" name="f1" placeholder="Naam *"  required=""></li>
-                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                            <li class="col-md-6 contact-input-spac">
                                 <input type="email" id="email_contactpersoon" value="" name="f3" placeholder="E-mail *" class="validate" required=""></li>
-                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                            <li class="col-md-6 contact-input-spac">
                                 <input type="tel" id="telefoon_contactpersoon" value="" name="f2" placeholder="Telefoon"> </li>
-                            <li class="col-md-6 col-sm-6 col-xs-12 contact-input-spac">
+                            <li class="col-md-6 contact-input-spac">
                                 <input type="tel" id="inschrijvingsnummer" value="" name="f2" placeholder="Inschrijvingsnummer"> </li>
-                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                            <li class="col-md-12 contact-input-spac">
                                 <select name='field{$i}type' class='form-control' required>
                                     <option disabled value="" selected hidden>Type vraag</option>
                                     <option value="html">Algemeen</option>
                                     <option value="css">Over inschrijving</option>
                                 </select></li>
-                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                            <li class="col-md-12 contact-input-spac">
                                 <textarea id="bericht_contactpersoon" name="bericht_contactpersoon" placeholder="Uw bericht.... *" required=""></textarea></li>
-                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                            <li class="col-md-12 contact-input-spac">
                                 <input type="checkbox" id="gdpr1" required>
                                 <label for="gdpr1"> Ik ga akkoord om per e-mail op de hoogte te blijven van andere evenementen of 
                                     aanbiedingen. *</label></li>
-                            <li class="col-md-12 col-sm-12 col-xs-12 contact-input-spac">
+                            <li class="col-md-12 contact-input-spac">
                                 <input type="checkbox" id="gdpr2" required>
                                 <label for="gdpr2">Ik ga akkoord dat de gegevens enkel mogen gebruikt worden voor behandeling van 
                                     inschrijving en boekhouding. *</label></li>
@@ -540,6 +589,7 @@
     <script src="js/dwapi.js"></script>
     <script src="js/winkel.js"></script>
     <script src="js/zoekcursus.js"></script>
+    <script src="js/cursist_inloggen.js"></script>
 </body>
 
 
