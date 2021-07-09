@@ -36,7 +36,7 @@ function toonCursussenTabel() {
                     </p>
                 </div>`;
             }
-           
+            else {
             cursussen.items.forEach(function(cursus) {
                
                     let locatie_naam = "";
@@ -85,7 +85,7 @@ function toonCursussenTabel() {
          tabel_cursussen_html += "</div>";
         if(document.getElementById("toon-deze-maand-cursus")){
         document.getElementById("toon-deze-maand-cursus").innerHTML = tabel_cursussen_html;  
-       }
+       }}
         })
 }
 
