@@ -108,36 +108,27 @@ function dezeMaandCursussenFilteren() {
 
 function categorienTonenInFilter() {
     //INVOER
-    let parameters = {
-        "endpoint": endpoint, 
-        "project": project,
-        "token": token, 
-        "entity": "categorie",
-        "property" : [{"field": "categorie_id"},{ "field": "naam"}],
-    }
 
-    //VERWERKING
-    dwapiRead(parameters).then(
-        resultaat => {
-            let select_categorien_html =  "";
-            let categorien = resultaat.result;
-
-            console.log(categorien);
-
-        
-            categorien.items.forEach(function(categorie) {
-                let categorie_naam = "";
-                categorie_naam = categorie.categorie.items[categorie.categorie_id].naam;
-                    
-                select_categorien_html += "<option value=${categorie_id}>{categorie_naam}</option>";
-
-                //UITVOER
-                document.getElementById("zoeken_door_categorie").innerHTML = select_categorien_html;  
-            });
+        let parameters = {
+            "endpoint": endpoint, 
+            "project": project,
+            "token": token, 
+            "entity": "categorie"
         }
-    )
-
-    
+        
+        dwapiRead(parameters).then(
+            data =>{
+            let categorie_opties = 
+            `<select required id="select_cursus_categorie" class="form-control select-input rounded">`;
+            data.result.items.forEach(function(categorie) {
+                categorie_opties += "<option value=" + categorie.categorie_id + ">" + categorie.naam + "</option>";
+            });
+        categorie_opties +=`</select>`;
+        console.log(categorie_opties);
+        document.getElementById("zoeken_door_categorie").innerHTML = categorie_opties;
+          } 
+           )
+            
 }
 
 
