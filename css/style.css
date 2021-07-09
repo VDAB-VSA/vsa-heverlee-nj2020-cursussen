@@ -2234,20 +2234,7 @@ width: 30% !important;
     font-size: 14px;
 
 }
-#zoeken_door_categorie {
-   position: relative;
-   background: white;
-    border: 1px solid #cecece; 
-    height: 48px;
-    background: #fff;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-    margin-bottom: 4px;
-    padding: 0px 15px;
-    box-sizing: border-box;
-    font-size: 16px;
 
-}
 /*-------------------------------------------------*/
 /* =  8.SLIDER
 /*-------------------------------------------------*/
@@ -4448,14 +4435,16 @@ left: 0;
 .select-wrapper {
    position: relative;
    border: 1px solid #cecece;
-   height: 45px;
+   height: 48px;
    background: #fff;
-   border-radius: 2px;
+   border-top-left-radius: 2px;
+   border-bottom-left-radius: 2px;
    margin-bottom: 4px;
    padding: 0px 15px;
    box-sizing: border-box;
    font-size: 16px;
 }
+
 .select-dropdown{
    font-size: 14px;
    margin-top: 7px;

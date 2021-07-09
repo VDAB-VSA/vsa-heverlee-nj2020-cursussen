@@ -6,6 +6,7 @@ let tabel_hoofd = '';
 
 window.addEventListener('load', function() { 
     dezeMaandCursussenFilteren();
+    categorienTonenInFilter();
     document.getElementById("button_cursus_zoek").addEventListener('click', cursussenFilteren);
     document.getElementById("button-toon-cursus-detail") ? document.getElementById("button-toon-cursus-detail").addEventListener('click', detailFilteren) : false;
   }, false);
@@ -102,6 +103,44 @@ function dezeMaandCursussenFilteren() {
     // UITVOER
     toonCursussenTabel();
 }
+
+
+
+function categorienTonenInFilter() {
+    //INVOER
+    let parameters = {
+        "endpoint": endpoint, 
+        "project": project,
+        "token": token, 
+        "entity": "categorie",
+        "property" : [{"field": "categorie_id"},{ "field": "naam"}],
+    }
+
+    //VERWERKING
+    dwapiRead(parameters).then(
+        resultaat => {
+            let select_categorien_html =  "";
+            let categorien = resultaat.result;
+
+            console.log(categorien);
+
+        
+            categorien.items.forEach(function(categorie) {
+                let categorie_naam = "";
+                categorie_naam = categorie.categorie.items[categorie.categorie_id].naam;
+                    
+                select_categorien_html += "<option value=${categorie_id}>{categorie_naam}</option>";
+
+                //UITVOER
+                document.getElementById("zoeken_door_categorie").innerHTML = select_categorien_html;  
+            });
+        }
+    )
+
+    
+}
+
+
 
 function cursussenFilteren() {
     // INVOER
