@@ -1,6 +1,6 @@
-let filter_waardes = [];
+//let filter_waardes = [];
 let sorteer = ["cursus_id", "ASC"];
-huidige_cursus_id;
+let huidige_cursus_id;
 //let tabel_hoofd = '';
 
 window.addEventListener('load', function() { 
@@ -18,7 +18,7 @@ let cursus_verwijdren = document.getElementById("button_product_verwijderen");
 function toonWinkelWagantje(id){
 
     //INVOER
-    filter_waardes = [];
+    let filter_waardes = [];
     filter_waardes.push(["cursus_id", "=", id]);
 
     //VERWERK
@@ -54,7 +54,7 @@ function toonWinkelWagantje(id){
                 </div>`;
             }
            else {
-               tabel_cursussen_html = tabel_hoofd;
+               //tabel_cursussen_html = tabel_hoofd;
                 cursussen.items.forEach(function(cursus) {
                
                     let locatie_naam = "";
