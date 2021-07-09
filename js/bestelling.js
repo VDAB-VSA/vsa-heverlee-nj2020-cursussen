@@ -25,11 +25,13 @@ function toonCursussenTabel() {
      }
     
     dwapiRead(parameters).then(
-        data => {
+        aankopen => {
             let tabel_aankoop_html =  "<table>";
-
-            data.result.items.forEach(function(aankoop) {
+             console.log(aankopen.result);
+            aankopen.result.items.forEach(function(aankoop) {
+                
                 let user_naam = "";
+                let cursus_naam = "";
                 if (aankoop.aankoop_id != null) {
                     let naam = aankoop.user.items[aankoop.user_id].naam;
                     let voornaam = aankoop.user.items[aankoop.user_id].voornaam;
@@ -38,10 +40,28 @@ function toonCursussenTabel() {
                     //console.log(aankoop_id, cursus_id);
                     //let voornaam = aankoop.user.items[aankoop.user_id].voornaam;
                     user_naam = voornaam + "," + naam;
-                    let cursus_naam = aankoop_cursus.cursus.items[aankoop_cursus.cursus_id].titel;
-                    console.log(cursus_naam);
+                    //let aa = [];
+                    //console.log(aankoop);
+                    //for(let i=0; i<)
+                    //aa.push(aankoop.aankoop_cursus.items.forEach(cc => {
+                      //  console.log(cc);
+                    //}));
+
+                    //let aa = 
+                    /*aankoop.aankoop_cursus.items[aankoop.aankoop_id].cursus.items.forEach(function(aa){
+                        //
+                        console.log(aa);
+                    });*/
+                 
+                    /*.map(function(cursus) {
+                         console.log(cursus);*/
+                    
+                    //console.log(aa);
+                    //[aankoop.aankoop_id].cursus.titel;
+                    //console.log(cursus_naam);*/
+                    cursus_naam = "my courses";
                 }
-                let cursus = aankoop.aankoop_cursus.items[aankoop.aankoop_id].cursus_id;
+                //let cursus = aankoop.aankoop_cursus.items[aankoop.aankoop_id].cursus_id;
 
                 tabel_aankoop_html += "<tr>"+
                     "<td>" + aankoop.aankoop_id + "</td>" +
@@ -63,7 +83,7 @@ function toonCursussenTabel() {
                     "<i class='fa fa-print'></i>" +
                     "</button>"
                     + "</td>" + "</tr>" +
-                    `<tr><td colspan="9">Cursus ${cursus}</td></tr>`;
+                    `<tr><td colspan="9" class="text-primary">Cursus ${cursus_naam}</td></tr>`;
                 });
            // tabel_cursussen_html += "</table>";
             document.getElementById("tabel_aankopen").innerHTML = tabel_aankoop_html;
