@@ -1,6 +1,23 @@
+/**
+ * This is a ready to use set of functions for the default dwAPI endpoints:
+ * - GET item: dwapiRead()
+ * - POST item: dwapiCreate()
+ * - PUT item: dwapiUpdate()
+ * - DELETE item: dwapiDelete()
+ * - POST user/login: dwapiLogin()
+ * - POST user/register: dwapiRegister()
+ * - GET user/logout: dwapiLogout()
+ * - GET user/reset_password: dwapiResetPassword()
+ * 
+ * For more documentation check https://dataweb.stoplight.io/studio/dwapi
+ * 
+ * Last updated on 29/06/2021, 19:55
+ * (c) Bert Jansen - 2021
+ */
+
 // READ
 async function dwapiRead(parameters) {   
-    let url = parameters.endpoint + 
+    let url = parameters.endpoint +
         "?project=" + parameters.project + 
         "&entity=" + parameters.entity;
 
@@ -17,13 +34,20 @@ async function dwapiRead(parameters) {
         url = url + "&paging=" + encodeURIComponent(JSON.stringify(parameters.paging))
     }
 
+    let headers = {
+        'Content-Type': 'application/json'
+    }
+    if (typeof parameters.token != "undefined") {
+        headers.Authorization = 'Bearer ' + parameters.token
+    }
+
     let response = await fetch(url, {
-        method: 'GET'
+        method: 'GET',
+        headers: headers
     });
 
     return response.json()
-        .then(data => {    
-            console.log(data);          
+        .then(data => {             
             return data; 
         });
 }   
@@ -31,9 +55,13 @@ async function dwapiRead(parameters) {
 
 // CREATE
 async function dwapiCreate(parameters) {   
-    let url = parameters.endpoint + 
+    let url = parameters.endpoint +
         "?project=" + parameters.project + 
         "&entity=" + parameters.entity;
+
+    if (typeof parameters.token_required !== "undefined") {
+        url = url + "&token_required=" + encodeURIComponent(JSON.stringify(parameters.token_required))
+    }
 
     const response = await fetch(url, {
         method: 'POST',
@@ -44,15 +72,14 @@ async function dwapiCreate(parameters) {
     });
 
     return response.json()
-        .then(data => {  
-            console.log(data);           
+        .then(data => {             
             return data; 
         }); 
 }
 
 // UPDATE
 async function dwapiUpdate(parameters) {   
-    let url = parameters.endpoint + 
+    let url = parameters.endpoint +
         "?project=" + parameters.project + 
         "&entity=" + parameters.entity + 
         "&filter=" + encodeURIComponent(JSON.stringify(parameters.filter));
@@ -90,7 +117,7 @@ async function dwapiDelete(parameters) {
     }); 
 
     return response.json()
-        .then(data => {            
+        .then(data => {             
             return data; 
         }); 
 }
@@ -115,14 +142,11 @@ async function dwapiLogin(parameters) {
 
     const response = await fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({"email": parameters.email, "password": parameters.password})
-    });
+        body: prepareBody({"email": parameters.email, "password": parameters.password})
+    }); 
+
     return response.json()
-        .then(data => {   
-            console.log(data);     
+        .then(data => {             
             return data; 
         }); 
 }
@@ -141,11 +165,30 @@ async function dwapiLogout(parameters) {
     });
 
     return response.json()
-        .then(data => {
-            console.log(data);             
+        .then(data => {             
             return data; 
         }); 
 }
+
+// VALIDATE TOKEN
+async function dwapiValidateToken(parameters) {   
+    let url = parameters.endpoint +
+        "?project=" + parameters.project;
+
+    const response = await fetch(url, {
+        method: 'GET',  
+        headers: { 
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + parameters.token,
+        },      
+    });
+
+    return response.json()
+        .then(data => {             
+            return data; 
+        }); 
+}
+
 
 // REGISTER
 async function dwapiRegister(parameters) {   

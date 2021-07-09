@@ -80,8 +80,8 @@ function inLoggen() {
 
                         label_fout = document.getElementById("inloggen_fout_boodschap");
 
-                        let message = "X Error code : " + resultaat.status.error_code;
-                        label_fout.innerHTML = message + "  Actieve gebruiker met dit e-mailadres/wachtwoord niet gevonden. ";
+                        let message = boodschap[resultaat.status.error_code];
+                        label_fout.innerHTML = message;
                         label_fout.classList.remove("invisible");
                         label_fout.classList.add("visible");
                     }
