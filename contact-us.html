@@ -152,20 +152,26 @@
                     <div class="col-md-12">
                         <div class="search-form">
                             <form>
-                                <div class="sf-type">
-                                    <div class="sf-input">
-                                        <input type="text" id="input_cursus_naam" placeholder="Cursus Titel" />
+                                <div class="sf-type" id="form_cursus_zoeken">
+                                    <div id="zoeken_door_categorie">
+                                        <!--
+                                        <select  class="form-select" aria-label="zoeken">
+                                            
+                                                <option selected>Categorien</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            
+                                        </select>
+                                        -->
                                     </div>
-                                    <!--div class="sf-list">
-                                        <ul>
-                                            <li><a href="course-details.html">Talen</a></li>
-                                            <li><a href="course-details.html">Mode & Decoratie</a></li>
-                                        </ul>
-                                    </div-->
-                                </div>
-                                <div class="sf-submit">
-                                    <input type="button" value="Zoek Cursus" id="button_cursus_zoek">
-                                </div>
+                                    <div class="sf-input">
+                                        <input type="text" id="input_cursus_naam" placeholder="Titel of zoekwoord" />  
+                                    </div>
+                                    <div class="sf-submit">
+                                        <input type="button" value="Zoek Cursus" id="button_cursus_zoek">
+                                    </div>
+                                </div>  
                             </form>
                         </div>
                     </div>
@@ -540,6 +546,7 @@
     <script src="js/dwapi.js"></script>
     <script src="js/winkel.js"></script>
     <script src="js/zoekcursus.js"></script>
+    <script src="js/register.js"></script>
 </body>
 
 

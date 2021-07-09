@@ -2,11 +2,12 @@ let huidige_cursus_actie;
 let huidige_cursus_id;
 let huidige_filter_waardes = [];
 let huidige_sorteer_waarde = ["cursus_id", "ASC"];
-let tabel_hoofd = '';
+let tabel_hoofd_cursussen = '';
 
 window.onload = function(){
     toonCursussenTabel();
     eventListenersVoorStatischeElementen();
+    categorienTonenInFilter();
 }
 
 function toonCursussenTabel() {
@@ -22,8 +23,8 @@ function toonCursussenTabel() {
     
     dwapiRead(parameters).then(
         data => {
-             if(!tabel_hoofd){
-               tabel_hoofd = ` <div class="row">
+             if(!tabel_hoofd_cursussen){
+                tabel_hoofd_cursussen = ` <div class="row">
                  <div class="con-title">
                      <h2>Alle <span>Cursussen</span></h2>
                      <p>Op zoek naar een nieuwe uitdaging of wil je graag je bestaande kennis en vaardigheden uitbreiden? Hieronder vind je het 
@@ -34,7 +35,7 @@ function toonCursussenTabel() {
              <div class="row">`;
              }
              
-            let tabel_cursussen_html = tabel_hoofd;
+            let tabel_cursussen_html = tabel_hoofd_cursussen;
             data.result.items.forEach(function(cursus) {
                 let locatie_naam = "";
                 let categorie_naam = "";
@@ -97,7 +98,7 @@ function cursussenFilteren() {
     if (String(filter_naam) != "") {
         huidige_filter_waardes.push(["titel", "LIKE", "%" + filter_naam + "%"]);
     }
-    tabel_hoofd = `<div class="row">
+    tabel_hoofd_cursussen = `<div class="row">
         <div class="con-title">
             <h2>Cursus<span>Zoekresultaat</span></h2>
         </div>
@@ -114,4 +115,34 @@ function eventListenersVoorStatischeElementen() {
     document.getElementById("button_cursus_zoek").addEventListener('click', function() {
         cursussenFilteren();
     })
+}
+function categorienTonenInFilter() {
+    //INVOER
+
+        let parameters = {
+            "endpoint": endpoint, 
+            "project": project,
+            "token": token, 
+            "entity": "categorie"
+        }
+        
+        dwapiRead(parameters).then(
+            data =>{
+            let categorie_opties = 
+                    `<select class="form-select" aria-label="zoeken">
+                    <option selected="">Categorien</option>`;
+                        
+            // VERWERKING
+            data.result.items.forEach(function(categorie) {
+                categorie_opties += "<option value=" + categorie.categorie_id + ">" + categorie.naam + "</option>";
+            });
+            
+            categorie_opties +=`</select>`;
+
+            //UITVOER
+            console.log(categorie_opties);
+            document.getElementById("zoeken_door_categorie").innerHTML = categorie_opties;
+        } 
+    )
+            
 }

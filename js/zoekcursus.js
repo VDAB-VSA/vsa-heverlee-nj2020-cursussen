@@ -1,8 +1,8 @@
-let huidige_cursus_actie;
-let huidige_cursus_id;
-let huidige_filter_waardes = [];
-let huidige_sorteer_waarde = ["cursus_id", "ASC"];
-let tabel_hoofd = '';
+//let huidige_cursus_knop;
+//let huidige_cursus_id;
+let filter_waardes = [];
+let sorteer_waarde = ["cursus_id", "ASC"];
+let tabel_hoofd_resultaat = '';
 
 window.addEventListener('load', function() { 
     dezeMaandCursussenFilteren();
@@ -18,8 +18,8 @@ function toonCursussenTabel() {
         "project": project,
         "token": token, 
         "entity": "cursus",
-        "filter": huidige_filter_waardes,
-        "sort": huidige_sorteer_waarde,
+        "filter": filter_waardes,
+        "sort": sorteer_waarde,
         "relation": [{"pri_entity": "cursus", "pri_key": "categorie_id", "sec_entity": "categorie", "sec_key": "categorie_id"}, {"pri_entity": "cursus", "pri_key": "locatie_id", "sec_entity": "locatie", "sec_key": "locatie_id"}],
      }
     
@@ -83,6 +83,7 @@ function toonCursussenTabel() {
                     </div>`
                 });
          tabel_cursussen_html += "</div>";
+         
         if(document.getElementById("toon-deze-maand-cursus")){
         document.getElementById("toon-deze-maand-cursus").innerHTML = tabel_cursussen_html;  
        }
@@ -91,14 +92,14 @@ function toonCursussenTabel() {
 
 function dezeMaandCursussenFilteren() {
     // INVOER
-    huidige_filter_waardes = [];
+    filter_waardes = [];
     let current = new Date();
     let maand;
    
     // VERWERK
     maand = current.getFullYear() + '-' + 0+(current.getMonth() + 1);
     if (String(maand) != "") {
-        huidige_filter_waardes.push(["startdatum", "LIKE", "%" + maand + "%"]);
+        filter_waardes.push(["startdatum", "LIKE", "%" + maand + "%"]);
     }    
     // UITVOER
     toonCursussenTabel();
@@ -119,15 +120,21 @@ function categorienTonenInFilter() {
         dwapiRead(parameters).then(
             data =>{
             let categorie_opties = 
-            `<select required id="select_cursus_categorie" class="form-control select-input rounded">`;
+                    `<select class="form-select" aria-label="zoeken">
+                    <option selected="">Categorien</option>`;
+                        
+            // VERWERKING
             data.result.items.forEach(function(categorie) {
                 categorie_opties += "<option value=" + categorie.categorie_id + ">" + categorie.naam + "</option>";
             });
-        categorie_opties +=`</select>`;
-        console.log(categorie_opties);
-        document.getElementById("zoeken_door_categorie").innerHTML = categorie_opties;
-          } 
-           )
+            
+            categorie_opties +=`</select>`;
+
+            //UITVOER
+            console.log(categorie_opties);
+            document.getElementById("zoeken_door_categorie").innerHTML = categorie_opties;
+        } 
+    )
             
 }
 
@@ -135,14 +142,14 @@ function categorienTonenInFilter() {
 
 function cursussenFilteren() {
     // INVOER
-    huidige_filter_waardes = [];
+    filter_waardes = [];
     let filter_naam = document.getElementById("input_cursus_naam").value;
 
     // VERWERKING
     if (String(filter_naam) != "") {
-        huidige_filter_waardes.push(["titel", "LIKE", "%" + filter_naam + "%"]);
+        filter_waardes.push(["titel", "LIKE", "%" + filter_naam + "%"]);
     }
-    tabel_hoofd = `<div class="row">
+    tabel_hoofd_resultaat = `<div class="row">
                         <div class="con-title">
                             <h2>Cursus<span>Zoekresultaat</span></h2>
                         </div>
@@ -181,8 +188,8 @@ function toonZoekResultaatTabel() {
         "project": project,
         "token": token, 
         "entity": "cursus",
-        "filter": huidige_filter_waardes,
-        "sort": huidige_sorteer_waarde,
+        "filter": filter_waardes,
+        "sort": sorteer_waarde,
         "relation": [{"pri_entity": "cursus", "pri_key": "categorie_id", "sec_entity": "categorie", "sec_key": "categorie_id"}, {"pri_entity": "cursus", "pri_key": "locatie_id", "sec_entity": "locatie", "sec_key": "locatie_id"}],
      }
     
@@ -208,7 +215,7 @@ function toonZoekResultaatTabel() {
                 </div>`;
             }
            else {
-               tabel_cursussen_html = tabel_hoofd;
+               tabel_cursussen_html = tabel_hoofd_resultaat;
                 cursussen.items.forEach(function(cursus) {
                
                     let locatie_naam = "";
