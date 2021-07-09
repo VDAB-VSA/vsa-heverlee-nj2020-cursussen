@@ -5,15 +5,25 @@ let project = "4nqmlRAiE5cG";
 /*window.onload = function(){
    eventListenersVoorStatischeElementen();
    console.log('inloggen1');
-};*/
+};
 
 function eventListenersVoorStatischeElementen() {
-    console.log('inloggen2');
+    console.log('inloggen2');*/
 
+window.addEventListener('load', (event) => {
+    console.log("onload");
     document.getElementById("bezoeker_inloggen").addEventListener('click', function() {
         inLoggen();
-    })
-}
+     })
+    console.log('inloggen1');
+  });
+
+/*function eventListenersVoorStatischeElementen() {
+    console.log("eventListenersVoorStatischeElementen");
+    
+  
+    
+}*/
 
 
 function inLoggen() {
@@ -27,7 +37,7 @@ function inLoggen() {
     let form_inloggen = document.getElementById("form_bezoeker_inloggen");
     if (form_inloggen.checkValidity()) {
         let parameters = {
-            "endpoint": endpoint + "/user/login",
+            "endpoint": tweede_endpoint + "/user/login",
             "project": project,               
             "email": gebruikeremail,
             "password": wachtwoord
