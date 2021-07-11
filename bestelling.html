@@ -505,16 +505,18 @@
                     </a>
                     <h4>Inloggen</h4>
                     <p>Bestaande klanten</p>
-                    <form class="s12">
+                    <label id="inloggen_fout_boodschap" class="note note-danger text-danger invisible"></label>
+                    <label id="inloggen_succes_boodschap" class="note note-danger invisible"></label>
+                    <form class="s12" id="form_bezoeker_inloggen">
                         <div>
                             <div class="input-field s12">
-                                <input type="email" data-ng-model="email" class="validate" required>
+                                <input id="email" type="email" data-ng-model="email" class="validate" required />
                                 <label>E-mail adres</label>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s12">
-                                <input type="password" class="validate" required>
+                                <input id="wachtwoord" type="password" class="validate" required />
                                 <label>Wachtwoord</label>
                             </div>
                         </div>
@@ -525,7 +527,7 @@
                         </div>
                         <div>
                             <div class="input-field s4">
-                                <input type="submit" value="Inloggen" class="waves-effect waves-light log-in-btn"> </div>
+                                <input id="bezoeker_inloggen" type="button" value="Inloggen" class="waves-effect waves-light log-in-btn" /> </div>
                         </div>
                     </form>
                 </div>
@@ -694,25 +696,25 @@
                     </a>
                     <h4>Wachtwoord vergeten ?</h4>
                     <p>Weet je het wachtwoord niet meer? Vul hieronder je e-mailadres in. 
-                    We sturen dan binnen enkele minuten een e-mail waarmee een nieuw wachtwoord kan worden aangemaakt.
+                      We sturen dan binnen enkele minuten een e-mail waarmee een nieuw wachtwoord kan worden aangemaakt.
                     </p>
-                    <form class="s12">
+                    <form id="form_reset_paswoord" class="s12">
                         <div>
                             <div class="input-field s12">
-                                <input type="email" data-ng-model="name3" class="validate" required>
+                                <input id="email_voor_reset" type="email" data-ng-model="name3" class="validate" required>
                                 <label>E-mail adres</label>
                             </div>
                         </div>
                         <div>
                             <div class="input-field s4">
-                                <input type="submit" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
+                                <input type="button" id="reset_paswoord_button" value="Verzenden" class="waves-effect waves-light log-in-btn"> </div>
                         </div>
                     </form>
-                    <div class="success_boodschap col-md-12">
+                    <div id="reset_succes" class="success_boodschap col-md-12 invisible">
                         <p><i class="fas fa-check-circle fa-2x"></i></p> 
                         <p>Wij hebben u een e-mail gestuurd met een nieuw wachtwoord</p>
                     </div>
-                    <div class="fout_boodschap col-md-12">
+                    <div id="reset_fout" class="fout_boodschap col-md-12 invisible">
                         <p><i class="fas fa-times-circle fa-2x"></i></p>
                         <p>Er was een probleem.
                             <br>Probeer het later nog eens of neem contact met ons op.
@@ -754,6 +756,39 @@
                 </div>
             </div>
         </div>
+
+       <!--verwijderen product from lijst-->
+       <div
+       class="modal fade"
+       id="modal_product_verwijderen"
+       tabindex="-1"
+       aria-labelledby="modal_product_verwijderen"
+       aria-hidden="true">
+       <div class="modal-dialog">
+           <div class="modal-content">
+               <div class="modal-header">
+                   <h5 class="modal-title">Weet je zeker dat je deze cursus van je winkelwagen wilt verwijderen?</h5>
+                   <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+               </div>
+               <div class="modal-body">                            
+                   <div class="form-outline mb-4">
+                       <button class="button_pop_up"
+                           type="button" 
+                           id="button_product_verwijderen" 
+                           class="btn btn-outline-primary">
+                           Verwijderen
+                       </button>
+                       <button class="button_pop_up" 
+                           type="button" 
+                           class="btn btn-outline-dark" 
+                           data-dismiss="modal">
+                           Annuleren
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
    </section>  
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
@@ -768,6 +803,10 @@
     <script src="js/zoekcursus.js"></script>
     <script src="js/dwapi.js"></script>
     <script src="js/bestelling-winkelwagantje.js"></script>
+    <script src="js/cursist_inloggen.js"></script>
+    <script src="js/reset_pasword.js"></script>
+    <script src="js/project_instelling.js"></script>
+    <script src="js/dwapi.js"></script>
 </body>
 
 
