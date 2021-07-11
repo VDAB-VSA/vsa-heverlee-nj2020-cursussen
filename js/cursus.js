@@ -6,6 +6,8 @@ let huidige_cursus_actie;
 let huidige_cursus_id;
 let huidige_filter_waardes = [];
 let huidige_sorteer_waarde = ["cursus_id", "ASC"];
+//let profiel_naam = `<h5>Beheerder<span>Welkom</span></h5>`;
+
 
 window.onload = function(){
     checkSessie();
@@ -32,6 +34,8 @@ console.log(gebruiker);
   }
 }
 function toonCursussenTabel() {
+    //INVOER
+    //gebruikerProfiel();
     
     let parameters = {
         "endpoint": endpoint, 
@@ -42,12 +46,8 @@ function toonCursussenTabel() {
         "sort": huidige_sorteer_waarde,
         "relation": [{"pri_entity": "cursus", "pri_key": "categorie_id", "sec_entity": "categorie", "sec_key": "categorie_id"}, {"pri_entity": "cursus", "pri_key": "locatie_id", "sec_entity": "locatie", "sec_key": "locatie_id"}],
      }
-     /* Gebrukers Profiel naam */
-     let profiel_naam = '';
-     let gebruiker = JSON.parse(window.sessionStorage.getItem("user"));
-     (gebruiker) ? profiel_naam = `<h5>${gebruiker[0].voornaam}<span> ${gebruiker[0].naam}</span></h5>`:profiel_naam = `<h5>Geen Naam<span>Admin</span></h5>` 
-     document.getElementById('gebruiker_naam').innerHTML = profiel_naam;
-     
+
+   
     dwapiRead(parameters).then(
         data => {
             let tabel_cursussen_html =  "<table>";
@@ -92,6 +92,7 @@ function toonCursussenTabel() {
                      "</button>" + "</td>" + "</tr>";
                 });
            // tabel_cursussen_html += "</table>";
+           //console.log(tabel_cursussen_html);
             document.getElementById("tabel_cursussen").innerHTML = tabel_cursussen_html;
             eventListenersVoorDynamischeElementen();            
        }
@@ -258,17 +259,7 @@ function eventListenersVoorStatischeElementen() {
             cursussenFilteren();
         })
     }
-    /*document.getElementById("button_cursus_bewaren").addEventListener('click', function() {
-        cursusBewaren();
-    })
-    document.getElementById("button_cursus_verwijderen").addEventListener('click', function() {
-        cursusVerwijderen(huidige_cursus_id);
-    })
-
-    document.getElementById("button_cursus_zoek").addEventListener('click', function() {
-        cursussenFilteren();
-    })*/
-
+ 
     let sorteer_links;
     sorteer_links = document.querySelectorAll('.link-cursussen-sorteren');
     for (var i = 0; i < sorteer_links.length; i++) {
@@ -279,7 +270,6 @@ function eventListenersVoorStatischeElementen() {
 }
 
 function eventListenersVoorDynamischeElementen() {
-    /* "locatie toevoegen" knop (statisch) en "locatie wijzigen" knoppen (dynamisch) */
     let toon_cursus_modal_buttons;
     toon_cursus_modal_buttons = document.querySelectorAll('.button-toon-cursus-modal');
     if (toon_cursus_modal_buttons) {
@@ -290,7 +280,6 @@ function eventListenersVoorDynamischeElementen() {
         }        
     }
 
-    /* "locatie verwijderen" knoppen */
     buttons = document.querySelectorAll('.button-toon-cursus-verwijderen-modal');
     if (buttons) {
         for (var i = 0; i < buttons.length; i++) {
@@ -311,17 +300,24 @@ function categorieenLadenInSelects() {
     
     dwapiRead(parameters).then(
         data => {
-            let categorie_opties = 
-                `<label class="form-label" for="select_cursus_categorie">Categorie</label>
-                <select required id="select_cursus_categorie" class="form-control select-input rounded">`;
+            
+            let select_categorie = document.getElementById('select_categorie');
+            let categorie_opties = `<label class="form-label" for="select_cursus_categorie">Categorie</label>
+            <select required id="select_cursus_categorie" class="form-control select-input rounded">`;
                 data.result.items.forEach(function(categorie) {
                     categorie_opties += "<option value='" + categorie.categorie_id + "'>" + categorie.naam + "</option>";
                 });
-            categorie_opties +=`
-            </select>    
-            <div class="invalid-feedback">Een categorie is verplicht.</div>`;
-            select_categorie.innerHTML = "<option value=''></option>" + categorie_opties;
-        });
+                categorie_opties += `</select><div class="invalid-feedback">Een categorie is verplicht.</div>`;
+            select_categorie.innerHTML = categorie_opties;
+})}
+function gebruikerProfiel(){
+       
+   /* let gebruiker = JSON.parse(window.sessionStorage.getItem("user")) || [];
+    (gebruiker.length > 0) ? profiel_naam = `<h5>${gebruiker[0].voornaam}<span> ${gebruiker[0].naam}</span></h5>` : false;
+    
+   
+    return profiel_naam;
+    //return profiel_naam;*/
 }
 
 function locatiesLadenInSelects() {
@@ -334,17 +330,14 @@ function locatiesLadenInSelects() {
     
     dwapiRead(parameters).then(
         data => {
-            //let select_locatie = document.getElementById('select_categorie');
-            let locatie_opties = 
-                `<label class="form-label" for="select_cursus_locatie">Locatie</label>
-                <select required id="select_cursus_locatie" class="form-control select-input rounded">`;
+            let select_locatie = document.getElementById('select_locatie');
+            let locatie_opties = `<label class="form-label" for="select_cursus_locatie">Locatie</label>
+            <select required id="select_cursus_locatie" class="form-control select-input rounded">`;
                 data.result.items.forEach(function(locatie) {
                     locatie_opties += "<option value='" + locatie.locatie_id + "'>" + locatie.naam_campus + "</option>";
                 });
-            locatie_opties +=`
-            </select>    
-            <div class="invalid-feedback">Een locatie is verplicht.</div>`;
-            select_locatie.innerHTML = locatie_opties;
+                locatie_opties += `</select><div class="invalid-feedback">Een locatie is verplicht.</div>`;
+            select_locatie.innerHTML = locatie_opties;   
         });
 }
 

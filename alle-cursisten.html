@@ -13,6 +13,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style-mob.css" rel="stylesheet" />
+    <script src="js/project_instelling.js"></script>
 </head>
 <body>
     <div class="container-fluid sb1">
@@ -49,7 +50,7 @@
                         <li><img src="images/placeholder.jpg" alt="">
                         </li>
                         <li>
-                            <h5>Thomas H <span> Lennik</span></h5>
+                            <h5>Beheerder<span>Welkom</span></h5>
                         </li>
                      
                     </ul>
@@ -129,16 +130,16 @@
                                             <input id="input_filter_categorie" type="search" class="form-control rounded" placeholder="Categorie" aria-label="Search" aria-describedby="search-addon" />
                                         </div-->
                                         <div class="col-md-3">
-                                            <button type="button" id="button_cursus_zoek" class="btn btn-outline-primary">Filter</button>
+                                            <button type="button" id="button_cursist_zoek" class="btn btn-outline-primary">Filter</button>
                                         </div>
                                   
                                     <div class="col-md-3">
                                         <button 
-                                        id="button_cursus_toevoegen"
+                                        id="button_cursist_toevoegen"
                                         type="button" 
-                                        class="btn btn-primary button-toon-cursus-modal" 
+                                        class="btn btn-primary button-toon-cursist-modal" 
                                         data-mdb-toggle="modal" 
-                                        data-mdb-target="#modal_cursus"        
+                                        data-mdb-target="#modal_cursist"        
                                         data-product-actie="create"
                                         >
                                         + Nieuwe Cursist
@@ -193,17 +194,17 @@
                                         <table class="table table-hover table datatable-table">
                                             <thead class="datatable-header">
                                                 <tr id="hoofdrij">
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_cursus_id" data-sorteer-op="cursus_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
-                                                    <th scope="col"><a class="link-cursussen-sorteren" id="link_sorteer_op_titel" data-sorteer-op="titel" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Naam</a></th>
-                                                    <th scope="col">Email</th>
-                                                    <th scope="col">Telefoon</th>
-                                                    <!--th>Docent</th-->
-                                                    <th scope="col">
-                                                        <a class="link-cursussen-sorteren" id="link_sorteer_op_docent" data-sorteer-op="docent" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Adres</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_user_id" data-sorteer-op="user_id" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Id</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_voornaam" data-sorteer-op="voornaam" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Voornaam</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_naam" data-sorteer-op="naam" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Naam</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_email" data-sorteer-op="email" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>E-mail</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_telefoon" data-sorteer-op="telefoon" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Telefoon</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_adres" data-sorteer-op="adres" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Adres</a></th>
+                                                    <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_rol" data-sorteer-op="rol" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i>Rol</a></th>
                                                     <th scope="col">Actie</th>
                                                 </tr>
                                             </thead>
-                                            <tbody class="datatable-body" id="tabel_cursussen">
+                                            <tbody class="datatable-body" id="tabel_cursisten">
                                                 <!--tr>
                                                     <td>1</td>
                                                     <td>
@@ -298,103 +299,73 @@
     <!--Modal -->
     <div
     class="modal fade"
-    id="modal_cursus"
+    id="modal_cursist"
     tabindex="-1"
-    aria-labelledby="modal_cursus"
+    aria-labelledby="modal_cursist"
     aria-hidden="true"        
     >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="modal_cursus_titel" class="modal-title">Cursus</h5>
+                    <h5 id="modal_cursist_titel" class="modal-title">Cursist</h5>
                     <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
                 <div class="modal-body">
-                    <label id="label_cursus_fout" class="note note-danger invisible">fout</label>
-                    <form class="row g-3 needs-validation" id="form_cursus" novalidate>    
-                        <!-- locatie input -->
+                    <label id="label_cursist_fout" class="note note-danger invisible">fout</label>
+                    <form class="row g-3 needs-validation" id="form_cursist" novalidate>    
+                        <!-- cursist input -->
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_naam">Titel</label>
-                            <input required type="text" id="input_cursus_naam" class="form-control" validate/>
-                            <div class="invalid-feedback">Een cursustitel is verplicht.</div>
-                        </div>
-                        <div class="form-group mb-4" id="select_locatie">
-
-                            <!--label class="form-label" for="input_cursus_locatie">Locatie</label>
-                            <input required type="text" id="input_cursus_locatie" class="form-control" validate/>
-                            <div class="invalid-feedback">Een cursuslocatie is verplicht.</div-->
-                        </div>
-                        <div class="form-group mb-4" id="select_categorie">
-                            <!--label class="form-label" for="select_cursus_categorie">Categorie</label>
-                            <select required id="select_cursus_categorie" class="form-control select-input rounded">
-                                <option></option>
-                            </select>    
-                            <div class="invalid-feedback">Een categorie is verplicht.</div-->                            
-                        </div>
-                        <!--div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_categorie">Categorie</label>
-                            <input required type="text" id="input_cursus_categorie" class="form-control" validate/>
-                            <div class="invalid-feedback">Een cursuscategorie is verplicht.</div>
-                        </div-->
-                        <!--div class="form-group mb-4" id="select_categorie">
-                            <label class="form-label" for="select_cursus_categorie">Categorie</label>
-                            <select id="select_filter_categorie" class="form-control select-input rounded">
-                                <option value="" selected>alle</option>                    
-                              </select-->
-                            <!--label class="form-label" for="select_cursus_categorie">Categorie</label>
-                            <select required id="select_cursus_categorie" class="form-control select-input rounded">
-                                <option></option>
-                            </select>    
-                            <div class="invalid-feedback">Een categorie is verplicht.</div-->                            
-                        <!--/div-->
-                        <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_docent">Docent</label>
-                            <input required type="text" id="input_cursus_docent" class="form-control" validate/>
-                            <div class="invalid-feedback">Een docent is verplicht.</div>
+                            <label class="form-label" for="input_cursist_naam">Naam</label>
+                            <input required type="text" id="input_cursist_naam" class="form-control" validate/>
+                            <div class="invalid-feedback">Een cursistnaam is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_start">Startdatum</label>
-                            <input required type="date" id="input_cursus_start" class="form-control" validate/>
-                            <div class="invalid-feedback">Een startdatum is verplicht.</div>
+                            <label class="form-label" for="input_cursist_voornaam">Voornaam</label>
+                            <input required type="text" id="input_cursist_voornaam" class="form-control" validate/>
+                            <div class="invalid-feedback">Een cursist voornaam is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_eind">Einddatum</label>
-                            <input required type="date" id="input_cursus_eind" class="form-control" validate/>
-                            <div class="invalid-feedback">Een einddatum is verplicht.</div>
+                            <label class="form-label" for="input_cursist_email">E-mail</label>
+                            <input required type="email" id="input_cursist_email" class="form-control" validate/>
+                            <div class="invalid-feedback">Een e-mail is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_uren">Aantallesuren</label>
-                            <input required type="number" id="input_cursus_uren" class="form-control" validate/>
-                            <div class="invalid-feedback">Een aantallesuren is verplicht.</div>
+                            <label class="form-label" for="input_cursist_paswoord">Paswoord</label>
+                            <input required type="password" id="input_cursist_paswoord" class="form-control" validate/>
+                            <div class="invalid-feedback">Een paswoord is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_omschrijving">Omschrijving</label>
-                            <textarea id="input_cursus_omschrijving" class="form-control" rows="4"></textarea>
-                            <!--input required type="text" id="input_cursus_omschrijving" class="form-control validate" /-->
-                            <div class="invalid-feedback">Een omschrijving is verplicht.</div>
+                            <label class="form-label" for="input_cursist_telefoon">Telefoon</label>
+                            <input type="text" id="input_cursist_telefoon" class="form-control" />
+                            <div class="invalid-feedback">Een gsm/telefoon nummer is verplicht.</div>
+                        </div> <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursist_adres">Ades</label>
+                            <input required type="text" id="input_cursist_adres" class="form-control" validate/>
+                            <div class="invalid-feedback">Een adres is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label class="form-label" for="input_cursus_platsen">Max Aantalplatsen</label>
-                            <input required type="number" id="input_cursus_platsen" class="form-control" validate/>
-                            <div class="invalid-feedback">Een maxaantalplatsen is verplicht.</div>
+                            <label class="form-label" for="input_cursist_postcode">Postcode</label>
+                            <input required type="text" id="input_cursist_postcode" class="form-control" validate/>
+                            <div class="invalid-feedback">Een postcode is verplicht.</div>
                         </div>
                         <div class="form-group mb-4">
-                            <label data-error="wrong" data-success="right" for="input_cursus_beeld">Beeld</label>
+                            <label class="form-label" for="input_cursist_stad">Stad</label>
+                            <input required type="text" id="input_cursist_stad" class="form-control" validate/>
+                            <div class="invalid-feedback">Een naamstad is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label data-error="wrong" data-success="right" for="input_cursist_beeld">Beeld</label>
                             <div class="custom-file">
-                                <input type="hidden" id="input_cursus_beeld_origineel" />
-                                <input type="file" id="input_cursus_beeld" aria-describedby="update_beeld">
-                                <label class="custom-file-label" id="label_cursus_beeld" for="cursus_beeld">Kies (nieuw) beeld</label>
+                                <input type="hidden" id="input_cursist_beeld_origineel" />
+                                <input type="file" id="input_cursist_beeld" aria-describedby="update_beeld">
+                                <label class="custom-file-label" id="label_cursist_beeld" for="cursist_beeld">Kies (nieuw) beeld</label>
                             </div>
-                        </div>
-                        <div class="form-group mb-4 form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="check_cursus_in_verkoop" />
-                            <label class="form-check-label" for="check_cursus_in_verkoop">in verkoop</label>
                         </div>
 
                         <!-- Submit button -->
                         <div class="form-outline mb-4">
                             <button 
-                            id="button_cursus_bewaren" 
+                            id="button_cursist_bewaren" 
                             type="submit"
                             class="btn btn-outline-primary">Bewaren</button>
                             <button 
@@ -410,25 +381,25 @@
 
     <div
     class="modal fade"
-    id="modal_cursus_verwijderen"
+    id="modal_cursist_verwijderen"
     tabindex="-1"
-    aria-labelledby="modal_cursus_verwijderen"
+    aria-labelledby="modal_cursist_verwijderen"
     aria-hidden="true"
     >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Cursus verwijderen</h5>
+                    <h5 class="modal-title">Cursist verwijderen</h5>
                     <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
                 </div>
                 <div class="modal-body">
-                    <label id="label_cursus_verwijderen_fout" class="note note-danger invisible"></label>
-                    <label class="form-outline mb-4" id="label_cursus_verwijderen">
+                    <label id="label_cursist_verwijderen_fout" class="note note-danger invisible"></label>
+                    <label class="form-outline mb-4" id="label_cursist_verwijderen">
                     </label>                      
                     <div class="form-outline mb-4">
                         <button 
                         type="button" 
-                        id="button_cursus_verwijderen" 
+                        id="button_cursist_verwijderen" 
                         class="btn btn-outline-primary">Verwijderen</button>
                         <button 
                         type="button" 

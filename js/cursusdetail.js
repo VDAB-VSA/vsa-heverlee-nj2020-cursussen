@@ -153,6 +153,7 @@ function toonDetailTabel(){
     dwapiRead(parameters).then(
         data => {
             let tabel_detail_cursus_html =  "";
+            let cursus_prijs = 0;
             let beeld = `<img src="images/logo3.png" alt="cursus" />`;
             let inverkoop = `<span class="inverkoop" class="alert alert-danger">momenteel geen les voor deze cursus</span>`;
             let cursussen = data.result;
@@ -162,6 +163,7 @@ function toonDetailTabel(){
                     let categorie_naam = "";
                     let prijs = `<p>Cursus Prijs is: €${cursus.prijs}</p>`;
                     let adres, postcode, stad = '';
+                    (cursus.earlybird) ? (cursus_prijs = cursus.earlybird) : (cursus_prijs = cursus.prijs)
                     if (cursus.afbeelding != null && cursus.afbeelding != "") {
                         beeld = '<img src="https://' +  data.result.assets_path + "/" +  cursus.afbeelding.name + '" />';
                     }
@@ -181,10 +183,10 @@ function toonDetailTabel(){
                     if(cursus.earlybird > 0){
                         prijs = `<p>NU €${cursus.earlybird}</p><p>€${cursus.prijs}</p>`;
                     }
-                    /*else{
+                    else{
                         prijs = `<p>Cursus Prijs is: €22${cursus.prijs}</p>`;
-                    }*/
-
+                    }
+                    
                     tabel_detail_cursus_html += `
                                 <div class="cor-p1">
                                 <h2>${cursus.titel} </h2>
@@ -203,7 +205,7 @@ function toonDetailTabel(){
                                 -->
                                 <div class="card">
                                 <div class="card-body">
-                                  <button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#verder_bestellen_of_winkelen" onclick="aankoop(${cursus.cursus_id});"><i class="fas fa-shopping-cart"></i>Aankoop</button>
+                                  <button type="button" class="btn btn-success btn-block btn-lg" data-toggle="modal" data-target="#verder_bestellen_of_winkelen" onclick="aankoop(${cursus.cursus_id}, ${cursus_prijs});"><i class="fas fa-shopping-cart"></i>Aankoop</button>
                                 </div>
                               </div>
                                 
@@ -257,16 +259,21 @@ function toonDetailTabel(){
         })
     }
 
-function aankoop(id) {
+function aankoop(id, prijs) {
     //INVOER
     let producten = JSON.parse(window.sessionStorage.getItem("cursussen")) || [];
 
     //VERWERK
     let nieuw_lijst = [...producten];
+    let cursus = {
+        "id": id,
+        "prijs": prijs
+    }
     let isProduct = nieuw_lijst.indexOf(id);
-    (isProduct >= 0) ? nieuw_lijst.splice(isProduct, 1) : nieuw_lijst.push(id);
+    (isProduct >= 0) ? nieuw_lijst.splice(isProduct, 1) : nieuw_lijst.push(cursus);
 
     //UITVOER
+    console.log(cursus);
     window.sessionStorage.setItem("cursussen", JSON.stringify(nieuw_lijst));
 }
 

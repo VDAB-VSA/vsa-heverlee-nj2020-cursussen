@@ -15,15 +15,15 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
         <!-- FONTAWESOME ICONS -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">    
         <!-- ALL CSS FILES -->
         <link href="css/materialize.css" rel="stylesheet">
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
-        <link rel="stylesheet" href="order.css">
+        <link rel="stylesheet" href="order.css" />
         <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
         <link href="css/style-mob.css" rel="stylesheet" />
-     
+        <script src="js/project_instelling.js"></script>
     </head>
     
     <body>
@@ -122,28 +122,7 @@
                                     <li><a href="winkelwagentje.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                         <span class="badge bg-danger ms-2" id="cart-badge"></span></a>
                                     </li>
-                                    <!-- Button triggers collapse -->
-                                    <!--
-                                    <a data-mdb-toggle="collapse"
-                                        href="#collapseWithScrollbar"
-                                        role="button"
-                                        aria-expanded="false"
-                                        aria-controls="collapseExample"
-                                        >
-                                        <i class="fa fa-angle-down"></i>
-                                    </a>
-                                    -->
-    
-                                    <!-- Collapsed content -->
-                                    <!--
-                                    <div class="collapse mt-3 scroll-section" id="collapseWithScrollbar"  style="max-width: 400px; position: absolute;">
-                                        <p class="bg-danger">Jouw winklewandje is leeg</p>
-                                    </div>
-                                    -->
-    
-                                    <!--div class="content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                      </div-->
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -189,19 +168,19 @@
         
 
     <!--SECTION START-->
-    <section>
-        <div class="container com-sp">
-            <div class="row">
+    <section class="container-fluid">
+        <div class="container-fluid pad-bot-70 overflow-hidden">
+            <div class="row ml-auto">
                 <div class="cor about-sp">
                     <div class="ed-about-tit">
                         <div class="con-title">
                             <h2><span>Kassa</span></h2>
-                            <!--p>Geef al uw juiste informatie zorgvuldig.</p-->
                         </div>
                     </div>                    
                 </div>
-                <div class="cor about-sp">
-                    <div class="ed-about-tit">
+
+                <div class="container overflow-hidden">
+                    <div class="multisteps-form">
                         <div class="row">
                             <div class="con-title">
                                 <div class="multisteps-form__progress">
@@ -212,330 +191,73 @@
                                     <button class="multisteps-form__progress-btn" type="button" title="Factuur">Factuur</button> 
                                 </div>
                             </div>
-                       </div>
-                       <div class="row">
-                            <div class="col-12 col-lg-12 m-center">
+                        </div>
+                        <div class="row">
+                            <div class="containier-lists">
                                 <form class="multisteps-form__form">
-                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white  js-active" data-animation="scaleIn">
+                                    <!--Eerste stap-->
+                                    <div class="multisteps-form__panel shadow p-8 rounded bg-white js-active" data-animation="scaleIn">
                                         <h3 class="multisteps-form__title">Controleer je bestelling</h3>
-                                        <div class="multisteps-form__content">
-                                            <div class="row">
-                                                <div class="winkel-top-cour">
-                                                    <div class="home-top-cour-desc">
-                                                        <img src="images/course/csharp.jfif" alt="">
-                                                    </div>
-                                                    <div class="winkelwagentje_titel home-top-cour-desc">
-                                                        <a href="course-details.html">
-                                                            <h3>C# Ontwiklaar</h3>
-                                                        </a>
-                                                    </div>
-                                                    <div class="winkelwagentje_omschrijving home-top-cour-desc">
-                                                        <p>Deze cursus begint op 05/07/2021</p>
-                                                    </div>
-                                                    <div class="winkelwagentje_categorie home-top-cour-desc">
-                                                        <h4>ICT</h4>
-                                                    </div>   
-                                                    <div class="winkelwagentje_prijs">
-                                                        <h4>100€</h4>
-                                                    </div>
-                                                    <div>
-                                                        <button class="button_product_verwijderen"
-                                                            data-product-id='1',
-                                                            data-product-naam='zz',
-                                                            data-toggle='modal',
-                                                            data-target='#modal_product_verwijderen'>
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="winkel-top-cour">
-                                                    <div class="home-top-cour-desc">
-                                                        <img src="images/course/java.png" alt="">
-                                                    </div>
-                                                    <div class="winkelwagentje_titel home-top-cour-desc">
-                                                        <a href="course-details.html">
-                                                            <h3>Java Ontwiklaar</h3>
-                                                        </a>
-                                                    </div>
-                                                    <div class="winkelwagentje_omschrijving home-top-cour-desc">
-                                                        <p>Deze cursus begint op 20/08/2021</p>
-                                                    </div>
-                                                    <div class="winkelwagentje_categorie home-top-cour-desc">
-                                                        <h4>ICT</h4>
-                                                    </div>   
-                                                    <div class="winkelwagentje_prijs">
-                                                        <h4>80€</h4>
-                                                    </div>
-                                                    <div>
-                                                        <button class="button_product_verwijderen" 
-                                                            data-product-id='1',
-                                                            data-product-naam='zz',
-                                                            data-toggle='modal',
-                                                            data-target='#modal_product_verwijderen'>
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="betaal_bedrag">
-                                                    <p>Subtotaal: 180 €</p>
-                                                    <p>Earlybird Korting: 28 €</p>
-                                                    <p>Inclusief BTW: 16.45 €</p>
-                                                    <h4>Totaal Bedrag: 168.45 €</h4>
-                                                </div>  
+                                        <div class="input-card multisteps-form__content">
+                                            <div class="winkelen">
+                                                <div class="winkelwagantje-lijst-box" id="winkelwagantje-lijst">
+                                                    <!--winkelwagantje lijst-->
+                                                </div> 
+                                                <div class="betaal_bedrag" id="betaal_bedrag">
+
+                                                </div> 
+                                                <h5 class="fw-bold mb-6 text-primary" style="position: relative; bottom: 0;">
+                                                    <a href="all-courses.html"><i class="fas fa-angle-left me-2 fa-2x"></i>TERUG NAAR WINKELEN</a>
+                                                </h5>
                                             </div>
-                                            <div class="row">
-                                                <div class="button-row d-flex mt-4 col-12">
-                                                    <button
-                                                        type="button" 
-                                                        class="btn btn-outline-dark button_pop_up" >
-                                                        <a href="all-courses.html">Verder winkelen ?</a>
-                                                    </button>
-                                                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
+                                            <!--end-->
+                                            <div class="row col-md-12">                                            
+                                                <div class="button-row d-flex flex-end mt-4">
+                                                    <button class="btn btn-primary ml-auto js-btn-next col-md-4" type="button" title="Next" id="gebruiker_gegeven">Volgende</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!--tweede stap-->
                                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
                                         <h3 class="multisteps-form__title">Controleer je gegevens</h3>
-                                        <div class="multisteps-form__content">
-                                            <div class="form-row mt-4">
-                                                <!--div class="col-12 col-sm-6"-->
-                                                <!--a href="#">je moet eerst ingelogd zijn om verder te gaan</a-->
-                                                <div class="tab-inn">
-                                                    <form>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate" required>
-                                                                <label class="">Voornaam</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate" required>
-                                                                <label class="">Naam</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="number"  class="validate">
-                                                                <label class="">Telefoon</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="email" class="validate" required>
-                                                                <label class="">Email</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="number" class="validate">
-                                                                <label class="">Postcode</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate">
-                                                                <label class="">Plaats</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <input type="text" class="validate">
-                                                                <label>Adres</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <input type="checkbox" id="ik_ben_bedrijf" />
-                                                            <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate" required>
-                                                                <label class="">Bedrijf</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="number" class="validate" required>
-                                                                <label class="">BTW-nummer</label>
-                                                            </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="number" class="validate">
-                                                                <label class="">Postcode</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate">
-                                                                <label class="">Plaats</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <input type="text" class="validate">
-                                                                <label>Adres</label>
-                                                            </div>
-                                                        </div>       
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="button-row d-flex mt-4 col-12">
-                                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
-                                                <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!--div class="form-row mt-4">
-                                            <div class="col-12 col-sm-6">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="First Name"/>
-                                            </div>
-                                            <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="Last Name"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-row mt-4">
-                                            <div class="col-12 col-sm-6">
-                                            <input class="multisteps-form__input form-control" type="text" placeholder="Login"/>
-                                            </div>
-                                            <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                            <input class="multisteps-form__input form-control" type="email" placeholder="Email"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-row mt-4">
-                                            <div class="col-12 col-sm-6">
-                                            <input class="multisteps-form__input form-control" type="password" placeholder="Password"/>
-                                            </div>
-                                            <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                            <input class="multisteps-form__input form-control" type="password" placeholder="Repeat Password"/>
-                                            </div>
-                                        </div>
-                                        <div class="button-row d-flex mt-4">
-                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
-                                        </div-->
-                                        
-                                    </div>
-                                </div>
-                                   
-
-                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <h4>Je bestelling : </h4>
-                                        <div class="multisteps-form__content">
-                                            <div class="row">
-                                                <div class="winkel-top-cour">
-                                                    <div class="home-top-cour-desc">
-                                                        <img src="images/course/csharp.jfif" alt="">
-                                                    </div>
-                                                    <div class="winkelwagentje_titel home-top-cour-desc">
-                                                        <a href="course-details.html">
-                                                            <h3>C# Ontwiklaar</h3>
-                                                        </a>
-                                                    </div>
-                                                    <div class="winkelwagentje_omschrijving home-top-cour-desc">
-                                                        <p>Deze cursus begint op 05/07/2021</p>
-                                                    </div>
-                                                    <div class="winkelwagentje_categorie home-top-cour-desc">
-                                                        <h4>ICT</h4>
-                                                    </div>   
-                                                    <div class="winkelwagentje_prijs">
-                                                        <h4>100€</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="winkel-top-cour">
-                                                    <div class="home-top-cour-desc">
-                                                        <img src="images/course/java.png" alt="">
-                                                    </div>
-                                                    <div class="winkelwagentje_titel home-top-cour-desc">
-                                                        <a href="course-details.html">
-                                                            <h3>Java Ontwiklaar</h3>
-                                                        </a>
-                                                    </div>
-                                                    <div class="winkelwagentje_omschrijving home-top-cour-desc">
-                                                        <p>Deze cursus begint op 20/08/2021</p>
-                                                    </div>
-                                                    <div class="winkelwagentje_categorie home-top-cour-desc">
-                                                        <h4>ICT</h4>
-                                                    </div>   
-                                                    <div class="winkelwagentje_prijs">
-                                                        <h4>80€</h4>
-                                                    </div>
-                                                </div>
-                                                <div class="betaal_bedrag">
-                                                    <h4>Totaal Bedrag: 168.45 €</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <h4>Je gegevens : </h4>
-                                        <div class="multisteps-form__content">
-                                            <div class="form-row mt-4">
+                                        <div class="input-card multisteps-form__content">
+                                            <!--start-->
+                                           <div class="controleer_gegvens">
+                                                <div class="form-row mt-4">
                                                     <!--div class="col-12 col-sm-6"-->
                                                     <!--a href="#">je moet eerst ingelogd zijn om verder te gaan</a-->
-                                                <div class="tab-inn">
-                                                    <form>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate" required>
-                                                                <label class="">Voornaam</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate" required>
-                                                                <label class="">Naam</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <input type="text" class="validate">
-                                                                <label>Adres</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="number" class="validate">
-                                                                <label class="">Postcode</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate">
-                                                                <label class="">Plaats</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <input type="checkbox" id="ik_ben_bedrijf" checked />
-                                                            <label for="ik_ben_bedrijf">Ik ben een bedrijf</label>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate" required>
-                                                                <label class="">Bedrijf</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="number" class="validate" required>
-                                                                <label class="">BTW-nummer</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s12">
-                                                                <input type="text" class="validate">
-                                                                <label>Adres</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="input-field col s6">
-                                                                <input type="number" class="validate">
-                                                                <label class="">Postcode</label>
-                                                            </div>
-                                                            <div class="input-field col s6">
-                                                                <input type="text" class="validate">
-                                                                <label class="">Plaats</label>
-                                                            </div>
-                                                        </div>
+                                                    <div class="tab-inn" id="gebruikerData">
                                                     
-                                                    </form> 
-                                                  
+                                                    </div>
+                                                </div>
+                                                <!--einde -->
+                                                <div class="row col-md-12">
+                                                    <div class="button-row d-flex mt-4">
+                                                        <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
+                                                        <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    
+                                    </div>
 
-                                        <div class="multisteps-form__content">
-                                            <div class="form-row mt-4">
-                                                <!--div class="col-12 col-sm-6"-->
-                                                <!--a href="#">je moet eerst ingelogd zijn om verder te gaan</a-->
+                                    <!--Derde stap-->
+                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                                        <h3 class="multisteps-form__title">Overzicht</h3>
+                                        <div class="input-card multisteps-form__content">
+                                            <div class="overzicht">
+                                                <h4>Jouw bestelling: </h4>
+                                                <div class="winkelwagantje-lijst-box" id="overzicht-bestelling">
+                                                    <!--winkelwagantje lijst-->
+                                                </div>
+                                                <div id="betaal_bedrag"></div>
+                                                <h4>Uw persoonlijke gegevens: </h4>
+                                                <div class="winkelwagantje-lijst-box" id="overzicht-gebruiker">
+                                                    
+                                                </div>
                                                 <div class="tab-inn">
-                                                    <form>
                                                         <div class="row">
                                                             <div class="input-field col s12">
                                                                 <input type="checkbox" id="voorwaarden_goedkeuring" name="voorwaarden goedkeuring">
@@ -567,182 +289,186 @@
                                                                 </label>
                                                             </div>
                                                         </div>
-                                                    </form>
-                                                </div>
+                                                </div>   
                                             </div>
-                                            <div class="row">
-                                                <div class="button-row d-flex mt-4 col-12">
-                                                <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
-                                                <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Akkoord en verwerkt</button>
+                                            <div class="row col-md-12">
+                                                <div class="button-row d-flex mt-4">
+                                                    <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
+                                                    <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Akkoord en verwerkt</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                                
-                                   <!-- betaal info -->
-                                   <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+
+                                    <!--vierde stap-->
+                                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
                                         <h3 class="multisteps-form__title">Betaling</h3>
-                                        <div class="multisteps-form__content">
-                                        <div class="form-row mt-4">
-                                            <div class="col-12 col-sm-6">
-                                                <div class="cardcontainer preload">
-                                                    <div class="creditcard">
-                                                        <div class="front">
-                                                            <div id="ccsingle"></div>
-                                                            <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
-                                                                <g id="Front">
-                                                                    <g id="CardBackground">
-                                                                        <g id="Page-1_1_">
-                                                                            <g id="amex_1_">
-                                                                                <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
-                                                                        C0,17.9,17.9,0,40,0z" />
+                                        <div class="input-card multisteps-form__content">
+                                            
+                                            <div class="betalen">
+                                                <div class="form-row mt-4">
+                                                    <div class="col-12 col-sm-6">
+                                                        <div class="cardcontainer preload">
+                                                            <div class="creditcard">
+                                                                <div class="front">
+                                                                    <div id="ccsingle"></div>
+                                                                    <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                                                                        <g id="Front">
+                                                                            <g id="CardBackground">
+                                                                                <g id="Page-1_1_">
+                                                                                    <g id="amex_1_">
+                                                                                        <path id="Rectangle-1_1_" class="lightcolor grey" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                                                                C0,17.9,17.9,0,40,0z" />
+                                                                                    </g>
+                                                                                </g>
+                                                                                <path class="darkcolor greydark" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
+                                                                            </g>
+                                                                            <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 0000</text>
+                                                                            <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">JOHN DOE</text>
+                                                                            <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
+                                                                            <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
+                                                                            <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
+                                                                            <g>
+                                                                                <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">01/23</text>
+                                                                                <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
+                                                                                <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
+                                                                                <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
+                                                                            </g>
+                                                                            <g id="cchip">
+                                                                                <g>
+                                                                                    <path class="st2" d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
+                                                                            c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z" />
+                                                                                </g>
+                                                                                <g>
+                                                                                    <g>
+                                                                                        <rect x="82" y="70" class="st12" width="1.5" height="60" />
+                                                                                    </g>
+                                                                                    <g>
+                                                                                        <rect x="167.4" y="70" class="st12" width="1.5" height="60" />
+                                                                                    </g>
+                                                                                    <g>
+                                                                                        <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
+                                                                                c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
+                                                                                C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
+                                                                                c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
+                                                                                c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z" />
+                                                                                    </g>
+                                                                                    <g>
+                                                                                        <rect x="82.8" y="82.1" class="st12" width="25.8" height="1.5" />
+                                                                                    </g>
+                                                                                    <g>
+                                                                                        <rect x="82.8" y="117.9" class="st12" width="26.1" height="1.5" />
+                                                                                    </g>
+                                                                                    <g>
+                                                                                        <rect x="142.4" y="82.1" class="st12" width="25.8" height="1.5" />
+                                                                                    </g>
+                                                                                    <g>
+                                                                                        <rect x="142" y="117.9" class="st12" width="26.2" height="1.5" />
+                                                                                    </g>
+                                                                                </g>
                                                                             </g>
                                                                         </g>
-                                                                        <path class="darkcolor greydark" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
-                                                                    </g>
-                                                                    <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">0123 4567 8910 0000</text>
-                                                                    <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">JOHN DOE</text>
-                                                                    <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">cardholder name</text>
-                                                                    <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">expiration</text>
-                                                                    <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">card number</text>
-                                                                    <g>
-                                                                        <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">01/23</text>
-                                                                        <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">VALID</text>
-                                                                        <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">THRU</text>
-                                                                        <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9 		" />
-                                                                    </g>
-                                                                    <g id="cchip">
-                                                                        <g>
-                                                                            <path class="st2" d="M168.1,143.6H82.9c-10.2,0-18.5-8.3-18.5-18.5V74.9c0-10.2,8.3-18.5,18.5-18.5h85.3
-                                                                    c10.2,0,18.5,8.3,18.5,18.5v50.2C186.6,135.3,178.3,143.6,168.1,143.6z" />
+                                                                        <g id="Back">
                                                                         </g>
-                                                                        <g>
-                                                                            <g>
-                                                                                <rect x="82" y="70" class="st12" width="1.5" height="60" />
-                                                                            </g>
-                                                                            <g>
-                                                                                <rect x="167.4" y="70" class="st12" width="1.5" height="60" />
-                                                                            </g>
-                                                                            <g>
-                                                                                <path class="st12" d="M125.5,130.8c-10.2,0-18.5-8.3-18.5-18.5c0-4.6,1.7-8.9,4.7-12.3c-3-3.4-4.7-7.7-4.7-12.3
-                                                                        c0-10.2,8.3-18.5,18.5-18.5s18.5,8.3,18.5,18.5c0,4.6-1.7,8.9-4.7,12.3c3,3.4,4.7,7.7,4.7,12.3
-                                                                        C143.9,122.5,135.7,130.8,125.5,130.8z M125.5,70.8c-9.3,0-16.9,7.6-16.9,16.9c0,4.4,1.7,8.6,4.8,11.8l0.5,0.5l-0.5,0.5
-                                                                        c-3.1,3.2-4.8,7.4-4.8,11.8c0,9.3,7.6,16.9,16.9,16.9s16.9-7.6,16.9-16.9c0-4.4-1.7-8.6-4.8-11.8l-0.5-0.5l0.5-0.5
-                                                                        c3.1-3.2,4.8-7.4,4.8-11.8C142.4,78.4,134.8,70.8,125.5,70.8z" />
-                                                                            </g>
-                                                                            <g>
-                                                                                <rect x="82.8" y="82.1" class="st12" width="25.8" height="1.5" />
-                                                                            </g>
-                                                                            <g>
-                                                                                <rect x="82.8" y="117.9" class="st12" width="26.1" height="1.5" />
-                                                                            </g>
-                                                                            <g>
-                                                                                <rect x="142.4" y="82.1" class="st12" width="25.8" height="1.5" />
-                                                                            </g>
-                                                                            <g>
-                                                                                <rect x="142" y="117.9" class="st12" width="26.2" height="1.5" />
-                                                                            </g>
+                                                                    </svg>
+                                                                </div>
+                                                                <div class="back">
+                                                                    <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                                                                        <g id="Front">
+                                                                            <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11" />
                                                                         </g>
-                                                                    </g>
-                                                                </g>
-                                                                <g id="Back">
-                                                                </g>
+                                                                        <g id="Back">
+                                                                            <g id="Page-1_2_">
+                                                                                <g id="amex_2_">
+                                                                                    <path id="Rectangle-1_2_" class="darkcolor greydark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
+                                                                            C0,17.9,17.9,0,40,0z" />
+                                                                                </g>
+                                                                            </g>
+                                                                            <rect y="61.6" class="st2" width="750" height="78" />
+                                                                            <g>
+                                                                                <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
+                                                                        C707.1,246.4,704.4,249.1,701.1,249.1z" />
+                                                                                <rect x="42.9" y="198.6" class="st4" width="664.1" height="10.5" />
+                                                                                <rect x="42.9" y="224.5" class="st4" width="664.1" height="10.5" />
+                                                                                <path class="st5" d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z" />
+                                                                            </g>
+                                                                            <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">985</text>
+                                                                            <g class="st8">
+                                                                                <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
+                                                                            </g>
+                                                                            <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
+                                                                            <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
+                                                                            <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">John Doe</text>
+                                                                        </g>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row mt-4">
+                                                    <div class="form-container">
+                                                        <div class="field-container">
+                                                            <label for="name">Naam van de kaarthouder</label>
+                                                            <input id="name" maxlength="20" type="text">
+                                                        </div>
+                                                        <div class="field-container">
+                                                            <label for="cardnumber">Kaartnummer</label><span id="generatecard">willekeurig genereren</span>
+                                                            <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
+                                                            <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                                             </svg>
                                                         </div>
-                                                        <div class="back">
-                                                            <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                                x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
-                                                                <g id="Front">
-                                                                    <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11" />
-                                                                </g>
-                                                                <g id="Back">
-                                                                    <g id="Page-1_2_">
-                                                                        <g id="amex_2_">
-                                                                            <path id="Rectangle-1_2_" class="darkcolor greydark" d="M40,0h670c22.1,0,40,17.9,40,40v391c0,22.1-17.9,40-40,40H40c-22.1,0-40-17.9-40-40V40
-                                                                    C0,17.9,17.9,0,40,0z" />
-                                                                        </g>
-                                                                    </g>
-                                                                    <rect y="61.6" class="st2" width="750" height="78" />
-                                                                    <g>
-                                                                        <path class="st3" d="M701.1,249.1H48.9c-3.3,0-6-2.7-6-6v-52.5c0-3.3,2.7-6,6-6h652.1c3.3,0,6,2.7,6,6v52.5
-                                                                C707.1,246.4,704.4,249.1,701.1,249.1z" />
-                                                                        <rect x="42.9" y="198.6" class="st4" width="664.1" height="10.5" />
-                                                                        <rect x="42.9" y="224.5" class="st4" width="664.1" height="10.5" />
-                                                                        <path class="st5" d="M701.1,184.6H618h-8h-10v64.5h10h8h83.1c3.3,0,6-2.7,6-6v-52.5C707.1,187.3,704.4,184.6,701.1,184.6z" />
-                                                                    </g>
-                                                                    <text transform="matrix(1 0 0 1 621.999 227.2734)" id="svgsecurity" class="st6 st7">985</text>
-                                                                    <g class="st8">
-                                                                        <text transform="matrix(1 0 0 1 518.083 280.0879)" class="st9 st6 st10">security code</text>
-                                                                    </g>
-                                                                    <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
-                                                                    <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
-                                                                    <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">John Doe</text>
-                                                                </g>
-                                                            </svg>
+                                                        <div class="field-container">
+                                                            <label for="expirationdate">Vervaldatum (mm/yy)</label>
+                                                            <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
                                                         </div>
+                                                        <div class="field-container">
+                                                            <label for="securitycode">CVC-code</label>
+                                                            <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row col-md-12">
+                                                    <div class="button-row d-flex mt-4">
+                                                        <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
+                                                        <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next" id="process_bestelling">Volgende</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-row mt-4">
-                                            <div class="form-container">
-                                                <div class="field-container">
-                                                    <label for="name">Naam van de kaarthouder</label>
-                                                    <input id="name" maxlength="20" type="text">
-                                                </div>
-                                                <div class="field-container">
-                                                    <label for="cardnumber">Kaartnummer</label><span id="generatecard">willekeurig genereren</span>
-                                                    <input id="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
-                                                    <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                                    </svg>
-                                                </div>
-                                                <div class="field-container">
-                                                    <label for="expirationdate">Vervaldatum (mm/yy)</label>
-                                                    <input id="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
-                                                </div>
-                                                <div class="field-container">
-                                                    <label for="securitycode">CVC-code</label>
-                                                    <input id="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--div class="button-row d-flex mt-4">
-                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
-                                        </div-->
-                                        <div class="button-row d-flex mt-4">
-                                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Vorige</button>
-                                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Volgende</button>
-                                        </div>
-                                        </div>
                                     </div>
-                                
-                    
+
+                                    <!--laatste stap-->
                                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                                        <div class="multisteps-form__content">
-                                        <div class="form-row mt-4">
-                                           <h4>Hartelijk bedankt voor je bestelling !</h4>
-                                           <p>We hebben je alvast een email gestuurd met daarin nog eens alle details van je bestelling.</p> 
-                                        </div>
-                                        <div class="button-row d-flex col-12">
-                                            <div id="factuur_here">
-                                                <iframe src="factuur.html"></iframe>
-                                            </div>
-                                            <div class="hom-list-share">
-                                                <ul>
-                                                    <li><a href="factuur.html"><i class="fas fa-print" aria-hidden="true"></i>print mijn factuur</a> </li>
-                                                </ul>
-                                            </div>                  
-                                           
-                                        </div>
+                                        <h3 class="multisteps-form__title">Factuur </h3>
+                                        <div class="input-card multisteps-form__content">
+                                            <div class="factuur">
+                                                <div class="form-row mt-4">
+                                                <h4>Hartelijk bedankt voor je bestelling !</h4>
+                                                <p>We hebben je alvast een email gestuurd met daarin nog eens alle details van je bestelling.</p> 
+                                                </div>
+                                                <div class="button-row d-flex col-12">
+                                                    <div id="factuur_here">
+                                                        <iframe src="factuur.html"></iframe>
+                                                    </div>
+                                                    <div class="hom-list-share">
+                                                        <ul>
+                                                            <li><a href="factuur.html"><i class="fas fa-print" aria-hidden="true"></i>print mijn factuur</a> </li>
+                                                        </ul>
+                                                    </div>                  
+                                                </div>
+                                           </div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                       </div>
+                        </div>
                     </div>                    
-                </div>
+                </div>   
             </div>
         </div>
     </section>
@@ -996,38 +722,38 @@
                 </div>
             </div>
         </div>
-       <!--verwijderen product from lijst-->
-       <div
-       class="modal fade"
-       id="modal_product_verwijderen"
-       tabindex="-1"
-       aria-labelledby="modal_product_verwijderen"
-       aria-hidden="true">
-       <div class="modal-dialog">
-           <div class="modal-content">
-               <div class="modal-header">
-                   <h5 class="modal-title">Weet je zeker dat je deze cursus van je winkelwagen wilt verwijderen?</h5>
-                   <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
-               </div>
-               <div class="modal-body">                            
-                   <div class="form-outline mb-4">
-                       <button class="button_pop_up"
-                           type="button" 
-                           id="button_product_verwijderen" 
-                           class="btn btn-outline-primary">
-                           Verwijderen
-                       </button>
-                       <button class="button_pop_up" 
-                           type="button" 
-                           class="btn btn-outline-dark" 
-                           data-dismiss="modal">
-                           Annuleren
-                       </button>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
+        <!--verwijderen product from lijst-->
+        <div
+        class="modal fade"
+        id="modal_product_verwijderen"
+        tabindex="-1"
+        aria-labelledby="modal_product_verwijderen"
+        aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Weet je zeker dat je deze cursus van je winkelwagen wilt verwijderen?</h5>
+                        <a href="#" class="pop-close" data-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                    </div>
+                    <div class="modal-body">                            
+                        <div class="form-outline mb-4">
+                            <button class="button_pop_up"
+                                type="button" 
+                                id="button_product_verwijderen" 
+                                class="btn btn-outline-primary">
+                                Verwijderen
+                            </button>
+                            <button class="button_pop_up" 
+                                type="button" 
+                                class="btn btn-outline-dark" 
+                                data-dismiss="modal">
+                                Annuleren
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
    </section>  
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>
@@ -1040,6 +766,8 @@
     <script  src="card.js"></script>
     <script src="js/register.js"></script>
     <script src="js/zoekcursus.js"></script>
+    <script src="js/dwapi.js"></script>
+    <script src="js/bestelling-winkelwagantje.js"></script>
 </body>
 
 

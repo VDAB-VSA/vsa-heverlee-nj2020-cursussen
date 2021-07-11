@@ -1,129 +1,153 @@
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjQ5ODg2MjQsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNDk1MjYyNH0.LfLNZxFzMbipADXygMXoNMQo5yiXlLtuxekPTsFiY7Q";
-const endpoint = "https://dwapi.dev/item";
-const project = "4nqmlRAiE5cG";
+//const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MjQ5ODg2MjQsImlzcyI6IjRucW1sUkFpRTVjRyIsImlhdCI6MTYyNDk1MjYyNH0.LfLNZxFzMbipADXygMXoNMQo5yiXlLtuxekPTsFiY7Q";
+//const endpoint = "https://dwapi.dev/item";
+//const project = "4nqmlRAiE5cG";
 
 let huidige_cursist_actie;
-let huidige_cursist_id;
-let huidige_filter_waardes = [];
-let huidige_sorteer_waarde = ["naam", "ASC"];
+let huidge_cursist_id;
+let huidige_filter_waardes = ["rol", "=", "Cursist"];
+let huidige_sorteer_waarde = ["user_id", "ASC"];
+//let profiel_naam = `<h5>Beheerder<span>Welkom</span></h5>`;
+
 
 window.onload = function(){
-    toonProductenTabel();
+    checkSessie();
+    toonCursistenTabel();
     toonSorteerRichting();
     eventListenersVoorStatischeElementen();
-    categorieenLadenInSelects();
 }
-
-function toonProductenTabel() {
+function checkSessie() {
+let gebruiker = JSON.parse(window.sessionStorage.getItem("user"));
+console.log(gebruiker);
+//console.log('sess', gebruiker);
+  if(gebruiker == null){
+   /*  let session = gebruiker[0].token != null ? "true" : "false";
+    if(session == false) {
+      //alert("Your Session has expired");
+      window.location.replace("index.html");
+    }
+  }
+  else { */
+  //setTimeout(() => redirectMessage, 40000);
+  window.location = "index.html";
+  }
+}
+function toonCursistenTabel() {
+    //INVOER
+    //gebruikerProfiel();
+    
     let parameters = {
         "endpoint": endpoint, 
         "project": project,
         "token": token, 
-        "entity": "product",
+        "entity": "user",
         "filter": huidige_filter_waardes,
-        "sort": huidige_sorteer_waarde,
-        "relation": [{"pri_entity": "product", "pri_key": "categorie_id", "sec_entity": "product_categorie", "sec_key": "id"}]
-    }
-    
+        "sort": huidige_sorteer_waarde
+     }
+
+   
     dwapiRead(parameters).then(
         data => {
-            let tabel_producten_html =  "<table>";
-            data.result.items.forEach(function(product) {
+            console.log(data);
+            let tabel_cursisten_html =  "<table>";
+            //console.log(data.result.assets_path);
+            data.result.items.forEach(function(gebruiker) {
+                let locatie_naam = "";
                 let categorie_naam = "";
-                if (product.categorie_id != null) {
-                    categorie_naam = product.product_categorie.items[product.categorie_id].naam;
+               /* if (gebruiker.user_id != null) {
+                    locatie_naam = cursist.locatie.items[cursist.locatie_id].naam_campus;
                 }
-                let beeld = "";
-                if (product.image != null && product.image != "") {
-                    beeld = '<img src="https://' +  data.result.assets_path + "/" +  product.image.name + '" />';
-                }
-                tabel_producten_html += "<tr>" +
-                    "<td>" + product.naam + "</td>" +
-                    "<td>€ " + product.prijs + "</td>" + 
-                    "<td>" + categorie_naam + "</td>" + 
-                    "<td>" + beeld + "</td>" + 
-                    "<td>" + 
-                        "<button "+
-                            "data-product-id='" + product.id + "' "+ 
-                            "data-product-actie='update' " +
-                            "class='button-toon-product-modal call-btn btn btn-outline-primary btn-floating btn-sm' "+
-                            "data-mdb-toggle='modal' " +
-                            "data-mdb-target='#modal_product'>" +
-                            "<i class='fa fa-pen'></i>" +
-                            "</button>" +
-                        "<button " + 
-                            "data-product-id='" + product.id + "' " +
-                            "data-product-naam='"+ product.naam + "' " +
-                            "class='button-toon-product-verwijderen-modal message-btn btn ms-2 btn-outline-dark btn-floating btn-sm' " +
-                            "data-mdb-toggle='modal' " +
-                            "data-mdb-target='#modal_product_verwijderen'>" +
-                            "<i class='fa fa-trash'></i>" + 
-                            "</button>" + 
-                    "</td>"
-                + "</tr>";
-            });
-            tabel_producten_html += "</table>";
-
-            document.getElementById("tabel_producten").innerHTML = tabel_producten_html;
-
+                if (cursist.categorie_id != null) {
+                  categorie_naam = cursist.categorie.items[cursist.categorie_id].naam;
+                }*/
+                tabel_cursisten_html += "<tr>"+
+                    "<td>" + gebruiker.user_id + "</td>" +
+                    "<td>" + gebruiker.voornaam + "</td>" + 
+                    "<td>" + gebruiker.naam + "</td>" + 
+                    "<td>" + gebruiker.email + "</td>" + 
+                    "<td>" + gebruiker.telefoon + "</td>" + 
+                    "<td>" + gebruiker.adres + "</td>" + 
+                    "<td>" + gebruiker.stad + "</td>" +  
+                    "<td>" + gebruiker.rol + "</td>" + 
+                    "<td>"+
+                    "<button "+
+                    "data-cursist-id='" + gebruiker.user_id + "' "+ 
+                    "data-cursist-actie='update' " +
+                    "class='button-toon-cursist-modal btn btn-outline-primary invisible' "+
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_cursist'>" +
+                    "<i class='fa fa-pen'></i>" +
+                    "</button>" +
+                    "<button " +
+                    "data-cursist-id='" + gebruiker.user_id + "' " +
+                    "data-cursist-naam='" + gebruiker.voornaam + "' " +
+                    "class='button-toon-cursist-verwijderen-modal btn btn-outline-danger'" +
+                    "data-mdb-ripple-color='dark'" +
+                    "data-mdb-toggle='modal' " +
+                    "data-mdb-target='#modal_cursist_verwijderen'>" + 
+                    "<i class='fa fa-trash'></i>" +
+                     "</button>" + "</td>" + "</tr>";
+                });
+           // tabel_cursisten_html += "</table>";
+           //console.log(tabel_cursisten_html);
+            document.getElementById("tabel_cursisten").innerHTML = tabel_cursisten_html;
             eventListenersVoorDynamischeElementen();            
-        }
+       }
     )
 }
 
-//function productToevoegen() -> productBewaren()
-//function productWijzigen() -> productBewaren()
-
-function productBewaren() {
+function cursistBewaren() {
     // INVOER
-    let product_naam = document.getElementById("input_product_naam").value;
-    let product_omschrijving = document.getElementById("input_product_omschrijving").value;
-    let product_prijs = document.getElementById("input_product_prijs").value;
-    let product_categorie_id = document.getElementById("select_product_categorie").value;    
-    let product_beeld_origineel = document.getElementById("input_product_beeld_origineel").value; 
-    let product_in_voorraad = document.getElementById("check_product_in_voorraad").checked;
-    let input_product_beeld = document.getElementById("input_product_beeld"); 
+   let cursist_naam = document.getElementById("input_cursist_naam").value;
+   let cursist_voornaam = document.getElementById("input_cursist_voornaam").value;
+   let cursist_email = document.getElementById("input_cursist_email").value;
+   let cursist_paswoord = document.getElementById("input_cursist_paswoord").value;
+   let cursist_telefoon = document.getElementById("input_cursist_telefoon").value;
+   let cursist_adres = document.getElementById("input_cursist_adres").value;
+   let cursist_postcode = document.getElementById("input_cursist_postcode").value;
+   let cursist_stad = document.getElementById("input_cursist_stad").value;
+   let cursist_beeld_origineel = document.getElementById("input_cursist_beeld_origineel").value;
+   let beeld = document.getElementById("input_cursist_beeld");
 
     // VERWERJING
-    if (product_in_voorraad == true) {
-        product_in_voorraad = 1;
+    let cursist_beeld;
+    if (beeld.files.length == 1) {
+        cursist_beeld = beeld.files[0];
     }
     else {
-        product_in_voorraad = 0;
+        cursist_beeld = cursist_beeld_origineel;
     }
 
-    let product_beeld;
-    if (input_product_beeld.files.length == 1) {
-        product_beeld = input_product_beeld.files[0];
-    }
-    else {
-        product_beeld = product_beeld_origineel;
-    }
-
-    let form_product = document.getElementById("form_product");
-    if (form_product.checkValidity()) {
-        let product = {
-            "naam": product_naam, 
-            "omschrijving": product_omschrijving, 
-            "prijs": product_prijs, 
-            "categorie_id": product_categorie_id,
-            "image": product_beeld,
-            "in_voorraad": product_in_voorraad,
+    let form_cursist = document.getElementById("form_cursist");
+    if (form_cursist.checkValidity()) {
+        let cursist = {
+            "naam": cursist_naam, 
+            "voornaam": cursist_voornaam,
+            "email": cursist_email,
+            "password": cursist_paswoord,
+            "telefoon": cursist_telefoon,
+            "adres": cursist_adres,
+            "postcode": cursist_postcode,
+            "stad": cursist_stad,
+            "afbeelding":cursist_beeld
         };
- 
+        console.log(cursist);
+       //console.log(cursist);
         let parameters = {
-            "endpoint": endpoint, 
+            "endpoint": tweede_endpoint + "/user/register",
             "project": project,
             "token": token, 
-            "entity": "product",
-            "values": product};
-
-        if (huidige_product_actie == "update") {
-            parameters.filter = ["id", "=", huidige_product_id];
+            "entity": "user",
+            "values": cursist};
+        
+        if (huidige_cursist_actie == "update") {
+            parameters.filter = ["user_id", "=", huidge_cursist_id];
             dwapiUpdate(parameters).then(
+                
                 resultaat => {
+                    console.log(resultaat);
                     // UITVOER
-                    verwerkResultaatNaProductActie(resultaat, "modal_product");                    
+                    verwerkResultaatNaCursusActie(resultaat, "modal_cursist");                    
                 }
             )
         }
@@ -131,67 +155,58 @@ function productBewaren() {
             dwapiCreate(parameters).then(
                 resultaat => {
                     // UITVOER
-                    verwerkResultaatNaProductActie(resultaat, "modal_product");
+                    verwerkResultaatNaCursusActie(resultaat, "modal_cursist");
                 }
             )
         }
     }
     else {
         // UITVOER
-        form_product.classList.add('was-validated');
+        form_cursist.classList.add('was-validated');
     }
 }
 
-function productVerwijderen(product_id) {
+function cursistVerwijderen(cursist_id) {
     // INVOER
     let parameters = {
         "endpoint": endpoint, 
         "project": project,
         "token": token, 
-        "entity": "product",
-        "filter": ["id", "=", product_id]}
+        "entity": "user",
+        "filter": ["user_id", "=", cursist_id]
+    }
 
     // VERWERKING
     dwapiDelete(parameters).then(
         resultaat => {
-            verwerkResultaatNaProductActie(resultaat, "modal_product_verwijderen");
+            verwerkResultaatNaCursusActie(resultaat, "modal_cursist_verwijderen");
         }
     )
 }
 
-function productenFilteren() {
+function cursistenFilteren() {
     // INVOER
     huidige_filter_waardes = [];
     let filter_naam = document.getElementById("input_filter_naam").value;
-    let filter_categorie_id = document.getElementById("select_filter_categorie").value;    
-    let filter_in_voorraad = "";
-    if (document.getElementById("check_filter_in_voorraad").disabled == false) {
-        filter_in_voorraad = Number(document.getElementById("check_filter_in_voorraad").checked);
-    }
+    let filter_telefoon = document.getElementById("input_filter_telefoon").value;
+    let filter_email = document.getElementById("input_filter_email").value;
 
     // VERWERKING
     if (String(filter_naam) != "") {
         huidige_filter_waardes.push(["naam", "LIKE", "%" + filter_naam + "%"]);
     }
-    if (String(filter_categorie_id) != "") {
-        huidige_filter_waardes.push(["categorie_id", "=", filter_categorie_id]);
+    if (String(filter_telefoon) != "") {
+        huidige_filter_waardes.push(["telefoon", "LIKE", "%" + filter_telefoon + "%"]);
     }
-    if (String(filter_in_voorraad) != "") {
-        huidige_filter_waardes.push(["in_voorraad", "=", filter_in_voorraad]);
+    if (String(filter_email) != "") {
+        huidige_filter_waardes.push(["email", "LIKE", "%" + filter_email + "%"]);
     }
-
+    
     // UITVOER
-    toonProductenTabel();
+    toonCursistenTabel();
 }
 
-function productenFilterenReset() {
-    document.getElementById("input_filter_naam").value = "";
-    document.getElementById("select_filter_categorie").value = "";
-    document.getElementById("check_filter_in_voorraad").disabled = true;
-    productenFilteren();
-}
-
-function productenSorteren(link) {
+function cursistenSorteren(link) {
     // INVOER
     let sorteer_op = link.dataset.sorteerOp;
 
@@ -204,160 +219,166 @@ function productenSorteren(link) {
     huidige_sorteer_waarde = [sorteer_op, sorteer_richting];
     
     // UITVOER
-    toonProductenTabel();
+    toonCursistenTabel();
     toonSorteerRichting();
 }
 
 // ------------------ //
 
 function eventListenersVoorStatischeElementen() {
-
-    document.getElementById("button_product_bewaren").addEventListener('click', function() {
-        productBewaren();
+    let cursist_bewaren = document.getElementById("button_cursist_bewaren");
+    if(cursist_bewaren){
+        cursist_bewaren.addEventListener('click', function() {
+            cursistBewaren();
+        })
+    }
+    let cursist_verwijdren = document.getElementById("button_cursist_verwijderen");
+    if(cursist_verwijdren){
+        cursist_verwijdren.addEventListener('click', function() {
+            cursistVerwijderen(huidge_cursist_id);
+        })
+    }
+    let cursist_zoek = document.getElementById("button_cursist_zoek");
+    if(cursist_zoek){
+        cursist_zoek.addEventListener('click', function() {
+            cursistenFilteren();
+        })
+    }
+    /*document.getElementById("button_cursist_bewaren").addEventListener('click', function() {
+        cursistBewaren();
+    })
+    document.getElementById("button_cursist_verwijderen").addEventListener('click', function() {
+        cursistVerwijderen(huidge_cursist_id);
     })
 
-    document.getElementById("button_product_verwijderen").addEventListener('click', function() {
-        productVerwijderen(huidige_product_id);
-    })
+    document.getElementById("button_cursist_zoek").addEventListener('click', function() {
+        cursistenFilteren();
+    })*/
 
-    document.getElementById("button_producten_filteren").addEventListener('click', function() {
-        productenFilteren();
-    })
-
-    document.getElementById("button_producten_filteren_reset").addEventListener('click', function() {
-        productenFilterenReset();
-    })
-
-    document.getElementById("div_check_filter_in_voorraad").addEventListener('click', function() {
-        if (document.getElementById("check_filter_in_voorraad").disabled == true) {
-            document.getElementById("check_filter_in_voorraad").disabled = false;
-            document.getElementById("check_filter_in_voorraad").checked = true;
-        }
-    })
-    
     let sorteer_links;
-    sorteer_links = document.querySelectorAll('.link-producten-sorteren');
+    sorteer_links = document.querySelectorAll('.link-cursisten-sorteren');
     for (var i = 0; i < sorteer_links.length; i++) {
-        sorteer_links[i].addEventListener('click', function() {            
-            productenSorteren(this);
+        sorteer_links[i].addEventListener('click', function() {     
+            cursistenSorteren(this);
         })
     }
 }
 
 function eventListenersVoorDynamischeElementen() {
-    /* "product toevoegen" knop (statisch) en "product wijzigen" knoppen (dynamisch) */
-    let toon_product_modal_buttons;
-    toon_product_modal_buttons = document.querySelectorAll('.button-toon-product-modal');
-    if (toon_product_modal_buttons) {
-        for (var i = 0; i < toon_product_modal_buttons.length; i++) {
-            toon_product_modal_buttons[i].addEventListener('click', function() {                
-                toonProductModal(this);
+    /* "locatie toevoegen" knop (statisch) en "locatie wijzigen" knoppen (dynamisch) */
+    let toon_cursist_modal_buttons;
+    toon_cursist_modal_buttons = document.querySelectorAll('.button-toon-cursist-modal');
+    if (toon_cursist_modal_buttons) {
+        for (var i = 0; i < toon_cursist_modal_buttons.length; i++) {
+            toon_cursist_modal_buttons[i].addEventListener('click', function() {            
+                toonCursistModal(this);
             });            
         }        
     }
 
-    /* "product verwijderen" knoppen */
-    buttons = document.querySelectorAll('.button-toon-product-verwijderen-modal');
+    /* "locatie verwijderen" knoppen */
+    buttons = document.querySelectorAll('.button-toon-cursist-verwijderen-modal');
     if (buttons) {
         for (var i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function() {                
-                toonProductVerwijderenModal(this);
+            buttons[i].addEventListener('click', function() {               
+                toonCursusVerwijderenModal(this);
             });            
         }           
     }
 }
 
-function categorieenLadenInSelects() {
-    let parameters = {
-        "endpoint": endpoint, 
-        "project": project,
-        "token": token, 
-        "entity": "product_categorie"
-    }
+function gebruikerProfiel(){
+       
+   /* let gebruiker = JSON.parse(window.sessionStorage.getItem("user")) || [];
+    (gebruiker.length > 0) ? profiel_naam = `<h5>${gebruiker[0].voornaam}<span> ${gebruiker[0].naam}</span></h5>` : false;
     
-    dwapiRead(parameters).then(
-        data => {
-            let select_filter_categorie = document.getElementById("select_filter_categorie");
-            let select_product_categorie = document.getElementById("select_product_categorie");
-            let categorie_opties = "";
-            data.result.items.forEach(function(categorie) {
-                categorie_opties += "<option value='" + categorie.id + "'>" + categorie.naam + "</option>";
-            });
-            select_filter_categorie.innerHTML = "<option value=''>alle</option>" + categorie_opties;
-            select_product_categorie.innerHTML = "<option value=''></option>" + categorie_opties;
-        });
+   
+    return profiel_naam;
+    //return profiel_naam;*/
 }
 
-function toonProductModal(via_button) {
+
+function toonCursistModal(via_button) {
+
     // INVOER
-    huidige_product_actie = via_button.dataset.productActie;
-    huidige_product_id = via_button.dataset.productId;
- 
+    huidige_cursist_actie = via_button.dataset.cursistActie;
+    huidge_cursist_id = via_button.dataset.cursistId;
+
     // UITVOER
-    resetProductFormulier();  
-    if (huidige_product_actie == "create") {
-        document.getElementById("modal_product_titel").innerHTML = "Nieuw product toevoegen";
+     resetCursusFormulier();  
+    if (huidige_cursist_actie == "update") {
+        document.getElementById("modal_cursist_titel").innerHTML = "Cursus wijzigen";
+        toonHuidigCursusInFormulier();
     }
-    if (huidige_product_actie == "update") {
-        document.getElementById("modal_product_titel").innerHTML = "Product wijzigen";
-        toonHuidigProductInFormulier();
+    else {
+        document.getElementById("modal_cursist_titel").innerHTML = "Nieuw cursist toevoegen";
     }
 
     // verwijder vorige validatie
-    document.getElementById("form_product").classList.remove('was-validated');
+    document.getElementById("form_cursist").classList.remove('was-validated');
 }
 
-function toonProductVerwijderenModal(via_button) {
+function toonCursusVerwijderenModal(via_button) {
     // VERWERKING
-    huidige_product_id = via_button.dataset.productId;
-
+    huidge_cursist_id = via_button.dataset.cursistId;
+    
     // UITVOER
-    document.getElementById("label_product_verwijderen").innerHTML = "Wil u product <strong>" + via_button.dataset.productNaam + "</strong> echt verwijderen?";
+    document.getElementById("label_cursist_verwijderen").innerHTML = "Wil u cursist <strong>" + via_button.dataset.cursistNaam + "</strong> echt verwijderen?";
 }
 
 
-function toonHuidigProductInFormulier() {
+function toonHuidigCursusInFormulier() {
 
     let parameters = {
         "endpoint": endpoint, 
         "project": project,
         "token": token, 
-        "entity": "product",
-        "filter": ["id", "=", huidige_product_id]
+        "entity": "user",
+        "filter": ["user_id", "=", huidge_cursist_id]
     }
     
     dwapiRead(parameters).then(
         data => {
-            let product = data.result.items[0];
-            document.getElementById("input_product_naam").value = product.naam;
-            document.getElementById("input_product_omschrijving").value = product.omschrijving;
-            document.getElementById("input_product_prijs").value = product.prijs;
-            document.getElementById("select_product_categorie").value = product.categorie_id;
-            document.getElementById("check_product_in_voorraad").checked = product.in_voorraad;   
-            let product_beeld_origineel = "";
-            if (product.image != "") {
-                product_beeld_origineel = JSON.stringify(product.image);
+            let cursist = data.result.items[0];
+
+            document.getElementById("input_cursist_naam").value = cursist.naam;
+            document.getElementById("input_cursist_voornaam").value = cursist.voornaam;
+            document.getElementById("input_cursist_email").value = cursist.email;
+            document.getElementById("input_cursist_paswoord").value = cursist.password;
+            document.getElementById("input_cursist_telefoon").value = cursist.telefoon;
+            document.getElementById("input_cursist_adres").value = cursist.adres;
+            document.getElementById("input_cursist_postcode").value = cursist.postcode;
+            document.getElementById("input_cursist_stad").value = cursist.stad;
+           // document.getElementById("input_cursist_naam").value = cursist.naam;
+           
+          //  console.log(cursist.afbeelding);
+            let cursist_beeld_origineel = "";
+            if (cursist.afbeelding != "") {
+                cursist_beeld_origineel = JSON.stringify(cursist.afbeelding);
             }         
-            document.getElementById("input_product_beeld_origineel").value = product_beeld_origineel;
+            document.getElementById("input_cursist_beeld_origineel").value = cursist_beeld_origineel;
+            //document.getElementById("input_cursist_beeld").value = cursist.afbeelding;
         }); 
 }
 
-function resetProductFormulier() {
-    document.getElementById("input_product_naam").value = "";
-    document.getElementById("input_product_omschrijving").value = "";
-    document.getElementById("input_product_prijs").value = "";
-    document.getElementById("select_product_categorie").value = "";
-    document.getElementById("input_product_beeld_origineel").value = "";
-    document.getElementById("input_product_beeld").value = "";
-    document.getElementById("label_product_beeld").innerHTML = "Kies (nieuw) beeld";
-
-    document.getElementById("label_product_fout").classList.remove("visible");
-    document.getElementById("label_product_fout").classList.add("invisible");
+function resetCursusFormulier() {
+    document.getElementById("input_cursist_naam").value = "";
+    document.getElementById("input_cursist_voornaam").value = "";
+    document.getElementById("input_cursist_email").value = "";
+    document.getElementById("input_cursist_paswoord").value = "";
+    document.getElementById("input_cursist_telefoon").value = "";
+    document.getElementById("input_cursist_adres").value = "";
+    document.getElementById("input_cursist_postcode").value = "";
+    document.getElementById("input_cursist_stad").value = "";
+    document.getElementById("input_cursist_beeld").value = "";
+  
+    document.getElementById("label_cursist_fout").classList.remove("visible");
+    document.getElementById("label_cursist_fout").classList.add("invisible");
 }
 
 function toonSorteerRichting() {
     // De arrow-up en arrow-down class van alle sorteer links verwijderen
-    let alle_sorteer_links = document.querySelectorAll('.link-producten-sorteren');
+    let alle_sorteer_links = document.querySelectorAll('.link-cursisten-sorteren');
     for (var i = 0; i < alle_sorteer_links.length; i++) {
         let icon = alle_sorteer_links[i].getElementsByTagName("i")[0];
         icon.classList.remove("fa-arrow-up");
@@ -375,9 +396,10 @@ function toonSorteerRichting() {
     }
 }
 
-function verwerkResultaatNaProductActie(resultaat, modal_id) {
+function verwerkResultaatNaCursusActie(resultaat, modal_id) {
+
     if (resultaat.status.success == true) {                              
-        toonProductenTabel();
+        toonCursistenTabel();
         $("#" + modal_id).modal('hide');
     }
     else {

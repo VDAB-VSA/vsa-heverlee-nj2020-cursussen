@@ -46,7 +46,7 @@
                         <li><img src="images/placeholder.jpg" alt="">
                         </li>
                         <li id="gebruiker_naam">
-                            <!--h5>Thomas H <span> Lennik</span></h5-->
+                            <h5>Beheerder<span>Welkom</span></h5>
                         </li>
                      
                     </ul>
@@ -163,83 +163,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="datatable-body" id="tabel_cursussen">
-                                                <!--tr>
-                                                    <td>1</td>
-                                                    <td><a href="admin-cursus-details.html">
-                                                        <span class="list-enq-name">C#</span>
-                                                        <span class="list-enq-city">.Net, C#, OOP</span></a>
-                                                    </td>
-                                                    <td>IT</td>
-                                                    <td>Leuven</td>
-                                                    <td>Bert J.</td>
-                                                    <td>20/06/2021</td>
-                                                    <td>120</td>
-                                                    <td>20</td>
-                                                    <td>€100</td>
-                                                    <td><i class="fa fa-check"></i></td>    
-                                                    <td>
-                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
-                                                    </td>
-													<td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td><a href="admin-student-details.html">
-                                                        <span class="list-enq-name">Full-Stack Ontwiklaar</span>
-                                                        <span class="list-enq-city">HTML, CSS, JS, Nodejs...</span></a>
-                                                    </td>
-                                                    <td>IT</td>
-                                                    <td>Antwerpen</td>
-                                                    <td>Evan.</td>
-                                                    <td>02/07/2021</td>
-                                                    <td>160</td>
-                                                    <td>20</td>
-                                                    <td>€80</td>
-                                                    <td></td>    
-                                                    <td>
-                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
-                                                    </td>
-													<td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td><a href="admin-cursus-details.html">
-                                                        <span class="list-enq-name">Nederlands</span>
-                                                        <span class="list-enq-city">Spreken, Luisteren, Lezen and Schrijven</span></a>
-                                                    </td>
-                                                    <td>Taalopleidingen</td>
-                                                    <td>Leuven</td>
-                                                    <td>Ilse H.</td>
-                                                    <td>10/07/2021</td>
-                                                    <td>150</td>
-                                                    <td>12</td>
-                                                    <td>€100</td>
-                                                    <td><i class="fa fa-check"></i></td>    
-                                                    <td>
-                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
-                                                    </td>
-													<td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td><a href="admin-cursus-details.html">
-                                                        <span class="list-enq-name">Secretaris </span>
-                                                        <span class="list-enq-city">administrative functies</span></a>
-                                                    </td>
-                                                    <td>Administratieve en commerciële functies</td>
-                                                    <td>Brussel</td>
-                                                    <td>Lola M.</td>
-                                                    <td>20/08/2021</td>
-                                                    <td>60</td>
-                                                    <td>10</td>
-                                                    <td>€80</td>
-                                                    <td><i class="fa fa-check"></i></td>    
-                                                    <td>
-                                                        <a href="admin-cursus-details.html" class="waves-effect"><i class="fa fa-edit bg-edit"></i></a>
-                                                    </td>
-													<td><a href="cursus-verwijderen.html"><i class="fa fa-trash bg-remove"></i></a></td>
-                                                </tr-->
-
+                                                <!-- cursussen -->
                                             </tbody>
                                         </table>
                                     </div>
@@ -252,6 +176,137 @@
 
         </div>
     </div>
+
+    
+    <!--Modal -->
+    <div
+    class="modal fade"
+    id="modal_cursus"
+    tabindex="-1"
+    aria-labelledby="modal_cursus"
+    aria-hidden="true"        
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal_cursus_titel" class="modal-title">Cursus</h5>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_cursus_fout" class="note note-danger invisible">fout</label>
+                    <form class="row g-3 needs-validation" id="form_cursus" novalidate>    
+                        <!-- locatie input -->
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_naam">Titel</label>
+                            <input required type="text" id="input_cursus_naam" class="form-control" validate/>
+                            <div class="invalid-feedback">Een cursustitel is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4" id="select_locatie">
+                        </div>
+                        <div class="form-group mb-4" id="select_categorie">                        
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_prijs">Prijs</label>
+                            <input required type="number" id="input_cursus_prijs" class="form-control" validate/>
+                            <div class="invalid-feedback">Een prijs is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_earlybird">Earlybirdprijs</label>
+                            <input type="number" id="input_cursus_earlybird" class="form-control" validate/>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_docent">Docent</label>
+                            <input required type="text" id="input_cursus_docent" class="form-control" validate/>
+                            <div class="invalid-feedback">Een docent is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_start">Startdatum</label>
+                            <input required type="date" id="input_cursus_start" class="form-control" validate/>
+                            <div class="invalid-feedback">Een startdatum is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_eind">Einddatum</label>
+                            <input required type="date" id="input_cursus_eind" class="form-control" validate/>
+                            <div class="invalid-feedback">Een einddatum is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_uren">Aantallesuren</label>
+                            <input required type="number" id="input_cursus_uren" class="form-control" validate/>
+                            <div class="invalid-feedback">Een aantallesuren is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_omschrijving">Omschrijving</label>
+                            <textarea id="input_cursus_omschrijving" class="form-control" rows="4"></textarea>
+                            <!--input required type="text" id="input_cursus_omschrijving" class="form-control validate" /-->
+                            <div class="invalid-feedback">Een omschrijving is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_cursus_platsen">Max Aantalplatsen</label>
+                            <input required type="number" id="input_cursus_platsen" class="form-control" validate/>
+                            <div class="invalid-feedback">Een maxaantalplatsen is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label data-error="wrong" data-success="right" for="input_cursus_beeld">Beeld</label>
+                            <div class="custom-file">
+                                <input type="hidden" id="input_cursus_beeld_origineel" />
+                                <input type="file" id="input_cursus_beeld" aria-describedby="update_beeld">
+                                <label class="custom-file-label" id="label_cursus_beeld" for="cursus_beeld">Kies (nieuw) beeld</label>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4 form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="check_cursus_in_verkoop" />
+                            <label class="form-check-label" for="check_cursus_in_verkoop">in verkoop</label>
+                        </div>
+
+                        <!-- Submit button -->
+                        <div class="form-outline mb-4">
+                            <button 
+                            id="button_cursus_bewaren" 
+                            type="button"
+                            class="btn btn-outline-primary">Bewaren</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-mdb-dismiss="modal">Annuleren</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="modal_cursus_verwijderen"
+    tabindex="-1"
+    aria-labelledby="modal_cursus_verwijderen"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cursus verwijderen</h5>
+                    <a href="#" class="pop-close" data-mdb-dismiss="modal"><img src="images/cancel.png" alt="" /></a>
+                </div>
+                <div class="modal-body">
+                    <label id="label_cursus_verwijderen_fout" class="note note-danger invisible"></label>
+                    <label class="form-outline mb-4" id="label_cursus_verwijderen">
+                    </label>                      
+                    <div class="form-outline mb-4">
+                        <button 
+                        type="button" 
+                        id="button_cursus_verwijderen" 
+                        class="btn btn-outline-primary">Verwijderen</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-mdb-dismiss="modal">Annuleren</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!--Import jQuery before materialize.js-->
     <script src="js/main.min.js"></script>

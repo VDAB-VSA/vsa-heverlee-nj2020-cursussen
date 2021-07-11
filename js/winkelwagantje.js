@@ -1,16 +1,14 @@
 //let filter_waardes = [];
 let sorteer = ["cursus_id", "ASC"];
-let huidige_cursus_id;
-//let tabel_hoofd = '';
+let huidige_cursus_id;      
+
 
 window.addEventListener('load', function() { 
-getAllIds();
-//cursussenFilteren();
-//toonWinkelWagantje();
-//eventListenersVoorDynamischeElementen();
-document.getElementById("button_aankoop_bevestig").addEventListener('click', verderBestelling);
-let cursus_verwijdren = document.getElementById("button_product_verwijderen");
-(cursus_verwijdren) ? cursus_verwijdren.addEventListener('click', () => {cursusVerwijderen(huidige_cursus_id)}) : false;
+    cursussenVanSessie();
+    getAllCursussen();
+    document.getElementById("button_aankoop_bevestig").addEventListener('click', verderBestelling);
+    let cursus_verwijdren = document.getElementById("button_product_verwijderen");
+    (cursus_verwijdren) ? cursus_verwijdren.addEventListener('click', () => {cursusVerwijderen(huidige_cursus_id)}) : false;
 
  }, false);
 
@@ -35,6 +33,10 @@ function toonWinkelWagantje(id){
     return dwapiRead(parameters).then(
         data => {
             let tabel_cursussen_html =  "";
+            //let subtotaal = 0;
+           // let btw = 0;
+            //let totaal = 0;
+
             let cursussen = data.result;
             if(cursussen.item_count == 0){
                 
@@ -56,7 +58,6 @@ function toonWinkelWagantje(id){
            else {
                //tabel_cursussen_html = tabel_hoofd;
                 cursussen.items.forEach(function(cursus) {
-               
                     let locatie_naam = "";
                     let categorie_naam = "";
                     let prijs = "";
@@ -109,56 +110,87 @@ function toonWinkelWagantje(id){
                     "</div>" +
                 "</div>"
                 });
-               }
-              return tabel_cursussen_html;
+               // totaal = subtotaal + btw;
+               // bestellingBedrag(subtotaal, btw, totaal);
+                 }                 
+               // bestelling.push(bedrag);
+              // bestelling.totaal += totaal,
+              // bestelling.subtotaal += totaal,
+              // bestelling.btw += btw
+              // bedrag.push(totaal);
+            return tabel_cursussen_html;//, totaal;
         })
     }
                   
-
-function getAllIds() {
+function bestellingBedrag(subtotaal, btw, totaal){
+    console.log(subtotaal, totaal)
+    
+}
+function getAllCursussen() {
     //INVOER
     let product_lijst = cursussenVanSessie();
+    
     let cursussen = [];
-    let bedrag_tebetal = '<p class="bg-danger">Geen items om af te rekenen</p>';
+    let prijs = 0;
+    let btw = 0;
+    let totaal = 0;
 
    //VERWERK
-    (product_lijst.length == 0) ? (document.getElementById("winkelwagantje-lijst").innerHTML = `<p class="bg-danger">Geen items om af te rekenen</p>`) :
+   (product_lijst.length == 0) ? document.getElementById("winkelwagantje-lijst").innerHTML = `<p class="bg-danger">Geen items om af te rekenen</p>` : false;
+  
     product_lijst.forEach(function(cursus_id){
-       cursussen.push(toonWinkelWagantje(cursus_id));
+       cursussen.push(toonWinkelWagantje(cursus_id.id));
+       prijs += cursus_id.prijs;
     });
+    btw = prijs * 0.15;
+    totaal = prijs + btw;
 
- //UITVOER
-  Promise.all(cursussen).then((values) => {
-    document.getElementById("winkelwagantje-lijst").innerHTML = values;
-  });
+    //UITVOER
+    Promise.all(cursussen).then((values) => {
+        document.getElementById("winkelwagantje-lijst").innerHTML = values;
+    });
+    let bedrag = "<p>Subtotaal: €" + prijs + "</p>" +
+    "<p>Inclusief BTW: €" + btw + "(15%)" + "</p>" +
+    "<h4>Totaal Bedrag: €" + totaal + "</h4>" +
+    `<div>
+            <a 
+            data-product-id='1',
+            data-product-naam='zz',
+            data-toggle='modal',
+            data-target='#bevestigen',
+            class="btn btn-warning btn-block button_product_verwijderen">Verder met bestellen</a>
+    </div>`;
+    document.getElementById("betaal_bedrag").innerHTML = bedrag;  
 }
 
 function cursusVerwijderen(id){
     //INVEOER
     let product_lijst = cursussenVanSessie();
+    let nieuw_lijst = [];
 
     //VERWERK
-    let nieuw_lijst = [...product_lijst];
-    let cursusIndex = nieuw_lijst.indexOf(id);
-    if(cursusIndex >= 0){
-        nieuw_lijst.splice(cursusIndex, 1);
+    let lijst = [...product_lijst];
+    for(i=0; i< lijst.length; i++){
+        if(lijst[i].id != id){
+            nieuw_lijst.push(lijst[i]);
+        }
     }
 
    //UITVOER
     window.sessionStorage.setItem("cursussen", JSON.stringify(nieuw_lijst));
-    getAllIds();
-   // console.log("index is", cursusIndex);
-    //console.log("verwijdered succesfully" + id);
-   
+    getAllCursussen();   
 }
 function verderBestelling(){
-    let gebruiker = JSON.parse(window.sessionStorage.getItem("user")) || [];
+   // let gebruiker = JSON.parse(window.sessionStorage.getItem("user")) || [];
    // Window.location.replace("bestelling.html");
     window.location.replace("bestelling.html");
 }
 
 function cursussenVanSessie() {
     let product_lijst = JSON.parse(window.sessionStorage.getItem("cursussen")) || [];
+    if(product_lijst.length <= 0){
+        window.location.replace("all-courses.html"); 
+    }
     return product_lijst;
 }
 

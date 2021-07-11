@@ -7,7 +7,8 @@ function checkSessie() {
 let gebruiker = JSON.parse(window.sessionStorage.getItem("user"));
 
 //console.log('sess', gebruiker);
-  if(gebruiker == null){
+  if(gebruiker.length > 0){
+    console.log('found');
    /*  let session = gebruiker[0].token != null ? "true" : "false";
     if(session == false) {
       //alert("Your Session has expired");
@@ -15,8 +16,11 @@ let gebruiker = JSON.parse(window.sessionStorage.getItem("user"));
     }
   }
   else { */
-  //setTimeout(() => redirectMessage, 40000);
-  window.location = "index.html";
+ // setTimeout(() => redirectMessage, 40000);
+  //window.location = "index.html";
+  }
+  else {
+    window.location = "index.html";
   }
 }
 
@@ -28,7 +32,7 @@ function logout() {
 }
 
 
-/*function redirectMessage() {
+function redirectMessage() {
   let body = document.getElementsByTagName('body');
     body.innerHtml  = "🔏 Trying to access secured admin page";
-}*/
+}
