@@ -147,8 +147,11 @@ function cursusVerwijderen(id){
    //UITVOER
     window.sessionStorage.setItem("cursussen", JSON.stringify(nieuw_lijst));
     getAllIds();
-   // console.log("index is", cursusIndex);
+   console.log("index is", cursusIndex);
     //console.log("verwijdered succesfully" + id);
+    setTimeout(function(){
+        window.location = "winkelwagentje.html";
+       }, 1000);
    
 }
 function verderBestelling(){
