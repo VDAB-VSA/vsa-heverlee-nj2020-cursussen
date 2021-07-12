@@ -92,6 +92,12 @@ function inLoggen() {
 }
     else {
         //UITVOER
+        label_fout = document.getElementById("inloggen_fout_boodschap");
+
+        let message = boodschap[resultaat.status.error_code];
+        label_fout.innerHTML = message;
+        label_fout.classList.remove("invisible");
+        label_fout.classList.add("visible");
         form_inloggen.classList.add('was-validated');
     }
 }
