@@ -187,9 +187,16 @@ function cursusVerwijderen(id){
    
 }
 function verderBestelling(){
-   // let gebruiker = JSON.parse(window.sessionStorage.getItem("user")) || [];
-   // Window.location.replace("bestelling.html");
+   let gebruiker = JSON.parse(window.sessionStorage.getItem("user")) || [];
+
+   if(gebruiker.length > 0){
     window.location.replace("bestelling.html");
+   }
+   else{
+       alert('Je moet inloggen om verder te gaan');
+   }
+   // Window.location.replace("bestelling.html");
+    
 }
 
 function cursussenVanSessie() {
